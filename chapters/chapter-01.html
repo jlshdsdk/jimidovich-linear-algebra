@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第一章 行列式 · 吉米多维奇线性代数刷题版</title>
+<link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="page-chapter" data-chapter="1">
+<header class="topbar">
+<a class="back-home" href="../index.html">← 总目录</a>
+<div class="book-title">线性代数习题精选精解 · 刷题版</div>
+<div class="topbar-actions">
+<button class="btn-mini" id="themeToggle" type="button">🌙 夜间</button>
+<button class="btn-mini mobile-only" id="sidebarToggle" type="button">本题目录</button>
+</div>
+</header>
+<div class="side-mask" id="sideMask"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="side-title">本章导航</div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-1">§1．行列式的定义</a>
+<div class="prob-grid">
+<a href="#prob-1.1.1" data-pid="1.1.1">1</a>
+<a href="#prob-1.1.2" data-pid="1.1.2">2</a>
+<a href="#prob-1.1.3" data-pid="1.1.3">3</a>
+<a href="#prob-1.1.4" data-pid="1.1.4">4</a>
+<a href="#prob-1.1.5" data-pid="1.1.5">5</a>
+<a href="#prob-1.1.6" data-pid="1.1.6">6</a>
+<a href="#prob-1.1.7" data-pid="1.1.7">7</a>
+<a href="#prob-1.1.8" data-pid="1.1.8">8</a>
+<a href="#prob-1.1.9" data-pid="1.1.9">9</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-2">§2．行列式的性质</a>
+<div class="prob-grid">
+<a href="#prob-1.2.1" data-pid="1.2.1">1</a>
+<a href="#prob-1.2.2" data-pid="1.2.2">2</a>
+<a href="#prob-1.2.3" data-pid="1.2.3">3</a>
+<a href="#prob-1.2.4" data-pid="1.2.4">4</a>
+<a href="#prob-1.2.5" data-pid="1.2.5">5</a>
+<a href="#prob-1.2.6" data-pid="1.2.6">6</a>
+<a href="#prob-1.2.7" data-pid="1.2.7">7</a>
+<a href="#prob-1.2.8" data-pid="1.2.8">8</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-3">§3．行列式按行（列）展开</a>
+<div class="prob-grid">
+<a href="#prob-1.3.1" data-pid="1.3.1">1</a>
+<a href="#prob-1.3.2" data-pid="1.3.2">2</a>
+<a href="#prob-1.3.3" data-pid="1.3.3">3</a>
+<a href="#prob-1.3.4" data-pid="1.3.4">4</a>
+<a href="#prob-1.3.5" data-pid="1.3.5">5</a>
+<a href="#prob-1.3.6" data-pid="1.3.6">6</a>
+<a href="#prob-1.3.7" data-pid="1.3.7">7</a>
+<a href="#prob-1.3.8" data-pid="1.3.8">8</a>
+<a href="#prob-1.3.9" data-pid="1.3.9">9</a>
+<a href="#prob-1.3.10" data-pid="1.3.10">10</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-4">§4．行列式的计算</a>
+<div class="prob-grid">
+<a href="#prob-1.4.1" data-pid="1.4.1">1</a>
+<a href="#prob-1.4.2" data-pid="1.4.2">2</a>
+<a href="#prob-1.4.3" data-pid="1.4.3">3</a>
+<a href="#prob-1.4.4" data-pid="1.4.4">4</a>
+<a href="#prob-1.4.5" data-pid="1.4.5">5</a>
+<a href="#prob-1.4.6" data-pid="1.4.6">6</a>
+<a href="#prob-1.4.7" data-pid="1.4.7">7</a>
+<a href="#prob-1.4.8" data-pid="1.4.8">8</a>
+<a href="#prob-1.4.9" data-pid="1.4.9">9</a>
+<a href="#prob-1.4.10" data-pid="1.4.10">10</a>
+<a href="#prob-1.4.11" data-pid="1.4.11">11</a>
+<a href="#prob-1.4.12" data-pid="1.4.12">12</a>
+<a href="#prob-1.4.13" data-pid="1.4.13">13</a>
+<a href="#prob-1.4.14" data-pid="1.4.14">14</a>
+<a href="#prob-1.4.15" data-pid="1.4.15">15</a>
+<a href="#prob-1.4.16" data-pid="1.4.16">16</a>
+<a href="#prob-1.4.17" data-pid="1.4.17">17</a>
+<a href="#prob-1.4.18" data-pid="1.4.18">18</a>
+<a href="#prob-1.4.19" data-pid="1.4.19">19</a>
+<a href="#prob-1.4.20" data-pid="1.4.20">20</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-5">§5．克莱姆法则</a>
+<div class="prob-grid">
+<a href="#prob-1.5.1" data-pid="1.5.1">1</a>
+<a href="#prob-1.5.2" data-pid="1.5.2">2</a>
+<a href="#prob-1.5.3" data-pid="1.5.3">3</a>
+<a href="#prob-1.5.4" data-pid="1.5.4">4</a>
+<a href="#prob-1.5.5" data-pid="1.5.5">5</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-6">§6．综合提高题型</a>
+<div class="prob-grid">
+<a href="#prob-1.6.1" data-pid="1.6.1">1</a>
+<a href="#prob-1.6.2" data-pid="1.6.2">2</a>
+<a href="#prob-1.6.3" data-pid="1.6.3">3</a>
+<a href="#prob-1.6.4" data-pid="1.6.4">4</a>
+<a href="#prob-1.6.5" data-pid="1.6.5">5</a>
+<a href="#prob-1.6.6" data-pid="1.6.6">6</a>
+<a href="#prob-1.6.7" data-pid="1.6.7">7</a>
+<a href="#prob-1.6.8" data-pid="1.6.8">8</a>
+<a href="#prob-1.6.9" data-pid="1.6.9">9</a>
+<a href="#prob-1.6.10" data-pid="1.6.10">10</a>
+<a href="#prob-1.6.11" data-pid="1.6.11">11</a>
+<a href="#prob-1.6.12" data-pid="1.6.12">12</a>
+<a href="#prob-1.6.13" data-pid="1.6.13">13</a>
+<a href="#prob-1.6.14" data-pid="1.6.14">14</a>
+<a href="#prob-1.6.15" data-pid="1.6.15">15</a>
+<a href="#prob-1.6.16" data-pid="1.6.16">16</a>
+<a href="#prob-1.6.17" data-pid="1.6.17">17</a>
+<a href="#prob-1.6.18" data-pid="1.6.18">18</a>
+<a href="#prob-1.6.19" data-pid="1.6.19">19</a>
+<a href="#prob-1.6.20" data-pid="1.6.20">20</a>
+<a href="#prob-1.6.21" data-pid="1.6.21">21</a>
+<a href="#prob-1.6.22" data-pid="1.6.22">22</a>
+<a href="#prob-1.6.23" data-pid="1.6.23">23</a>
+<a href="#prob-1.6.24" data-pid="1.6.24">24</a>
+<a href="#prob-1.6.25" data-pid="1.6.25">25</a>
+<a href="#prob-1.6.26" data-pid="1.6.26">26</a>
+<a href="#prob-1.6.27" data-pid="1.6.27">27</a>
+<a href="#prob-1.6.28" data-pid="1.6.28">28</a>
+<a href="#prob-1.6.29" data-pid="1.6.29">29</a>
+</div></div>
+<div class="side-title" style="margin-top:18px">进度</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 81 题</div>
+</aside>
+<main class="content">
+<h1 class="chapter-title">第一章　行列式</h1>
+<p class="chapter-sub">共 81 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<section class="sec-block" id="sec-1">
+<h2 class="sec-heading">§1．行列式的定义</h2>
+<div class="note-block"></div>
+<div class="sec-divider">知 识 要 点</div>
+<div class="note-block"><span class="note-tag">知识点</span>1. n级排列<div class="note-body"><p>由 $1, 2, \cdots, n$ 组成的一个有序数组称为一个 $n$ 级排列，通常记为 $i_1 i_2 \cdots i_n$.</p>
+<p>**逆序**　在一个排列中，如果一对数的前后位置与大小顺序相反，即前面的数大于后面的数，则它们称为一个逆序.</p>
+<p>**逆序数**　一个排列中的逆序总数，通常记为 $\tau(i_1 i_2 \cdots i_n)$.</p>
+<p>**奇（偶）排列**　逆序数为奇数（偶数）的排列.</p>
+<p>**对换**　把一个排列中某两个数的位置互换，而其余的数不动，就得到另一个排列，这样的一个变换称为一个对换.</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>2. n级排列的性质<div class="note-body"><p>（1）任意一个排列经过一个对换后，奇偶性改变；</p>
+<p>（2）$n$ 级排列共有 $n!$ 种，奇偶排列各占一半.</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>3. n阶行列式<div class="note-body"><p>$$\begin{vmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix}$$</p>
+<p>是所有取自不同行不同列的 $n$ 个元素的乘积 $a_{1j_1} a_{2j_2} \cdots a_{nj_n}$ 的代数和，这里 $j_1 j_2 \cdots j_n$ 是一个 $n$ 级排列. 当 $j_1 j_2 \cdots j_n$ 是偶排列时，该项前面带正号；当 $j_1 j_2 \cdots j_n$ 是奇排列时，该项前面带负号，即</p>
+<p>$$\begin{vmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix} = \sum_{j_1 j_2 \cdots j_n} (-1)^{\tau(j_1 j_2 \cdots j_n)} a_{1j_1} a_{2j_2} \cdots a_{nj_n},$$</p>
+<p>其中 $\sum\limits_{j_1 j_2 \cdots j_n}$ 表示对所有 $n$ 级排列求和.</p>
+<p>$n$ 阶行列式有时简记为 $|\, a_{ij} \,|_n$，而且有如下另外两种类似的定义：</p>
+<p>$$|\, a_{ij} \,|_n = \sum_{i_1 i_2 \cdots i_n} (-1)^{\tau(i_1 \cdots i_n)} a_{i_1 1} a_{i_2 2} \cdots a_{i_n n}$$</p>
+<p>和</p>
+<p>$$|\, a_{ij} \,|_n = \sum_{\substack{i_1 i_2 \cdots i_n \\ \text{和}\ j_1 j_2 \cdots j_n}} (-1)^{\tau(i_1 i_2 \cdots i_n) + \tau(j_1 j_2 \cdots j_n)} a_{i_1 j_1} a_{i_2 j_2} \cdots a_{i_n j_n}.$$</p>
+<p>由 $n$ 级排列的性质可知，$n$ 阶行列式共有 $n!$ 项，其中冠以正号的项和冠以负号的项（不算元</p>
+<p>素本身所带的负号）各占一半.</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>4. 常见行列式<div class="note-body"><p>（1）二阶行列式：</p>
+<p>$$\begin{vmatrix} a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} \end{vmatrix} = a_{11}a_{22} - a_{12}a_{21}.$$</p>
+<p>（2）三阶行列式：</p>
+<p>$$\begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix} = a_{11}a_{22}a_{33} + a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{13}a_{22}a_{31} - a_{12}a_{21}a_{33} - a_{11}a_{23}a_{32}.$$</p>
+<p>（3）上三角、下三角、对角行列式：</p>
+<p>$$\begin{vmatrix} a_{11} &amp; &amp; &amp; * \\ &amp; a_{22} &amp; &amp; \\ &amp; &amp; \cdots &amp; \\ O &amp; &amp; &amp; a_{nn} \end{vmatrix} = \begin{vmatrix} a_{11} &amp; &amp; &amp; O \\ &amp; a_{22} &amp; &amp; \\ &amp; &amp; \cdots &amp; \\ * &amp; &amp; &amp; a_{nn} \end{vmatrix} = \begin{vmatrix} a_{11} &amp; &amp; &amp; O \\ &amp; a_{22} &amp; &amp; \\ &amp; &amp; \cdots &amp; \\ O &amp; &amp; &amp; a_{nn} \end{vmatrix} = a_{11}a_{22}\cdots a_{nn}.$$</p>
+<p>（4）副对角线方向的行列式：</p>
+<p>$$\begin{vmatrix} * &amp; &amp; &amp; a_{1n} \\ &amp; a_{2,n-1} &amp; &amp; \\ &amp; \cdots &amp; &amp; \\ a_{n1} &amp; &amp; &amp; O \end{vmatrix} = \begin{vmatrix} O &amp; &amp; &amp; a_{1n} \\ &amp; a_{2,n-1} &amp; &amp; \\ &amp; \cdots &amp; &amp; \\ a_{n1} &amp; &amp; &amp; * \end{vmatrix} = \begin{vmatrix} O &amp; &amp; &amp; a_{1n} \\ &amp; a_{2,n-1} &amp; &amp; \\ &amp; \cdots &amp; &amp; \\ a_{n1} &amp; &amp; &amp; O \end{vmatrix}$$</p>
+<p>$$= (-1)^{\frac{n(n-1)}{2}} a_{1n}a_{2,n-1}\cdots a_{n1}.$$</p>
+<p>（5）范德蒙行列式：</p>
+<p>$$\begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ a_1 &amp; a_2 &amp; \cdots &amp; a_n \\ a_1^2 &amp; a_2^2 &amp; \cdots &amp; a_n^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_1^{n-1} &amp; a_2^{n-1} &amp; \cdots &amp; a_n^{n-1} \end{vmatrix} = \prod_{1 \leqslant j &lt; i \leqslant n} (a_i - a_j).$$</p></div></div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：计算排列的逆序数和奇偶性</h3><div class="type-body"><p>方法与技巧：排列 $i_1 i_2 \cdots i_n$ 的逆序数 $\tau(i_1 i_2 \cdots i_n)$ 等于：</p>
+<p>$i_1$ 后面比 $i_1$ 小的数的个数 $+\ i_2$ 后面比 $i_2$ 小的数的个数 $+\ \cdots\ + i_{n-1}$ 后面比 $i_{n-1}$ 小的数的个数.</p></div></div>
+<article class="problem" id="prob-1.1.1" data-pid="1.1.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求下列排列的逆序数：</p>
+<p>（1）217986354　（2）134782695　（3）987654321</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）$\tau(217986354) = 1 + 0 + 4 + 5 + 4 + 3 + 0 + 1 = 18.$</p>
+<p>（2）$\tau(134782695) = 0 + 1 + 1 + 3 + 3 + 0 + 1 + 1 = 10.$</p>
+<p>（3）$\tau(987654321) = 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = 36.$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.2" data-pid="1.1.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求下列排序的逆序数，并确定奇偶性.</p>
+<p>（1）$n(n-1)\cdots 21$　（2）$13\cdots(2n-1)24\cdots(2n)$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）$\tau(n(n-1)\cdots 21) = (n-1) + (n-2) + \cdots + 2 + 1 = \dfrac{n(n-1)}{2}.$</p>
+<p>当 $n = 4k$ 或 $4k+1$ 时，$\dfrac{n(n-1)}{2}$ 为偶数，从而所给排列为偶排列；</p>
+<p>当 $n = 4k+2$ 或 $4k+3$ 时，$\dfrac{n(n-1)}{2}$ 为奇数，从而所给排列为奇排列.</p>
+<p>（2）排列中前 $n$ 个数 $1, 3, \cdots, (2n-1)$ 之间不构成逆序，后 $n$ 个数 $2, 4, \cdots, (2n)$ 之间也不构成逆序，只有前 $n$ 个数和后 $n$ 个数之间才构成逆序，</p>
+<p>$$\tau(13\cdots(2n-1)24\cdots(2n)) = 0 + 1 + 2 + \cdots + (n-1) = \frac{n(n-1)}{2}.$$</p>
+<p>奇偶性讨论与（1）相同.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：关于行列式的定义</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.1.3" data-pid="1.1.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>如果排列 $x_1 x_2 \cdots x_n$ 的逆序数为 $k$，问：排列 $x_n x_{n-1} \cdots x_2 x_1$ 的逆序数是多少？</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>显然，$x_1, x_2, \cdots, x_n$ 中任意不同的 $x_i$ 与 $x_j$，必在排列 $x_1 x_2 \cdots x_n$ 或 $x_n x_{n-1} \cdots x_2 x_1$ 中构成逆序，而且只能在一个中构成逆序. 因此，这二排列的逆序数的和，即为从 $n$ 个元素中取两个不同的元素的组合数 $C_n^2 = \dfrac{n(n-1)}{2}$. 但由于 $x_1 x_2 \cdots x_n$ 的逆序数为 $k$，故 $x_n x_{n-1} \cdots x_2 x_1$ 的逆序数为</p>
+<p>$$\frac{n(n-1)}{2} - k.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.4" data-pid="1.1.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>选择 $i$ 与 $k$，使</p>
+<p>（1）$1274i56k9$ 成偶排列；</p>
+<p>（2）$1i25k4897$ 成奇排列.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）在排列 $1274i56k9$ 中缺数码 $3, 8$，于是</p>
+<p>令 $i = 3, k = 8$ 得：</p>
+<p>$$\tau(127435689) = 4 + 1 = 5;$$</p>
+<p>令 $i = 8, k = 3$ 得：</p>
+<p>$$\tau(127485639) = 4 + 1 + 3 + 1 + 1 = 10.$$</p>
+<p>所以，当 $i = 8, k = 3$ 时成偶排列.</p>
+<p>（2）在排列 $1i25k4897$ 中缺数码 $3, 6$，于是</p>
+<p>令 $i = 3, k = 6$ 得：</p>
+<p>$$\tau(132564897) = 1 + 1 + 1 + 1 + 1 = 5;$$</p>
+<p>令 $i = 6, k = 3$ 得：</p>
+<p>$$\tau(162534897) = 4 + 2 + 1 + 1 = 8.$$</p>
+<p>所以，当 $i = 3, k = 6$ 时成奇排列.</p>
+<p>点评：对于含参数的排列，要对参数进行讨论来确定前后数的大小关系.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.5" data-pid="1.1.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>选择 $i$ 与 $k$，使 $a_{1i} a_{32} a_{4k} a_{25} a_{53}$ 成为五阶行列式中一个带负号的项.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将给定的项改写成行标为自然顺序，即</p>
+<p>$$a_{1i} a_{25} a_{32} a_{4k} a_{53}.$$</p>
+<p>列标构成的排列 $i52k3$ 中缺 1 和 4.</p>
+<p>令 $i = 1, k = 4$，$\tau(15243) = 3 + 1 = 4$，故该项带正号.</p>
+<p>令 $i = 4, k = 1$，$\tau(45213) = 3 + 3 + 1 = 7$，故该项带负号.</p>
+<p>所以，$i = 4, k = 1$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.6" data-pid="1.1.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $f(x) = \begin{vmatrix} 2x &amp; x &amp; 1 &amp; 2 \\ 1 &amp; x &amp; 1 &amp; -1 \\ 3 &amp; 2 &amp; x &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; x \end{vmatrix}$ 中 $x^4$ 与 $x^3$ 的系数.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>根据行列式定义，只有对角线上的元素相乘才出现 $x^4$，而且这一项带正号，即 $2x^4$. 故 $f(x)$ 的 $x^4$ 的系数为 2.</p>
+<p>同理，含 $x^3$ 的项也只有一项，即</p>
+<p>$$x \cdot 1 \cdot x \cdot x = x^3.$$</p>
+<p>而且其列标所构成的排列为 2134. 但是</p>
+<p>$$\tau(2134) = 1,$$</p>
+<p>故 $f(x)$ 的含 $x^3$ 的项为 $-x^3$，它的系数为 $-1$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.7" data-pid="1.1.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>仅用行列式定义，证明：</p>
+<p>$$D = \begin{vmatrix} a_1 &amp; a_2 &amp; a_3 &amp; a_4 &amp; a_5 \\ b_1 &amp; b_2 &amp; b_3 &amp; b_4 &amp; b_5 \\ c_1 &amp; c_2 &amp; 0 &amp; 0 &amp; 0 \\ d_1 &amp; d_2 &amp; 0 &amp; 0 &amp; 0 \\ e_1 &amp; e_2 &amp; 0 &amp; 0 &amp; 0 \end{vmatrix} = 0.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　除去符号的差异外，行列式 $D$ 的一般项可表示为</p>
+<p>$$a_i b_j c_k d_s e_t,$$</p>
+<p>其中 $ijkst$ 为 $1, 2, 3, 4, 5$ 的任意一个排列，而且 $c_r, e_r, d_r$（$r = 3, 4, 5$）都是 0.</p>
+<p>由于 $k, s, t$ 为 $1, 2, 3, 4, 5$ 中的三个不同的数，故至少要取到 $3, 4, 5$ 中的一个数. 就是说，在 $D$ 的展开式的每一项中至少有一个因子 0. 从而 $D$ 的每项都是零，故 $D = 0$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.8" data-pid="1.1.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明：一个 $n$ 阶行列式中等于零的元素的个数如果比 $n^2 - n$ 多，则此行列式必等于零.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　$n$ 阶行列式共有 $n^2$ 个元素. 如果 $D$ 是 $n$ 阶行列式，而且其中等于零的元素的个数比 $n^2 - n$ 多，则不等于零的元素的个数比</p>
+<p>$$n^2 - (n^2 - n) = n$$</p>
+<p>少. 这样，$D$ 的展开式中每一项至少有一个因子 0，从而 $D = 0$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.1.9" data-pid="1.1.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>利用定义计算下列行列式.</p>
+<p>（1）$D_n = \left|\begin{array}{cccc} 0 &amp; \cdots &amp; 0 &amp; a_{1n} \\ 0 &amp; \cdots &amp; a_{2,n-1} &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; \cdots &amp; a_{n,n-1} &amp; a_{nn} \end{array}\right|$；</p>
+<p>（2）$D_n = \left|\begin{array}{cccccc} 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a_1 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; a_2 &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; a_{n-2} &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ a_{n-1} &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 &amp; a_n \end{array}\right|$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）由行列式的定义，$D_n$ 中的一般项为</p>
+<p>$$\tau(j_1 j_2 \cdots j_n)\, a_{1j_1} a_{2j_2} \cdots a_{nj_n}.$$</p>
+<p>因为 $D_n$ 中第一行除 $a_{1n}$ 外全为零，所以 $a_{1j_1}$ 取为 $a_{1n}$.</p>
+<p>而第二行中除 $a_{2,n-1}$ 和 $a_{2n}$ 外全为零，故 $a_{2j_2}$ 取为 $a_{2,n-1}$.</p>
+<p>同理，$a_{3j_3}$ 取为 $a_{3,n-3}$，$\cdots$，$a_{nj_n}$ 取为 $a_{n1}$，即 $D_n$ 只有一项 $a_{1n} a_{2,n-1} \cdots a_{n1}$. 而这一项的列标构成的排列的逆序数为</p>
+<p>$$\tau(n\,(n-1)\,\cdots\,2\,1) = \frac{n(n-1)}{2}.$$</p>
+<p>故 $D_n = (-1)^{\frac{n(n-1)}{2}} a_{1n} a_{2,n-1} \cdots a_{n1}$.</p>
+<p>（2）由行列式的定义，第一行取 $a_1$，第二行取 $a_2$，$\cdots$，第 $n$ 行取 $a_n$，即 $D_n$ 只有一项 $a_1 a_2 \cdots a_n$. 而这一项的列标构成的排列为：$(n-1)\,(n-2)\,\cdots\,1\,n$，所以逆序数为</p>
+<p>$$\tau((n-1)\,(n-2)\,\cdots\,1\,n) = \frac{(n-1)(n-2)}{2}.$$</p>
+<p>故 $D_n = (-1)^{\frac{(n-1)(n-2)}{2}} a_1 a_2 \cdots a_n$.</p></div>
+</div></div>
+</article>
+</section>
+<section class="sec-block" id="sec-2">
+<h2 class="sec-heading">§2．行列式的性质</h2>
+<div class="sec-divider">知 识 要 点</div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：直接利用性质计算行列式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.2.1" data-pid="1.2.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>如果 $D = \begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix}$，$D_1 = \begin{vmatrix} 2a_{11} &amp; 2a_{12} &amp; 2a_{13} \\ 2a_{21} &amp; 2a_{22} &amp; 2a_{23} \\ 2a_{31} &amp; 2a_{32} &amp; 2a_{33} \end{vmatrix}$，则 $D_1 =$ ＿＿＿.</p>
+<p>（A）$2D$　　（B）$-2D$　　（C）$8D$　　（D）$-8D$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>根据行列式的性质 3 及其推论，</p>
+<p>$$D_1 = 2 \times 2 \times 2D = 8D.$$</p>
+<p>故应选（C）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.2" data-pid="1.2.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} -2 &amp; 5 &amp; -1 &amp; 3 \\ 1 &amp; -9 &amp; 13 &amp; 7 \\ 3 &amp; -1 &amp; 5 &amp; -5 \\ 2 &amp; 8 &amp; -7 &amp; -10 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D \xrightarrow{\ r_1 \leftrightarrow r_2\ } -\begin{vmatrix} 1 &amp; -9 &amp; 13 &amp; 7 \\ -2 &amp; 5 &amp; -1 &amp; 3 \\ 3 &amp; -1 &amp; 5 &amp; -5 \\ 2 &amp; 8 &amp; -7 &amp; -10 \end{vmatrix} \xrightarrow[\ r_4 - 2r_1\ ]{\ r_2 + 2r_1,\ r_3 - 3r_1\ } -\begin{vmatrix} 1 &amp; -9 &amp; 13 &amp; 7 \\ 0 &amp; -13 &amp; 25 &amp; 17 \\ 0 &amp; 26 &amp; -34 &amp; -26 \\ 0 &amp; 26 &amp; -33 &amp; -24 \end{vmatrix}$$</p>
+<p>$$\xrightarrow[\ r_4 + 2r_2\ ]{\ r_3 + 2r_2\ } -\begin{vmatrix} 1 &amp; -9 &amp; 13 &amp; 7 \\ 0 &amp; -13 &amp; 25 &amp; 17 \\ 0 &amp; 0 &amp; 16 &amp; 8 \\ 0 &amp; 0 &amp; 17 &amp; 10 \end{vmatrix} \xrightarrow{\ r_4 - \frac{17}{16}r_3\ } -\begin{vmatrix} 1 &amp; -9 &amp; 13 &amp; 7 \\ 0 &amp; -13 &amp; 25 &amp; 17 \\ 0 &amp; 0 &amp; 16 &amp; 8 \\ 0 &amp; 0 &amp; 0 &amp; \frac{3}{2} \end{vmatrix}$$</p>
+<p>$$= -(-13) \times 16 \times \frac{3}{2} = 312.$$</p>
+<p>点评：利用行列式的性质，将行列式化为三角形行列式，这是常见的计算行列式的一种思路.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.3" data-pid="1.2.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} a_0 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ 1 &amp; a_1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; 0 &amp; a_2 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 0 &amp; 0 &amp; \cdots &amp; a_{n-1} &amp; 0 \\ 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a_n \end{vmatrix}$（$a_i \neq 0, i = 1, 2, \cdots, n$）.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>把行列式中第二列 $\times \left(-\dfrac{1}{a_1}\right)$，第三列 $\times \left(-\dfrac{1}{a_2}\right)$，$\cdots$，第 $(n+1)$ 列 $\times \left(-\dfrac{1}{a_n}\right)$ 加至第一列，可把行列式化为上三角形行列式，从而得其值. 即</p>
+<p>$$D = \begin{vmatrix} a_0 - \sum\limits_{i=1}^{n} \frac{1}{a_i} &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; a_1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; a_2 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a_n \end{vmatrix} = a_1 a_2 \cdots a_n \left(a_0 - \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.4" data-pid="1.2.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} 0 &amp; a &amp; b &amp; a \\ a &amp; 0 &amp; a &amp; b \\ b &amp; a &amp; 0 &amp; a \\ a &amp; b &amp; a &amp; 0 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D \xrightarrow[\ c_1 + c_3\ ] {\ c_1 + c_2,\ c_1 + c_4\ } \begin{vmatrix} 2a+b &amp; a &amp; b &amp; a \\ 2a+b &amp; 0 &amp; a &amp; b \\ 2a+b &amp; a &amp; 0 &amp; a \\ 2a+b &amp; b &amp; a &amp; 0 \end{vmatrix} = (2a+b) \begin{vmatrix} 1 &amp; a &amp; b &amp; a \\ 1 &amp; 0 &amp; a &amp; b \\ 1 &amp; a &amp; 0 &amp; a \\ 1 &amp; b &amp; a &amp; 0 \end{vmatrix}$$</p>
+<p>$$\xrightarrow[\ r_4 - r_1\ ]{\ r_2 - r_1,\ r_3 - r_1\ } (2a+b) \begin{vmatrix} 1 &amp; a &amp; b &amp; a \\ 0 &amp; -a &amp; a-b &amp; b-a \\ 0 &amp; 0 &amp; -b &amp; 0 \\ 0 &amp; b-a &amp; a-b &amp; -a \end{vmatrix} \xrightarrow{\ c_2 + c_3\ } (2a+b) \begin{vmatrix} 1 &amp; a+b &amp; b &amp; a \\ 0 &amp; -b &amp; a-b &amp; b-a \\ 0 &amp; -b &amp; -b &amp; 0 \\ 0 &amp; 0 &amp; a-b &amp; -a \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ r_3 - r_2,\ c_3 + c_4\ } (2a+b) \begin{vmatrix} 1 &amp; a+b &amp; a+b &amp; a \\ 0 &amp; -b &amp; 0 &amp; b-a \\ 0 &amp; 0 &amp; -b &amp; a-b \\ 0 &amp; 0 &amp; -b &amp; -a \end{vmatrix} \xrightarrow{\ r_4 - r_3\ } (2a+b) \begin{vmatrix} 1 &amp; a+b &amp; a+b &amp; a \\ 0 &amp; -b &amp; 0 &amp; b-a \\ 0 &amp; 0 &amp; -b &amp; a-b \\ 0 &amp; 0 &amp; 0 &amp; -2a+b \end{vmatrix}$$</p>
+<p>$$= b^2 (b^2 - 4a^2).$$</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：利用性质证明行列式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.2.5" data-pid="1.2.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明：$\begin{vmatrix} ax+by &amp; ay+bz &amp; az+bx \\ ay+bz &amp; az+bx &amp; ax+by \\ az+bx &amp; ax+by &amp; ay+bz \end{vmatrix} = (a^3 + b^3) \begin{vmatrix} x &amp; y &amp; z \\ y &amp; z &amp; x \\ z &amp; x &amp; y \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　左端 $= \begin{vmatrix} ax &amp; ay+bz &amp; az+bx \\ ay &amp; az+bx &amp; ax+by \\ az &amp; ax+by &amp; ay+bz \end{vmatrix} + \begin{vmatrix} by &amp; ay+bz &amp; az+bx \\ bz &amp; az+bx &amp; ax+by \\ bx &amp; ax+by &amp; ay+bz \end{vmatrix}$</p>
+<p>$$= a \begin{vmatrix} x &amp; ay+bz &amp; az \\ y &amp; az+bx &amp; ax \\ z &amp; ax+by &amp; ay \end{vmatrix} + b \begin{vmatrix} y &amp; bz &amp; az+bx \\ z &amp; bx &amp; ax+by \\ x &amp; by &amp; ay+bz \end{vmatrix}$$</p>
+<p>$$= a^3 \begin{vmatrix} x &amp; y &amp; z \\ y &amp; z &amp; x \\ z &amp; x &amp; y \end{vmatrix} + b^3 \begin{vmatrix} y &amp; z &amp; x \\ z &amp; x &amp; y \\ x &amp; y &amp; z \end{vmatrix}$$</p>
+<p>$$= (a^3 + b^3) \begin{vmatrix} x &amp; y &amp; z \\ y &amp; z &amp; x \\ z &amp; x &amp; y \end{vmatrix} = \text{右端}.$$</p>
+<p>点评：本题利用性质 5 将行列式拆分成简单的行列式的和的形式，这也是常见的计算行列式的方法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.6" data-pid="1.2.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明：$\begin{vmatrix} a^2 &amp; (a+1)^2 &amp; (a+2)^2 &amp; (a+3)^2 \\ b^2 &amp; (b+1)^2 &amp; (b+2)^2 &amp; (b+3)^2 \\ c^2 &amp; (c+1)^2 &amp; (c+2)^2 &amp; (c+3)^2 \\ d^2 &amp; (d+1)^2 &amp; (d+2)^2 &amp; (d+3)^2 \end{vmatrix} = 0.$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　左端 $\xrightarrow[\ c_4 - c_1\ ]{\ c_2 - c_1,\ c_3 - c_1\ } \begin{vmatrix} a^2 &amp; 2a+1 &amp; 4a+4 &amp; 6a+9 \\ b^2 &amp; 2b+1 &amp; 4b+4 &amp; 6b+9 \\ c^2 &amp; 2c+1 &amp; 4c+4 &amp; 6c+9 \\ d^2 &amp; 2d+1 &amp; 4d+4 &amp; 6d+9 \end{vmatrix} \xrightarrow[\ c_4 - 3c_2\ ]{\ c_3 - 2c_2\ } \begin{vmatrix} a^2 &amp; 2a+1 &amp; 2 &amp; 6 \\ b^2 &amp; 2b+1 &amp; 2 &amp; 6 \\ c^2 &amp; 2c+1 &amp; 2 &amp; 6 \\ d^2 &amp; 2d+1 &amp; 2 &amp; 6 \end{vmatrix} = 0.$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.7" data-pid="1.2.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>如果 $n$ 阶行列式 $D_n = |\,a_{ij}\,|$ 满足 $a_{ij} = -a_{ji}$（$i, j = 1, 2, \cdots, n$），则称 $D_n$ 为反对称行列式. 证明：奇数阶反对称行列式为零.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设 $D_n$ 为反对称行列式，且 $n$ 为奇数，由定义知 $a_{ii} = -a_{ii}$，于是有 $a_{ii} = 0$（$i = 1, 2, \cdots, n$），所以</p>
+<p>$$D_n = \begin{vmatrix} 0 &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\ -a_{12} &amp; 0 &amp; a_{23} &amp; \cdots &amp; a_{2n} \\ -a_{13} &amp; -a_{23} &amp; 0 &amp; \cdots &amp; a_{3n} \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -a_{1n} &amp; -a_{2n} &amp; -a_{3n} &amp; \cdots &amp; 0 \end{vmatrix} \xrightarrow{\ \text{行列式转置}\ } \begin{vmatrix} 0 &amp; -a_{12} &amp; -a_{13} &amp; \cdots &amp; -a_{1n} \\ a_{12} &amp; 0 &amp; -a_{23} &amp; \cdots &amp; -a_{2n} \\ a_{13} &amp; a_{23} &amp; 0 &amp; \cdots &amp; -a_{3n} \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ a_{1n} &amp; a_{2n} &amp; a_{3n} &amp; \cdots &amp; 0 \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{各列提出}(-1)\ } (-1)^n \begin{vmatrix} 0 &amp; a_{12} &amp; a_{13} &amp; \cdots &amp; a_{1n} \\ -a_{12} &amp; 0 &amp; a_{23} &amp; \cdots &amp; a_{2n} \\ -a_{13} &amp; -a_{23} &amp; 0 &amp; \cdots &amp; a_{3n} \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -a_{1n} &amp; -a_{2n} &amp; -a_{3n} &amp; \cdots &amp; 0 \end{vmatrix} \xrightarrow{\ n\ \text{为奇数}\ } -D_n,$$</p>
+<p>于是 $D_n = 0$.</p>
+<p>点评：本题利用行列式的性质 1 和性质 3 先证明 $D_n = -D_n$，从而 $D_n = 0$，这是证明行列式为零的常用方法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.2.8" data-pid="1.2.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明元素为 0,1 的三阶行列式的值只能是 $0, \pm 1, \pm 2$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　设 $D = \begin{vmatrix} a_{11} &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22} &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33} \end{vmatrix}$，$a_{ij}$ 取值 0 或 1.</p>
+<p>若 $D$ 的某一列元素全为零，则 $D = 0$，结论成立. 否则，第一列中至少有一个非零元素，不失一般性，设 $a_{11} = 1$，当 $a_{21}$ 或 $a_{31}$ 不全为零时，通过减去第一行，可把 $D$ 化为</p>
+<p>$$D = \begin{vmatrix} 1 &amp; a_{12} &amp; a_{13} \\ 0 &amp; b_{22} &amp; b_{23} \\ 0 &amp; b_{32} &amp; b_{33} \end{vmatrix} = b_{22} b_{33} - b_{32} b_{23},$$</p>
+<p>其中 $b_{ij} = a_{ij}$ 或 $b_{ij} = a_{ij} - a_{1j}$，因此 $|\,b_{ij}\,| \leqslant 1$，故 $|\,D\,| \leqslant 2$.</p></div>
+</div></div>
+</article>
+</section>
+<section class="sec-block" id="sec-3">
+<h2 class="sec-heading">§3．行列式按行（列）展开</h2>
+<div class="sec-divider">知 识 要 点</div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：关于代数余子式和余子式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.3.1" data-pid="1.3.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若 $\begin{vmatrix} 1 &amp; 0 &amp; 2 \\ x &amp; 3 &amp; 1 \\ 4 &amp; x &amp; 5 \end{vmatrix}$ 中代数余子式 $A_{12} = -1$，则 $A_{21} =$ ＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$A_{12} = (-1)^{1+2} \begin{vmatrix} x &amp; 1 \\ 4 &amp; 5 \end{vmatrix} = 4 - 5x = -1$，故 $x = 1$，所以，$A_{21} = (-1)^{2+1} \begin{vmatrix} 0 &amp; 2 \\ 1 &amp; 5 \end{vmatrix} = 2.$</p>
+<p>故应填 2.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.2" data-pid="1.3.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设四阶行列式 $D_4$ 的第三行元素为 $-1, 0, 2, 4$.</p>
+<p>（1）当 $D_4 = 4$ 时，设第三行元素所对应的代数余子式分别为 $5, 10, a, 4$，求 $a$.</p>
+<p>（2）设第四行元素对应余子式分别 $5, 10, a, 4$，求 $a$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）由行列式按一行（列）展开公式，</p>
+<p>$$(-1) \times 5 + 0 \times 10 + 2 \times a + 4 \times 4 = 4. \text{ 故 } a = -\frac{7}{2}.$$</p>
+<p>（2）由定义，第四行元素对应的代数余子式分别为</p>
+<p>$$(-1)^{4+1} \times 5, \ (-1)^{4+2} \times 10, \ (-1)^{4+3} \times a, \ (-1)^{4+4} \times 4,$$</p>
+<p>所以，$(-1) \times (-1)^{4+1} \times 5 + 0 \times (-1)^{4+2} \times 10 + 2 \times (-1)^{4+3} \times a + 4 \times (-1)^{4+4} \times 4 = 0.$</p>
+<p>故 $a = \dfrac{21}{2}$.</p>
+<p>点评：注意代数余子式 $A_{ij}$ 和余子式 $M_{ij}$ 之间的转换，即</p>
+<p>$$A_{ij} = (-1)^{i+j} M_{ij}, \qquad M_{ij} = (-1)^{i+j} A_{ij}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.3" data-pid="1.3.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设行列式 $D = \begin{vmatrix} 3 &amp; 0 &amp; 4 &amp; 0 \\ 2 &amp; 2 &amp; 2 &amp; 2 \\ 0 &amp; -7 &amp; 0 &amp; 0 \\ 5 &amp; 3 &amp; -2 &amp; 2 \end{vmatrix}$，求第四行各元素余子式之和.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$M_{41} + M_{42} + M_{43} + M_{44} = -A_{41} + A_{42} - A_{43} + A_{44}$$</p>
+<p>$$= \begin{vmatrix} 3 &amp; 0 &amp; 4 &amp; 0 \\ 2 &amp; 2 &amp; 2 &amp; 2 \\ 0 &amp; -7 &amp; 0 &amp; 0 \\ -1 &amp; 1 &amp; -1 &amp; 1 \end{vmatrix} \xrightarrow{\ \text{按第三行展开}\ } (-7) \times (-1)^{3+2} \begin{vmatrix} 3 &amp; 4 &amp; 0 \\ 2 &amp; 2 &amp; 2 \\ -1 &amp; -1 &amp; 1 \end{vmatrix}$$</p>
+<p>$$= 14 \begin{vmatrix} 3 &amp; 4 &amp; 0 \\ 1 &amp; 1 &amp; 1 \\ -1 &amp; -1 &amp; 1 \end{vmatrix} = -28.$$</p>
+<p>点评：利用行（列）展开构造新的行列式，即用 $A_{41}, A_{42}, A_{43}, A_{44}$ 的系数 $-1, 1, -1, 1$ 替换 $D$ 中的第四行元素.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.4" data-pid="1.3.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>（1）设 $D_5 = \begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\ 1 &amp; 1 &amp; 1 &amp; 3 &amp; 3 \\ 3 &amp; 2 &amp; 5 &amp; 4 &amp; 2 \\ 2 &amp; 2 &amp; 2 &amp; 1 &amp; 1 \\ 4 &amp; 6 &amp; 5 &amp; 2 &amp; 3 \end{vmatrix}$，　求 $1°\ A_{31} + A_{32} + A_{33}$；　$2°\ A_{34} + A_{35}$.</p>
+<p>（2）设 $D_4 = \begin{vmatrix} 1 &amp; -1 &amp; 2 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; 1 \\ 2 &amp; 0 &amp; 0 &amp; 4 \end{vmatrix}$，求 $1°\ A_{41} + A_{42} + A_{43} + A_{44}$；　$2°\ A_{41} + 2A_{42} + 3A_{43} + 4A_{44}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）将 $D_5$ 中第三行换成 $1, 1, 1, 3, 3$，行列式的值等于 0，按第三行展开，则有：</p>
+<p>$$(A_{31} + A_{32} + A_{33}) + 3(A_{34} + A_{35}) = 0. \qquad ①$$</p>
+<p>同理，将 $D_5$ 中第三行的元素换成第四行的对应元素，按第三行展开，则有：</p>
+<p>$$2(A_{31} + A_{32} + A_{33}) + A_{34} + A_{35} = 0. \qquad ②$$</p>
+<p>解 ①,② 联立方程组，得 $1°\ A_{31} + A_{32} + A_{33} = 0$；　$2°\ A_{34} + A_{35} = 0$.</p>
+<p>（2）$1°$ 由第二行元素与第四行对应元素的代数余子式乘积之和为 0，所以</p>
+<p>$$1 \cdot A_{41} + 1 \cdot A_{42} + 1 \cdot A_{43} + 1 \cdot A_{44} = 0,$$</p>
+<p>即 $A_{41} + A_{42} + A_{43} + A_{44} = 0$.</p>
+<p>$2°$ 用 $1, 2, 3, 4$ 替换 $D_4$ 的第四行元素，得 $D_4^* = \begin{vmatrix} 1 &amp; -1 &amp; 2 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 3 &amp; 4 \end{vmatrix}$，于是</p>
+<p>$$A_{41} + 2A_{42} + 3A_{43} + 4A_{44}$$</p>
+<p>$$= D_4^* \xrightarrow[\ r_3 - r_2\ ]{\ r_1 - r_2\ } \begin{vmatrix} 0 &amp; -2 &amp; 1 &amp; -2 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; 3 \end{vmatrix} \xrightarrow{\ \text{按第一列展开}\ } -\begin{vmatrix} -2 &amp; 1 &amp; -2 \\ 1 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 3 \end{vmatrix} = 10.$$</p>
+<p>点评：解此类问题，通常是利用行列展开的相关结论构造新的行列式，构造方程从而解之.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.5" data-pid="1.3.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $D_n = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; 2 &amp; \cdots &amp; 2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; n \end{vmatrix}$，则 $D_n$ 中所有元素的代数余子式之和为＿＿＿.</p>
+<p>（A）0　　（B）$n!$　　（C）$-n!$　　（D）$2n!$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因第一行元素与其对应的代数余子式乘积之和等于行列式的值，所以</p>
+<p>$$1 \cdot A_{11} + 1 \cdot A_{12} + \cdots + 1 \cdot A_{1n} = D_n = n!.$$</p>
+<p>因第一行元素与第 $i$ 行（$i \geqslant 2$）对应元素的代数余子式乘积之和等于零，所以</p>
+<p>$$1 \cdot A_{i1} + 1 \cdot A_{i2} + \cdots + 1 \cdot A_{in} = 0.$$</p>
+<p>故所有元素代数余子式之和为 $n!$</p>
+<p>故应选（B）.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：按一行（列）展开计算行列式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.3.6" data-pid="1.3.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $D_n = \begin{vmatrix} a &amp; b &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; a &amp; b &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; a &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a &amp; b \\ b &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>按第一列展开，得</p>
+<p>$$D_n = a \begin{vmatrix} a &amp; b &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; a &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; a &amp; b \\ 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a \end{vmatrix} + b(-1)^{n+1} \begin{vmatrix} b &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ a &amp; b &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; a &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; a &amp; b \end{vmatrix}$$</p>
+<p>$$= aa^{n-1} + (-1)^{n+1} bb^{n-1} = a^n + (-1)^{n+1} b^n.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.7" data-pid="1.3.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $D_n = \begin{vmatrix} 2 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 2 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 2 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将 $D_n$ 按第一列展开得：$D_n = 2D_{n-1} - D_{n-2}$，</p>
+<p>因此有：$D_n - D_{n-1} = D_{n-1} - D_{n-2} = \cdots = D_2 - D_1$.</p>
+<p>又</p>
+<p>$$D_1 = 2, \quad D_2 = \begin{vmatrix} 2 &amp; 1 \\ 1 &amp; 2 \end{vmatrix} = 3,$$</p>
+<p>所以 $D_n = D_{n-1} + 1 = D_{n-2} + 2 = \cdots = D_1 + (n-1) = n + 1$.</p>
+<p>点评：行列式 $\begin{vmatrix} a &amp; b &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ c &amp; a &amp; b &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; c &amp; a &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a &amp; b \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; c &amp; a \end{vmatrix}$ 称为三对角行列式.</p>
+<p>计算此类行列式通常采用递推法，即：根据行列式的行列展开，找出 $D_n$ 与 $D_{n-1}$ 或 $D_n$ 与 $D_{n-1}, D_{n-2}$ 之间的关系，利用递推关系求出行列式.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型3：利用拉普拉斯定理求解行列式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.3.8" data-pid="1.3.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $D_4 = \begin{vmatrix} 2 &amp; 3 &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 3 &amp; 0 \\ 0 &amp; 1 &amp; 2 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; 2 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由拉普拉斯定理，按第一行和第二行展开</p>
+<p>$$D_4 = \begin{vmatrix} 2 &amp; 3 \\ 1 &amp; 2 \end{vmatrix} \times (-1)^{1+2+1+2} \begin{vmatrix} 2 &amp; 3 \\ 1 &amp; 2 \end{vmatrix} + \begin{vmatrix} 2 &amp; 0 \\ 1 &amp; 3 \end{vmatrix} \times (-1)^{1+2+1+3} \begin{vmatrix} 1 &amp; 3 \\ 0 &amp; 2 \end{vmatrix}$$</p>
+<p>$$+ \begin{vmatrix} 3 &amp; 0 \\ 2 &amp; 3 \end{vmatrix} \times (-1)^{1+2+2+3} \begin{vmatrix} 0 &amp; 3 \\ 0 &amp; 2 \end{vmatrix} = 1 - 12 + 0 = -11.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.9" data-pid="1.3.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $D_4 = \begin{vmatrix} a_1 &amp; 0 &amp; 0 &amp; b_1 \\ 0 &amp; a_2 &amp; b_2 &amp; 0 \\ 0 &amp; b_3 &amp; a_3 &amp; 0 \\ b_4 &amp; 0 &amp; 0 &amp; a_4 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D_4 = \begin{vmatrix} a_1 &amp; b_1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; a_2 &amp; b_2 \\ 0 &amp; 0 &amp; b_3 &amp; a_3 \\ b_4 &amp; a_4 &amp; 0 &amp; 0 \end{vmatrix} = \begin{vmatrix} a_1 &amp; b_1 &amp; 0 &amp; 0 \\ b_4 &amp; a_4 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; a_2 &amp; b_2 \\ 0 &amp; 0 &amp; b_3 &amp; a_3 \end{vmatrix} = \begin{vmatrix} a_1 &amp; b_1 \\ b_4 &amp; a_4 \end{vmatrix} \left| \begin{array}{cc} a_2 &amp; b_2 \\ b_3 &amp; a_3 \end{array} \right|$$</p>
+<p>$$= (a_1 a_4 - b_1 b_4)(a_2 a_3 - b_2 b_3).$$</p>
+<p>点评：根据行列式的性质把行列式化为块对角行列式，然后使用拉普拉斯定理计算.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.3.10" data-pid="1.3.10">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明 $\begin{vmatrix} x &amp; y &amp; z &amp; w \\ a &amp; b &amp; c &amp; d \\ d &amp; c &amp; b &amp; a \\ w &amp; z &amp; y &amp; x \end{vmatrix} = \begin{vmatrix} x+w &amp; y+z \\ a+d &amp; b+c \end{vmatrix} \left| \begin{array}{cc} x-w &amp; y-z \\ a-d &amp; b-c \end{array} \right|$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　记左端的行列式为 $D$.</p>
+<p>$$D \xrightarrow[\ c_2 + c_3\ ]{\ c_1 + c_4\ } \begin{vmatrix} x+w &amp; y+z &amp; z &amp; w \\ a+d &amp; b+c &amp; c &amp; d \\ d+a &amp; c+b &amp; b &amp; a \\ w+x &amp; z+y &amp; y &amp; x \end{vmatrix} \xrightarrow[\ r_3 - r_2\ ]{\ r_4 - r_1\ } \begin{vmatrix} x+w &amp; y+z &amp; z &amp; w \\ a+d &amp; b+c &amp; c &amp; d \\ 0 &amp; 0 &amp; b-c &amp; a-d \\ 0 &amp; 0 &amp; y-z &amp; x-w \end{vmatrix},$$</p>
+<p>根据拉普拉斯定理得</p>
+<p>$$D = \begin{vmatrix} x+w &amp; y+z \\ a+d &amp; b+c \end{vmatrix} \begin{vmatrix} b-c &amp; a-d \\ y-z &amp; x-w \end{vmatrix} = \begin{vmatrix} x+w &amp; y+z \\ a+d &amp; b+c \end{vmatrix} \begin{vmatrix} x-w &amp; y-z \\ a-d &amp; b-c \end{vmatrix}$$</p>
+<p>$=$ 右端.</p></div>
+</div></div>
+</article>
+</section>
+<section class="sec-block" id="sec-4">
+<h2 class="sec-heading">§4．行列式的计算</h2>
+<div class="sec-divider">知 识 要 点</div>
+<div class="sec-divider">基 本 题 型</div>
+<article class="problem" id="prob-1.4.1" data-pid="1.4.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>按行列式的定义，计算以下各 $n$ 阶行列式.</p>
+<p>（1）$\begin{vmatrix} 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\ 0 &amp; 0 &amp; \cdots &amp; 2 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; n-1 &amp; \cdots &amp; 0 &amp; 0 \\ n &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \end{vmatrix}$，　（2）$\begin{vmatrix} 0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; 2 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; n-1 \\ n &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \end{vmatrix}$，　（3）$\begin{vmatrix} 0 &amp; \cdots &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; \cdots &amp; 2 &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ n-1 &amp; \cdots &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; \cdots &amp; 0 &amp; 0 &amp; n \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>用 $\tau(i_1 i_2 \cdots i_n)$ 表示排列 $i_1 i_2 \cdots i_n$ 的逆序数，并且用 $D$ 表示所给的行列式.</p>
+<p>（1）根据行列式的定义，行列式展开后每项都是 $n$ 个元素相乘，且这 $n$ 个元素要位于 $D$ 中不同的行和不同的列，因此，$D$ 除去有零的项外，只有一项，即</p>
+<p>$$1\,2\,\cdots\,(n-1)\,n = n!.$$</p>
+<p>这一项的行标为自然顺序，列标构成的排列为 $n(n-1)\cdots 21$.</p>
+<p>而其逆序数为 $\dfrac{n(n-1)}{2}$. 所以，$D = (-1)^{\frac{n(n-1)}{2}} n!$.</p>
+<p>（2）根据同样的道理，有</p>
+<p>$$D = (-1)^{\tau(23\cdots n1)} n! = (-1)^{n-1} n!.$$</p>
+<p>（3）根据同样的道理，有</p>
+<p>$$D = (-1)^{\tau(n-1,\,n-2,\,\cdots 1,\,n)} n! = (-1)^{\frac{(n-1)(n-2)}{2}} n!.$$</p>
+<p>点评：行列式中零元素较多而非零元素较少，以至于按定义展开后，非零项很少，此种情形可用定义法计算行列式.</p>
+<p>**方法 2**：直接利用行列式的性质.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.2" data-pid="1.4.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $D = \begin{vmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix} = d$，求下列 $n$ 阶行列式的值.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D_1 = \begin{vmatrix} a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\ a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \end{vmatrix}, \quad D_2 = \begin{vmatrix} a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \end{vmatrix}.$$</p>
+<p>将 $D_1$ 的最后一行逐次与上一行交换，一直交换到第一行，共交换 $n-1$ 次，即得行列式 $D$. 故</p>
+<p>$$D_1 = (-1)^{n-1} D = (-1)^{n-1} d.$$</p>
+<p>将 $D_2$ 的最后一行逐次与上一行交换，一直交换到第一行，共交换 $n-1$ 次，设所得的行列式为 $A_1$；再将 $A_1$ 的最后一行（即 $D_2$ 中原来的倒数第二行）与其上面的 $n-2$ 行，自下而上逐次交换，共交换 $n-2$ 次，设所得的行列式为 $A_2$. 如此继续下去，一直到 $D$ 为止. 共交换</p>
+<p>$$(n-1) + (n-2) + \cdots + 2 + 1 = \frac{n(n-1)}{2}$$</p>
+<p>次. 故</p>
+<p>$$D_2 = (-1)^{\frac{n(n-1)}{2}} d.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.3" data-pid="1.4.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算行列式 $\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ -1 &amp; 0 &amp; 3 &amp; \cdots &amp; n \\ -1 &amp; -2 &amp; 0 &amp; \cdots &amp; n \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -1 &amp; -2 &amp; -3 &amp; \cdots &amp; 0 \end{vmatrix}$ 的值.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将第一行分别加到以后各行，有</p>
+<p>$$\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 0 &amp; 2 &amp; 6 &amp; \cdots &amp; 2n \\ 0 &amp; 0 &amp; 3 &amp; \cdots &amp; 2n \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; n \end{vmatrix},$$</p>
+<p>所以原行列式的值是 $n!$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.4" data-pid="1.4.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算行列式 $\begin{vmatrix} x+a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n \\ a_1 &amp; x+a_2 &amp; a_3 &amp; \cdots &amp; a_n \\ a_1 &amp; a_2 &amp; x+a_3 &amp; \cdots &amp; a_n \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; x+a_n \end{vmatrix}$ 的值.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将第一行的 $(-1)$ 倍加到以后各行，有</p>
+<p>$$\begin{vmatrix} x+a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n \\ -x &amp; x &amp; 0 &amp; \cdots &amp; 0 \\ -x &amp; 0 &amp; x &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -x &amp; 0 &amp; 0 &amp; \cdots &amp; x \end{vmatrix},$$</p>
+<p>再将前 $n-1$ 列分别加到第一列上，有</p>
+<p>$$\begin{vmatrix} x + \sum\limits_{i=1}^{n} a_i &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n \\ 0 &amp; x &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; x &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; x \end{vmatrix} = x^{n-1} \left( x + \sum\limits_{i=1}^{n} a_i \right).$$</p>
+<p>点评：首先仔细观察行列式的行列排列规律，然后利用性质化为容易求解的行列式，通常为三角行列式，进而求得行列式.</p>
+<p>由行列式的性质，还可得到下列两种常见的方法和技巧.</p>
+<p>**方法 3**：各行（列）加到同一行（列）上去.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.5" data-pid="1.4.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $n$ 阶行列式 $D_n = \begin{vmatrix} a &amp; b &amp; b &amp; \cdots &amp; b \\ b &amp; a &amp; b &amp; \cdots &amp; b \\ b &amp; b &amp; a &amp; \cdots &amp; b \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ b &amp; b &amp; b &amp; \cdots &amp; a \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>每列元素都是一个 $a$ 与 $n-1$ 个 $b$，故可把每行均加至第一行，提取公因式 $a + (n-1)b$，再化为上三角行列式，即</p>
+<p>$$D_n = \begin{vmatrix} a+(n-1)b &amp; a+(n-1)b &amp; a+(n-1)b &amp; \cdots &amp; a+(n-1)b \\ b &amp; a &amp; b &amp; \cdots &amp; b \\ b &amp; b &amp; a &amp; \cdots &amp; b \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ b &amp; b &amp; b &amp; \cdots &amp; a \end{vmatrix}$$</p>
+<p>$$= [a + (n-1)b] \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ b &amp; a &amp; b &amp; \cdots &amp; b \\ b &amp; b &amp; a &amp; \cdots &amp; b \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ b &amp; b &amp; b &amp; \cdots &amp; a \end{vmatrix}$$</p>
+<p>$$= [a + (n-1)b] \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; a-b &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; a-b &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a-b \end{vmatrix}$$</p>
+<p>$$= [a + (n-1)b](a-b)^{n-1}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.6" data-pid="1.4.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} 1 &amp; -1 &amp; 1 &amp; x-1 \\ 1 &amp; -1 &amp; x+1 &amp; -1 \\ 1 &amp; x-1 &amp; 1 &amp; -1 \\ x+1 &amp; -1 &amp; 1 &amp; -1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将各列加到第一列后，再提出第一列的公因子 $x$，按第一列展开，得</p>
+<p>$$D = \begin{vmatrix} x &amp; -1 &amp; 1 &amp; x-1 \\ x &amp; -1 &amp; x+1 &amp; -1 \\ x &amp; x-1 &amp; 1 &amp; -1 \\ x &amp; -1 &amp; 1 &amp; -1 \end{vmatrix} = x \begin{vmatrix} 1 &amp; -1 &amp; 1 &amp; x-1 \\ 0 &amp; 0 &amp; x &amp; -x \\ 0 &amp; x &amp; 0 &amp; -x \\ 0 &amp; 0 &amp; 0 &amp; -x \end{vmatrix} = x^4 \begin{vmatrix} 0 &amp; 1 &amp; -1 \\ 1 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; -1 \end{vmatrix} = x^4.$$</p>
+<p>点评：当行列式各行（列）诸元素之和相等时，先求和，再提公因子，然后再运用其他方法求解.</p>
+<p>**方法 4**：拆分法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.7" data-pid="1.4.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $abcd = 1$，计算 $D = \begin{vmatrix} a^2 + \frac{1}{a^2} &amp; a &amp; \frac{1}{a} &amp; 1 \\ b^2 + \frac{1}{b^2} &amp; b &amp; \frac{1}{b} &amp; 1 \\ c^2 + \frac{1}{c^2} &amp; c &amp; \frac{1}{c} &amp; 1 \\ d^2 + \frac{1}{d^2} &amp; d &amp; \frac{1}{d} &amp; 1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由行列式的性质 5 知</p>
+<p>$$D = \begin{vmatrix} a^2 &amp; a &amp; \frac{1}{a} &amp; 1 \\ b^2 &amp; b &amp; \frac{1}{b} &amp; 1 \\ c^2 &amp; c &amp; \frac{1}{c} &amp; 1 \\ d^2 &amp; d &amp; \frac{1}{d} &amp; 1 \end{vmatrix} + \begin{vmatrix} \frac{1}{a^2} &amp; a &amp; \frac{1}{a} &amp; 1 \\ \frac{1}{b^2} &amp; b &amp; \frac{1}{b} &amp; 1 \\ \frac{1}{c^2} &amp; c &amp; \frac{1}{c} &amp; 1 \\ \frac{1}{d^2} &amp; d &amp; \frac{1}{d} &amp; 1 \end{vmatrix}$$</p>
+<p>$$= abcd \begin{vmatrix} a &amp; 1 &amp; \frac{1}{a^2} &amp; \frac{1}{a} \\ b &amp; 1 &amp; \frac{1}{b^2} &amp; \frac{1}{b} \\ c &amp; 1 &amp; \frac{1}{c^2} &amp; \frac{1}{c} \\ d &amp; 1 &amp; \frac{1}{d^2} &amp; \frac{1}{d} \end{vmatrix} + (-1)^3 \begin{vmatrix} a &amp; 1 &amp; \frac{1}{a^2} &amp; \frac{1}{a} \\ b &amp; 1 &amp; \frac{1}{b^2} &amp; \frac{1}{b} \\ c &amp; 1 &amp; \frac{1}{c^2} &amp; \frac{1}{c} \\ d &amp; 1 &amp; \frac{1}{d^2} &amp; \frac{1}{d} \end{vmatrix} = 0.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.8" data-pid="1.4.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} x_1 + 1 &amp; x_1 + 2 &amp; \cdots &amp; x_1 + n \\ x_2 + 1 &amp; x_2 + 2 &amp; \cdots &amp; x_2 + n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_n + 1 &amp; x_n + 2 &amp; \cdots &amp; x_n + n \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>当 $n = 2$ 时，$D = \begin{vmatrix} x_1 + 1 &amp; x_1 + 2 \\ x_2 + 1 &amp; x_2 + 2 \end{vmatrix} = x_1 - x_2$.</p>
+<p>当 $n &gt; 2$ 时，</p>
+<p>方法 1：将 $D$ 的第一列乘 $(-1)$ 后加到其余各列，则得：</p>
+<p>$$D = \begin{vmatrix} x_1 + 1 &amp; 1 &amp; 2 &amp; \cdots &amp; n-1 \\ x_2 + 1 &amp; 1 &amp; 2 &amp; \cdots &amp; n-1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_n + 1 &amp; 1 &amp; 2 &amp; \cdots &amp; n-1 \end{vmatrix} = 0.$$</p>
+<p>方法 2：把 $D$ 拆成两个行列式相加</p>
+<p>$$D = \begin{vmatrix} x_1 &amp; x_1 + 2 &amp; \cdots &amp; x_1 + n \\ x_2 &amp; x_2 + 2 &amp; \cdots &amp; x_2 + n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_n &amp; x_n + 2 &amp; \cdots &amp; x_n + n \end{vmatrix} + \begin{vmatrix} 1 &amp; x_1 + 2 &amp; \cdots &amp; x_1 + n \\ 1 &amp; x_2 + 2 &amp; \cdots &amp; x_2 + n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; x_n + 2 &amp; \cdots &amp; x_n + n \end{vmatrix} = 0 + 0 = 0.$$</p>
+<p>利用行列式的行列展开可得到以下两种方法和技巧.</p>
+<p>**方法 5**：递推法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.9" data-pid="1.4.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_5 = \begin{vmatrix} 1-a &amp; a &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 1-a &amp; a &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; 1-a &amp; a &amp; 0 \\ 0 &amp; 0 &amp; -1 &amp; 1-a &amp; a \\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; 1-a \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>把行列式按第一行展开，有 $D_5 = (1-a)D_4 + aD_3$，则</p>
+<p>$$D_5 - D_4 = -a(D_4 - D_3) = a^2(D_3 - D_2) = -a^3(D_2 - D_1) = -a^5, \qquad ①$$</p>
+<p>$$D_5 + aD_4 = D_4 + aD_3 = D_3 + aD_2 = D_2 + aD_1 = 1. \qquad ②$$</p>
+<p>① $\times$ a $+$ ② 得 $(a+1)D_5 = 1 - a^6$.</p>
+<p>故 $a \neq -1$ 时，$D_5 = \dfrac{1 - a^6}{a+1} = 1 - a + a^2 - a^3 + a^4 - a^5$；</p>
+<p>$a = -1$ 时，由 ② 式得：</p>
+<p>$$D_5 = D_4 + 1 = D_3 + 2 = D_2 + 3 = D_1 + 4 = 6$$</p>
+<p>$$= 1 - (-1)^1 + (-1)^2 - (-1)^3 + (-1)^4 - (-1)^5.$$</p>
+<p>所以 $D_5 = 1 - a + a^2 - a^3 + a^4 - a^5$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.10" data-pid="1.4.10">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} \alpha+\beta &amp; \alpha\beta &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; \alpha+\beta &amp; \alpha\beta &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \alpha+\beta &amp; \alpha\beta &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; \alpha+\beta &amp; \alpha\beta \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 &amp; \alpha+\beta \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>按第一行展开，有</p>
+<p>$$D_n = (\alpha + \beta) D_{n-1} - \alpha\beta D_{n-2},$$</p>
+<p>由此可得下面两个关系式</p>
+<p>$$\begin{cases} D_n - \alpha D_{n-1} = \beta (D_{n-1} - \alpha D_{n-2}), \\ D_n - \beta D_{n-1} = \alpha (D_{n-1} - \beta D_{n-2}). \end{cases} \qquad ①$$</p>
+<p>则有</p>
+<p>$$\begin{cases} D_{n-1} - \alpha D_{n-2} = \beta (D_{n-2} - \alpha D_{n-3}), \\ D_{n-1} - \beta D_{n-2} = \alpha (D_{n-2} - \beta D_{n-3}), \end{cases} \cdots\cdots, \begin{cases} D_3 - \alpha D_2 = \beta (D_2 - \alpha D_1), \\ D_3 - \beta D_2 = \alpha (D_2 - \beta D_1). \end{cases}$$</p>
+<p>把以上各式依次代入 ① 式，得</p>
+<p>$$\begin{cases} D_n - \alpha D_{n-1} = \beta^{n-2} (D_2 - \alpha D_1), \\ D_n - \beta D_{n-1} = \alpha^{n-2} (D_2 - \beta D_1). \end{cases}$$</p>
+<p>又因为 $D_2 - \alpha D_1 = \beta^2$，$D_2 - \beta D_1 = \alpha^2$，</p>
+<p>于是，若 $\alpha \neq \beta$，则 $D_n = \dfrac{\alpha^{n+1} - \beta^{n+1}}{\alpha - \beta}$，若 $\alpha = \beta$，则 $D_n = (n+1)\alpha^n$.</p>
+<p>点评：对于典型的三对角行列式，通常用递推法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.11" data-pid="1.4.11">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.11】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} x &amp; -1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; x &amp; -1 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; x &amp; -1 \\ a_n &amp; a_{n-1} &amp; a_{n-2} &amp; \cdots &amp; a_2 &amp; x+a_1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>按第一列展开，则得到递推公式：$D_n = xD_{n-1} + a_n$. 所以</p>
+<p>$$D_n = x(xD_{n-2} + a_{n-1}) + a_n = \cdots = x^n + a_1 x^{n-1} + \cdots + a_{n-1} x + a_n.$$</p>
+<p>**方法 6**：升阶法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.12" data-pid="1.4.12">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.12】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} 1+x &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1-x &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1+y &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1-y \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将 $D$ 添加一行，一列，化为五阶行列式</p>
+<p>$$D = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1+x &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1-x &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 1+y &amp; 1 \\ 0 &amp; 1 &amp; 1 &amp; 1 &amp; 1-y \end{vmatrix} = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ -1 &amp; x &amp; 0 &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; -x &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; 0 &amp; y &amp; 0 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; -y \end{vmatrix}.$$</p>
+<p>当 $xy \neq 0$ 时，</p>
+<p>$$D = \begin{vmatrix} 1 + \frac{1}{x} - \frac{1}{x} + \frac{1}{y} - \frac{1}{y} &amp; 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; x &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -x &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; y &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; -y \end{vmatrix} = x^2 y^2.$$</p>
+<p>当 $xy = 0$ 时，显然 $D = 0$，所以 $D = x^2 y^2$.</p>
+<p>点评：在原行列式中添加一行，一列，且保持原行列式不变或与原行列式有某种巧妙的联系，常见的升阶法是：</p>
+<p>$$D_n = \begin{vmatrix} a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix} = \begin{vmatrix} 1 &amp; b_1 &amp; b_2 &amp; \cdots &amp; b_n \\ 0 &amp; a_{11} &amp; a_{12} &amp; \cdots &amp; a_{1n} \\ 0 &amp; a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; a_{n1} &amp; a_{n2} &amp; \cdots &amp; a_{nn} \end{vmatrix}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.13" data-pid="1.4.13">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.13】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} a+b+2c &amp; a &amp; b \\ c &amp; b+c+2a &amp; b \\ c &amp; a &amp; c+a+2b \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D = \begin{vmatrix} 1 &amp; c &amp; a &amp; b \\ 0 &amp; a+b+2c &amp; a &amp; b \\ 0 &amp; c &amp; b+c+2a &amp; b \\ 0 &amp; c &amp; a &amp; c+a+2b \end{vmatrix} = \begin{vmatrix} 1 &amp; c &amp; a &amp; b \\ -1 &amp; a+b+c &amp; 0 &amp; 0 \\ -1 &amp; 0 &amp; a+b+c &amp; 0 \\ -1 &amp; 0 &amp; 0 &amp; a+b+c \end{vmatrix}.$$</p>
+<p>当 $a+b+c \neq 0$ 时，</p>
+<p>$$D = \begin{vmatrix} 1 + \frac{c+a+b}{a+b+c} &amp; c &amp; a &amp; b \\ 0 &amp; a+b+c &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; a+b+c &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; a+b+c \end{vmatrix} = 2(a+b+c)^3.$$</p>
+<p>当 $a+b+c = 0$ 时，$D = \begin{vmatrix} c &amp; a &amp; b \\ c &amp; a &amp; b \\ c &amp; a &amp; b \end{vmatrix} = 0.$</p>
+<p>故 $D = 2(a+b+c)^3$.</p>
+<p>我们再给大家介绍几种常见方法.</p>
+<p>**方法 7**：利用范德蒙行列式.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.14" data-pid="1.4.14">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.14】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $a, b, c$ 互不相同，$D = \begin{vmatrix} a &amp; b &amp; c \\ a^2 &amp; b^2 &amp; c^2 \\ b+c &amp; c+a &amp; a+b \end{vmatrix}$，</p>
+<p>则 $D = 0$ 的充要条件是 $a+b+c = 0$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　将 $D$ 的第一行加到第三行后调整行的顺序，得</p>
+<p>$$D = (a+b+c) \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ a &amp; b &amp; c \\ a^2 &amp; b^2 &amp; c^2 \end{vmatrix}.$$</p>
+<p>因为 $a, b, c$ 互异，所以，$D = 0$ 的充要条件是 $a+b+c = 0$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.15" data-pid="1.4.15">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.15】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 2 &amp; 2^2 &amp; 2^3 &amp; \cdots &amp; 2^n \\ 3 &amp; 3^2 &amp; 3^3 &amp; \cdots &amp; 3^n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ n &amp; n^2 &amp; n^3 &amp; \cdots &amp; n^n \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>从各行中提取公因式，得</p>
+<p>$$D_n = n! \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 2 &amp; 2^2 &amp; \cdots &amp; 2^{n-1} \\ 1 &amp; 3 &amp; 3^2 &amp; \cdots &amp; 3^{n-1} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; n^2 &amp; \cdots &amp; n^{n-1} \end{vmatrix} = n! \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 1 &amp; 2^2 &amp; 3^2 &amp; \cdots &amp; n^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 2^{n-1} &amp; 3^{n-1} &amp; \cdots &amp; n^{n-1} \end{vmatrix}$$</p>
+<p>$$= n!(2-1)(3-1)\cdots\cdots(n-1)(3-2)(4-2)\cdots\cdots(n-2)\cdots\cdots(n-(n-1))$$</p>
+<p>$$= n!(n-1)!(n-2)!\cdots\cdots 2!1!.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.16" data-pid="1.4.16">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.16】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1+1 &amp; x_2+1 &amp; \cdots &amp; x_n+1 \\ x_1^2+x_1 &amp; x_2^2+x_2 &amp; \cdots &amp; x_n^2+x_n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_1^{n-1}+x_1^{n-2} &amp; x_2^{n-1}+x_2^{n-2} &amp; \cdots &amp; x_n^{n-1}+x_n^{n-2} \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将第 $i$ 行 $\times (-1)$ 加到第 $i+1$ 行，$i = 1, 2, \cdots, n-1$ 可得</p>
+<p>$$D_n = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; \cdots &amp; x_n^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_1^{n-1} &amp; x_2^{n-1} &amp; \cdots &amp; x_n^{n-1} \end{vmatrix} = \prod_{n \geqslant i &gt; j \geqslant 1} (x_i - x_j).$$</p>
+<p>**方法 8**：数学归纳法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.17" data-pid="1.4.17">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.17】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} x &amp; -1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; x &amp; -1 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; x &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; x &amp; -1 \\ a_n &amp; a_{n-1} &amp; a_{n-2} &amp; \cdots &amp; a_2 &amp; x+a_1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $D_1 = x + a_1$，$D_2 = \begin{vmatrix} x &amp; -1 \\ a_1 &amp; x+a_1 \end{vmatrix} = x^2 + a_1 x + a_2$.</p>
+<p>设</p>
+<p>$$D_k = x^k + a_1 x^{k-1} + \cdots + a_{k-1} x + a_k. \qquad ①$$</p>
+<p>现在来看 $D_{k+1}$，将 $D_{k+1}$ 按第一列展开，得</p>
+<p>$$D_{k+1} = xD_k + a_{k+1}(-1)^{k+2}(-1)^k, \text{ 即 } D_{k+1} = xD_k + a_{k+1}. \qquad ②$$</p>
+<p>将归纳假设 ① 代入 ② 得</p>
+<p>$$D_{k+1} = x(x^k + a_1 x^{k-1} + \cdots + a_{k-1} x + a_k) + a_{k+1}$$</p>
+<p>$$= x^{k+1} + a_1 x^k + \cdots + a_{k-1} x^2 + a_k x + a_{k+1}.$$</p>
+<p>因此 ① 式对任何正整数 $k$ 都成立，即得行列式</p>
+<p>$$D_n = x^n + a_1 x^{n-1} + \cdots + a_{n-1} x + a_n.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.18" data-pid="1.4.18">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.18】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>用数学归纳法证明</p>
+<p>$$D_n = \begin{vmatrix} a &amp; b &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; a &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; c &amp; a &amp; \cdots &amp; \cdots &amp; \cdots \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ c &amp; c &amp; c &amp; \cdots &amp; a &amp; b \\ c &amp; c &amp; c &amp; \cdots &amp; c &amp; a \end{vmatrix} = \frac{c(a-b)^n - b(a-c)^n}{c-b} \quad (c \neq b).$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D_n = \begin{vmatrix} a &amp; b &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; a &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; c &amp; a &amp; \cdots &amp; \cdots &amp; \cdots \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ c &amp; c &amp; c &amp; \cdots &amp; a &amp; b \\ c+0 &amp; c+0 &amp; c+0 &amp; \cdots &amp; c+0 &amp; c+(a-c) \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} a &amp; b &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; a &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; c &amp; a &amp; \cdots &amp; \cdots &amp; \cdots \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ c &amp; c &amp; c &amp; \cdots &amp; a &amp; b \\ c &amp; c &amp; c &amp; \cdots &amp; c &amp; c \end{vmatrix} + \begin{vmatrix} a &amp; b &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; a &amp; b &amp; \cdots &amp; b &amp; b \\ c &amp; c &amp; a &amp; \cdots &amp; b &amp; b \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ c &amp; c &amp; c &amp; \cdots &amp; a &amp; b \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; a-c \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} a-b &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ c-b &amp; a-b &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ c-b &amp; c-b &amp; \cdots &amp; a-b &amp; 0 \\ c &amp; c &amp; \cdots &amp; c &amp; c \end{vmatrix} + (a-c)D_{n-1}$$</p>
+<p>$$= c(a-b)^{n-1} + (a-c)D_{n-1}. \qquad ①$$</p>
+<p>当 $n = 1$ 时，$D_1 = a = \dfrac{c(a-b) - b(a-c)}{c-b}$ 成立；</p>
+<p>当 $n = 2$ 时，$D_2 = \begin{vmatrix} a &amp; b \\ c &amp; a \end{vmatrix} = a^2 - bc = \dfrac{c(a-b)^2 - b(a-c)^2}{c-b}$ 成立.</p>
+<p>假设 $n = k-1$ 时，结论成立，即 $D_{k-1} = \dfrac{c(a-b)^{k-1} - b(a-c)^{k-1}}{c-b}$ 成立，则由 ① 得</p>
+<p>$$D_k = c(a-b)^{k-1} + (a-c)D_{k-1}$$</p>
+<p>$$= c(a-b)^{k-1} + (a-c)\frac{c(a-b)^{k-1} - b(a-c)^{k-1}}{c-b}$$</p>
+<p>$$= \frac{c(a-b)^{k-1}\left[(c-b) + (a-c)\right] - b(a-c)^k}{c-b}$$</p>
+<p>$$= \frac{c(a-b)^k - b(a-c)^k}{c-b}.$$</p>
+<p>因此对一切自然数 $n$，结论成立.</p>
+<p>**方法 9**：析因子法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.19" data-pid="1.4.19">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.19】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D = \begin{vmatrix} 1 &amp; 1 &amp; 2 &amp; 3 \\ 1 &amp; 2-x^2 &amp; 2 &amp; 3 \\ 2 &amp; 3 &amp; 1 &amp; 5 \\ 2 &amp; 3 &amp; 1 &amp; 9-x^2 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>当 $x = \pm 1$ 时，第一,二行对应元素相同，所以 $D = 0$，可见 $D$ 中含有因子 $(x-1)(x+1)$；当 $x = \pm 2$ 时，第三,四行对应元素相同，所以 $D = 0$，可见 $D$ 中含有因式 $(x-2)(x+2)$. 由于 $D$ 是 $x$ 的 4 次多项式，因此设</p>
+<p>$$D = m(x-1)(x+1)(x-2)(x+2), \qquad ①$$</p>
+<p>而 $D$ 中含有 $x^4$ 的项为</p>
+<p>$$1 \cdot (2-x^2) \cdot 1 \cdot (9-x^2) - 2 \cdot (2-x^2) \cdot 2 \cdot (9-x^2). \qquad ②$$</p>
+<p>比较 ①、② 中 $x^4$ 的系数，得 $m = -3$，故</p>
+<p>$$D = -3(x-1)(x+1)(x-2)(x+2).$$</p>
+<p>点评：如果行列式 $D$ 中有一些元素是变量 $x$ 的多项式，则可将 $D$ 当作一个多项式 $f(x)$，将 $f(x)$ 进行因式分解（即求出 $D$ 的因式），然后通过比较 $x$ 的某些次方的系数求解行列式.</p>
+<p>**方法 10**：换元法.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.4.20" data-pid="1.4.20">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明 $D = \begin{vmatrix} x_1 &amp; a &amp; \cdots &amp; a \\ b &amp; x_2 &amp; \cdots &amp; a \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ b &amp; b &amp; \cdots &amp; x_n \end{vmatrix} = \dfrac{af(b) - bf(a)}{a - b}$.</p>
+<p>其中 $f(x) = (x_1 - x)(x_2 - x)\cdots(x_n - x)$（$a \neq b$）.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　令 $D(x) = \begin{vmatrix} x_1+x &amp; a+x &amp; \cdots &amp; a+x \\ b+x &amp; x_2+x &amp; \cdots &amp; a+x \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ b+x &amp; b+x &amp; \cdots &amp; x_n+x \end{vmatrix}$，</p>
+<p>可见 $D(-a) = f(a)$，$D(-b) = f(b)$.</p>
+<p>$$D(x) \xrightarrow{\ \text{后一行减去前一行}\ } \begin{vmatrix} x_1+x &amp; a+x &amp; \cdots &amp; a+x \\ b-x &amp; x_2-a &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; x_n-a \end{vmatrix}.$$</p>
+<p>由行列式定义知 $D(x)$ 是关于 $x$ 的一次多项式，因此设 $D(x) = cx + d$，其中 $c, d$ 为待定常数，而又知 $d = D(0) = D$. 故由</p>
+<p>$$\begin{cases} D(-a) = -ca + D = f(a), \\ D(-b) = -cb + D = f(b) \end{cases}$$</p>
+<p>得 $D = \dfrac{af(b) - bf(a)}{a - b}$.</p>
+<p>点评：本题证明中关键的一步是把行列式的每一元素 $a_{ij}$ 变换为 $a_{ij} + x$，从而 $D$ 变成 $D(x)$，进而借助于 $D(x)$ 证得结论. 这种方法称为换元法. 其基本思路为：令 $b_{ij} = a_{ij} + x$，于是</p>
+<p>$$D = D(x) - x \sum_{i,j=1}^{n} A_{ij},$$</p>
+<p>其中 $A_{ij}$ 为 $D$ 的元素 $a_{ij}$ 的代数余子式，这样即可设法通过计算 $D(x)$ 及 $A_{ij}$ 求得 $D$ 的值.</p></div>
+</div></div>
+</article>
+</section>
+<section class="sec-block" id="sec-5">
+<h2 class="sec-heading">§5．克莱姆法则</h2>
+<div class="sec-divider">知 识 要 点</div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：求解线性方程组</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.5.1" data-pid="1.5.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>用克莱姆法则求下列方程组的解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$\begin{cases} x_2 - 3x_3 + 4x_4 = -5, \\ x_1 - 2x_3 + 3x_4 = -4, \\ 3x_1 + 2x_2 - 5x_4 = 12, \\ 4x_1 + 3x_2 - 5x_3 = 5. \end{cases}$$</p>
+<p>$$D = \begin{vmatrix} 0 &amp; 1 &amp; -3 &amp; 4 \\ 1 &amp; 0 &amp; -2 &amp; 3 \\ 3 &amp; 2 &amp; 0 &amp; -5 \\ 4 &amp; 3 &amp; -5 &amp; 0 \end{vmatrix} = 24,$$</p>
+<p>$$D_1 = \begin{vmatrix} -5 &amp; 1 &amp; -3 &amp; 4 \\ -4 &amp; 0 &amp; -2 &amp; 3 \\ 12 &amp; 2 &amp; 0 &amp; -5 \\ 5 &amp; 3 &amp; -5 &amp; 0 \end{vmatrix} = 24, \qquad D_2 = \begin{vmatrix} 0 &amp; -5 &amp; -3 &amp; 4 \\ 1 &amp; -4 &amp; -2 &amp; 3 \\ 3 &amp; 12 &amp; 0 &amp; -5 \\ 4 &amp; 5 &amp; -5 &amp; 0 \end{vmatrix} = 48,$$</p>
+<p>$$D_3 = \begin{vmatrix} 0 &amp; 1 &amp; -5 &amp; 4 \\ 1 &amp; 0 &amp; -4 &amp; 3 \\ 3 &amp; 2 &amp; 12 &amp; -5 \\ 4 &amp; 3 &amp; 5 &amp; 0 \end{vmatrix} = 24, \qquad D_4 = \begin{vmatrix} 0 &amp; 1 &amp; -3 &amp; -5 \\ 1 &amp; 0 &amp; -2 &amp; -4 \\ 3 &amp; 2 &amp; 0 &amp; 12 \\ 4 &amp; 3 &amp; -5 &amp; 5 \end{vmatrix} = -24,$$</p>
+<p>所以，$x_1 = \dfrac{D_1}{D} = 1$，$x_2 = \dfrac{D_2}{D} = 2$，$x_3 = \dfrac{D_3}{D} = 1$，$x_4 = \dfrac{D_4}{D} = -1$.</p>
+<p>点评：直接利用克莱姆法则.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.5.2" data-pid="1.5.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>解线性方程组</p>
+<p>$$\begin{cases} x_1 + 2x_2 + 3x_3 + 4x_4 = 1, \\ 3x_1 - x_2 - x_3 = 1, \\ x_1 + x_3 + 2x_4 = -1, \\ x_1 + 2x_2 - 5x_4 = 10. \end{cases}$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>该方程组的系数行列式为</p>
+<p>$$D = \begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\ 3 &amp; -1 &amp; -1 &amp; 0 \\ 1 &amp; 0 &amp; 1 &amp; 2 \\ 1 &amp; 2 &amp; 0 &amp; -5 \end{vmatrix} = 24 \neq 0,$$</p>
+<p>$$D_1 = \begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; 4 \\ 1 &amp; -1 &amp; -1 &amp; 0 \\ -1 &amp; 0 &amp; 1 &amp; 2 \\ 10 &amp; 2 &amp; 0 &amp; -5 \end{vmatrix} = 24, \qquad D_2 = \begin{vmatrix} 1 &amp; 1 &amp; 3 &amp; 4 \\ 3 &amp; 1 &amp; -1 &amp; 0 \\ 1 &amp; -1 &amp; 1 &amp; 2 \\ 1 &amp; 10 &amp; 0 &amp; -5 \end{vmatrix} = 48,$$</p>
+<p>$$D_3 = \begin{vmatrix} 1 &amp; 2 &amp; 1 &amp; 4 \\ 3 &amp; -1 &amp; 1 &amp; 0 \\ 1 &amp; 0 &amp; -1 &amp; 2 \\ 1 &amp; 2 &amp; 10 &amp; -5 \end{vmatrix} = 0, \qquad D_4 = \begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; 1 \\ 3 &amp; -1 &amp; -1 &amp; 1 \\ 1 &amp; 0 &amp; 1 &amp; -1 \\ 1 &amp; 2 &amp; 0 &amp; 10 \end{vmatrix} = -24,$$</p>
+<p>所以，方程组的解是：$x_1 = 1$，$x_2 = 2$，$x_3 = 0$，$x_4 = -1$.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：求线性方程组中的参数</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.5.3" data-pid="1.5.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>解下列线性方程组</p>
+<p>$$\begin{cases} x_1 + a_1 x_2 + a_1^2 x_3 + \cdots + a_1^{n-1} x_n = 1, \\ x_1 + a_2 x_2 + a_2^2 x_3 + \cdots + a_2^{n-1} x_n = 1, \\ \cdots\cdots\cdots\cdots \\ x_1 + a_n x_2 + a_n^2 x_3 + \cdots + a_n^{n-1} x_n = 1, \end{cases}$$</p>
+<p>其中 $a_i \neq a_j$（$i \neq j, i, j = 1, 2, \cdots, n$）.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>该方程组的系数行列式是范德蒙行列式的转置行列式，有</p>
+<p>$$D = \begin{vmatrix} 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^{n-1} \\ 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^{n-1} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp; a_n^{n-1} \end{vmatrix} = \prod_{1 \leqslant j &lt; i \leqslant n} (a_i - a_j) \neq 0,$$</p>
+<p>于是由克莱姆法则知方程组有唯一解. 由行列式的性质易知 $D_1 = D, D_2 = \cdots = D_n = 0$，所以</p>
+<p>$$x_1 = \frac{D_1}{D} = 1, \ x_2 = \frac{D_2}{D} = 0, \cdots, \ x_n = \frac{D_n}{D} = 0.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.5.4" data-pid="1.5.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知齐次线性方程组</p>
+<p>$$\begin{cases} (3-\lambda)x_1 + x_2 + x_3 = 0, \\ (2-\lambda)x_2 - x_3 = 0, \\ 4x_1 - 2x_2 + (1-\lambda)x_3 = 0 \end{cases}$$</p>
+<p>有非零解，求 $\lambda$ 的值.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因齐次线性方程组有非零解，故其系数行列式为零，有</p>
+<p>$$\begin{vmatrix} 3-\lambda &amp; 1 &amp; 1 \\ 0 &amp; 2-\lambda &amp; -1 \\ 4 &amp; -2 &amp; 1-\lambda \end{vmatrix} = \begin{vmatrix} 3-\lambda &amp; 3-\lambda &amp; 0 \\ 0 &amp; 2-\lambda &amp; -1 \\ 4 &amp; -2 &amp; 1-\lambda \end{vmatrix} = \begin{vmatrix} 3-\lambda &amp; 0 &amp; 0 \\ 0 &amp; 2-\lambda &amp; -1 \\ 4 &amp; -6 &amp; 1-\lambda \end{vmatrix}$$</p>
+<p>$$= (3-\lambda)\left[(2-\lambda)(1-\lambda) - 6\right] = (3-\lambda)(\lambda-4)(\lambda+1) = 0,$$</p>
+<p>所以 $\lambda$ 为 $3, 4$ 或 $-1$.</p>
+<p>点评：利用齐次线性方程组有非零解的判定条件.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.5.5" data-pid="1.5.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>如果齐次线性方程组</p>
+<p>$$\begin{cases} \lambda x_1 + x_2 + x_3 = 0, \\ x_1 + \lambda x_2 + x_3 = 0, \\ x_1 + x_2 + \lambda x_3 = 0 \end{cases}$$</p>
+<p>有非零解，试求 $\lambda$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因方程组有非零解，故其系数行列式等于零. 方程组的系数行列式</p>
+<p>$$D = \begin{vmatrix} \lambda &amp; 1 &amp; 1 \\ 1 &amp; \lambda &amp; 1 \\ 1 &amp; 1 &amp; \lambda \end{vmatrix} = \begin{vmatrix} \lambda+2 &amp; \lambda+2 &amp; \lambda+2 \\ 1 &amp; \lambda &amp; 1 \\ 1 &amp; 1 &amp; \lambda \end{vmatrix}$$</p>
+<p>$$= (\lambda+2) \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 1 &amp; \lambda &amp; 1 \\ 1 &amp; 1 &amp; \lambda \end{vmatrix} = (\lambda+2) \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 0 &amp; \lambda-1 &amp; 0 \\ 0 &amp; 0 &amp; \lambda-1 \end{vmatrix}$$</p>
+<p>$$= (\lambda+2)(\lambda-1)^2 = 0,$$</p>
+<p>所以 $\lambda = -2$ 或 $\lambda = 1$，即当方程组有非零解时，$\lambda$ 只可能取 $-2$ 或 $1$.</p></div>
+</div></div>
+</article>
+</section>
+<section class="sec-block" id="sec-6">
+<h2 class="sec-heading">§6．综合提高题型</h2>
+<div class="type-block"><h3>题型1：含参数行列式</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.6.1" data-pid="1.6.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若 $\begin{vmatrix} \lambda-3 &amp; -2 &amp; 2 \\ k &amp; \lambda+1 &amp; -k \\ -4 &amp; -2 &amp; \lambda+3 \end{vmatrix} = 0$，则 $\lambda =$ ＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>把第三列加至第一列，第一列有公因式 $\lambda - 1$.</p>
+<p>$$\begin{vmatrix} \lambda-3 &amp; -2 &amp; 2 \\ k &amp; \lambda+1 &amp; -k \\ -4 &amp; -2 &amp; \lambda+3 \end{vmatrix} = \begin{vmatrix} \lambda-1 &amp; -2 &amp; 2 \\ 0 &amp; \lambda+1 &amp; -k \\ \lambda-1 &amp; -2 &amp; \lambda+3 \end{vmatrix} = \begin{vmatrix} \lambda-1 &amp; -2 &amp; 2 \\ 0 &amp; \lambda+1 &amp; -k \\ 0 &amp; 0 &amp; \lambda+1 \end{vmatrix}$$</p>
+<p>$$= (\lambda-1)(\lambda+1)^2 = 0.$$</p>
+<p>所以 $\lambda$ 为 $1, -1, -1$.</p>
+<p>故应填 $1, -1, -1$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.2" data-pid="1.6.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若 $\begin{vmatrix} \lambda-a &amp; -1 &amp; -1 \\ -1 &amp; \lambda-a &amp; 1 \\ -1 &amp; 1 &amp; \lambda-a \end{vmatrix} = 0$，则 $\lambda =$ ＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>把第二行加至第一行，第一行有公因式 $\lambda - a - 1$.</p>
+<p>$$\begin{vmatrix} \lambda-a &amp; -1 &amp; -1 \\ -1 &amp; \lambda-a &amp; 1 \\ -1 &amp; 1 &amp; \lambda-a \end{vmatrix} = \begin{vmatrix} \lambda-a-1 &amp; \lambda-a-1 &amp; 0 \\ -1 &amp; \lambda-a &amp; 1 \\ -1 &amp; 1 &amp; \lambda-a \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} \lambda-a-1 &amp; 0 &amp; 0 \\ -1 &amp; \lambda-a+1 &amp; 1 \\ -1 &amp; 2 &amp; \lambda-a \end{vmatrix} = (\lambda-a-1) \begin{vmatrix} \lambda-a+1 &amp; 1 \\ 2 &amp; \lambda-a \end{vmatrix}$$</p>
+<p>$$= (\lambda-a-1)^2(\lambda-a+2) = 0.$$</p>
+<p>所以 $\lambda$ 为 $a+1, a+1, a-2$.</p>
+<p>故应填 $a+1, a+1, a-2$.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：行列式的计算</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.6.3" data-pid="1.6.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算行列式 $\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 1 &amp; x+1 &amp; 3 &amp; \cdots &amp; n \\ 1 &amp; 2 &amp; x+1 &amp; \cdots &amp; n \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 1 &amp; 2 &amp; 3 &amp; \cdots &amp; x+1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将第一行的 $(-1)$ 倍加到以后各行，有</p>
+<p>$$\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 0 &amp; x-1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; x-2 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; x-n+1 \end{vmatrix} = (x-1)(x-2)\cdots(x-n+1).$$</p>
+<p>点评：利用行列式的性质化成三角行列式.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.4" data-pid="1.6.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $D_n = \begin{vmatrix} -a_1 &amp; a_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; -a_2 &amp; a_2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -a_3 &amp; a_3 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -a_{n-1} &amp; a_{n-1} \\ 1 &amp; 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将行列式中第 $i$ 列加到第 $i+1$ 列（$i = 1, 2, \cdots, n-1$），则</p>
+<p>$$D_n = \begin{vmatrix} -a_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; -a_2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -a_3 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -a_{n-1} &amp; 0 \\ 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n-1 &amp; n \end{vmatrix} = (-1)^{n-1} n a_1 a_2 \cdots a_{n-1}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.5" data-pid="1.6.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算以下 $n+1$ 阶行列式：</p>
+<p>$$D_{n+1} = \begin{vmatrix} x &amp; a_1 &amp; a_2 &amp; \cdots &amp; a_{n-1} &amp; 1 \\ a_1 &amp; x &amp; a_2 &amp; \cdots &amp; a_{n-1} &amp; 1 \\ a_1 &amp; a_2 &amp; x &amp; \cdots &amp; a_{n-1} &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; x &amp; 1 \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n &amp; 1 \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>从第一行起逐行相减再按最后一列展开得</p>
+<p>$$D_{n+1} = \begin{vmatrix} x-a_1 &amp; a_1-x &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; x-a_2 &amp; a_2-x &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; x-a_3 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; x-a_n &amp; 0 \\ a_1 &amp; a_2 &amp; a_3 &amp; \cdots &amp; a_n &amp; 1 \end{vmatrix}$$</p>
+<p>$$= (x-a_1)(x-a_2)\cdots(x-a_n).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.6" data-pid="1.6.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算以下 $n+1$ 阶行列式：</p>
+<p>$$D_{n+1} = \begin{vmatrix} a &amp; ax &amp; ax^2 &amp; \cdots &amp; ax^{n-1} &amp; ax^n \\ -1 &amp; a &amp; ax &amp; \cdots &amp; ax^{n-2} &amp; ax^{n-1} \\ 0 &amp; -1 &amp; a &amp; \cdots &amp; ax^{n-3} &amp; ax^{n-2} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a &amp; ax \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; a \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>从第 $n-1$ 列开始，每列都乘 $-x$ 往下一列加，得</p>
+<p>$$D_{n+1} = \begin{vmatrix} a &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ -1 &amp; a+x &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; -1 &amp; a+x &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a+x &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -1 &amp; a+x \end{vmatrix} = a(a+x)^n.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.7" data-pid="1.6.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算以下 $n+1$ 阶行列式：</p>
+<p>$$D_{n+1} = \begin{vmatrix} 1 &amp; x &amp; x^2 &amp; \cdots &amp; x^{n-1} &amp; x^n \\ a_{11} &amp; 1 &amp; x &amp; \cdots &amp; x^{n-2} &amp; x^{n-1} \\ a_{21} &amp; a_{22} &amp; 1 &amp; \cdots &amp; x^{n-3} &amp; x^{n-2} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n-1,1} &amp; a_{n-1,2} &amp; a_{n-1,3} &amp; \cdots &amp; 1 &amp; x \\ a_{n1} &amp; a_{n2} &amp; a_{n3} &amp; \cdots &amp; a_{nn} &amp; 1 \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>从第 $n-1$ 列开始，每列都乘 $-x$ 往下一列加，得</p>
+<p>$$D_{n+1} = \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ a_{11} &amp; 1-a_{11}x &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ a_{21} &amp; a_{22}-a_{21}x &amp; 1-a_{22}x &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a_{n-1,1} &amp; \cdots &amp; \cdots &amp; \cdots &amp; 1-a_{n-1,n-1}x &amp; 0 \\ a_{n1} &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; 1-a_{nn}x \end{vmatrix}$$</p>
+<p>$$= \prod_{i=1}^{n} (1 - a_{ii}x).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.8" data-pid="1.6.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $n$ 阶行列式 $D_n = |\,a_{ij}\,|$，其中 $a_{ij} = |\,i - j\,|$　（$i, j = 1, 2, \cdots, n$）.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$D_n = \begin{vmatrix} 0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 \\ 1 &amp; 0 &amp; 1 &amp; \cdots &amp; n-3 &amp; n-2 \\ 2 &amp; 1 &amp; 0 &amp; \cdots &amp; n-4 &amp; n-3 \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ n-2 &amp; n-3 &amp; n-4 &amp; \cdots &amp; 0 &amp; 1 \\ n-1 &amp; n-2 &amp; n-3 &amp; \cdots &amp; 1 &amp; 0 \end{vmatrix},$$</p>
+<p>第 $n-1$ 行的 $(-1)$ 倍加至第 $n$ 行，第 $n-2$ 行的 $(-1)$ 倍加至第 $n-1$ 行，$\cdots$，第一行的 $(-1)$ 倍加至第二行，有</p>
+<p>$$D_n = \begin{vmatrix} 0 &amp; 1 &amp; 2 &amp; \cdots &amp; n-2 &amp; n-1 \\ 1 &amp; -1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 \\ 1 &amp; 1 &amp; -1 &amp; \cdots &amp; -1 &amp; -1 \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; -1 &amp; -1 \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; -1 \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{将第 } n \text{ 列分别加到前边第 } 1,2,\cdots,n-1 \text{ 列}\ } \begin{vmatrix} n-1 &amp; n &amp; n+1 &amp; \cdots &amp; 2n-3 &amp; n-1 \\ 0 &amp; -2 &amp; -2 &amp; \cdots &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; -2 &amp; \cdots &amp; -2 &amp; -1 \\ \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots &amp; \vdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; -2 &amp; -1 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; -1 \end{vmatrix}$$</p>
+<p>$$= (-1)^{n-1} (n-1) 2^{n-2}.$$</p>
+<p>点评：此行列式相邻两行对应元素大小相差 1，利用逐行相减法，先将第 $n$ 行减去第 $n-1$ 行，其次第 $n-1$ 行减去第 $n-2$ 行，依次进行下去，直至第二行减去第一行，此时，除第一行外，其余元素全是 1 或 $-1$，然后化为三角行列式.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.9" data-pid="1.6.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算行列式 $\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 2 &amp; 3 &amp; 4 &amp; \cdots &amp; 1 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ n-1 &amp; n &amp; 1 &amp; \cdots &amp; n-2 \\ n &amp; 1 &amp; 2 &amp; \cdots &amp; n-1 \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>依次将第 $n$ 行减第 $n-1$ 行，第 $n-1$ 行减第 $n-2$ 行，$\cdots$，第二行减第一行，再将各列加到第一列，</p>
+<p>$$\begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; -n+1 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 1 &amp; 1 &amp; -n+1 &amp; \cdots &amp; 1 \\ 1 &amp; -n+1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} \frac{n(n+1)}{2} &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ 0 &amp; 1 &amp; 1 &amp; \cdots &amp; -n+1 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ 0 &amp; 1 &amp; -n+1 &amp; \cdots &amp; 1 \\ 0 &amp; -n+1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= \frac{n(n+1)}{2} \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; -n+1 \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ 1 &amp; -n+1 &amp; \cdots &amp; 1 \\ -n+1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= \frac{n(n+1)}{2} \begin{vmatrix} -1 &amp; 1 &amp; \cdots &amp; -n+1 \\ \vdots &amp; \vdots &amp; &amp; \vdots \\ -1 &amp; -n+1 &amp; \cdots &amp; 1 \\ -1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix} = \frac{n(n+1)}{2} \begin{vmatrix} -1 &amp; 0 &amp; \cdots &amp; -n \\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ -1 &amp; -n &amp; \cdots &amp; 0 \\ -1 &amp; 0 &amp; \cdots &amp; 0 \end{vmatrix}$$</p>
+<p>$$= \frac{n(n+1)}{2}(-1)^{n-1}(-n)^{n-2} = -\frac{n^{n-1}(n+1)}{2}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.10" data-pid="1.6.10">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $2n$ 阶行列式</p>
+<p>$$D_{2n} = \left|\begin{array}{ccccccc} a &amp; &amp; &amp; &amp; &amp; &amp; b \\ &amp; a &amp; &amp; &amp; &amp; b &amp; \\ &amp; &amp; \ddots &amp; &amp; \ddots &amp; &amp; \\ &amp; &amp; &amp; a &amp; b &amp; &amp; \\ &amp; &amp; &amp; c &amp; d &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; c &amp; &amp; &amp; &amp; &amp; d \\ c &amp; &amp; &amp; &amp; &amp; &amp; d \end{array}\right|.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对 $D_{2n}$ 按第一行展开，得</p>
+<p>$$D_{2n} = a \left|\begin{array}{ccccccc} a &amp; &amp; &amp; &amp; &amp; b &amp; 0 \\ &amp; \ddots &amp; &amp; \ddots &amp; &amp; &amp; \vdots \\ &amp; &amp; a &amp; b &amp; &amp; &amp; \vdots \\ &amp; &amp; c &amp; d &amp; &amp; &amp; \vdots \\ &amp; \ddots &amp; &amp; &amp; \ddots &amp; &amp; \vdots \\ c &amp; &amp; &amp; &amp; &amp; d &amp; 0 \\ 0 &amp; &amp; &amp; &amp; 0 &amp; &amp; d \end{array}\right| - b \left|\begin{array}{ccccccc} 0 &amp; a &amp; &amp; &amp; &amp; &amp; b \\ \vdots &amp; &amp; \ddots &amp; &amp; \ddots &amp; &amp; \\ \vdots &amp; &amp; &amp; a &amp; b &amp; &amp; \\ \vdots &amp; &amp; &amp; c &amp; d &amp; &amp; \\ \vdots &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ 0 &amp; c &amp; &amp; &amp; &amp; &amp; d \\ c &amp; 0 &amp; &amp; &amp; 0 &amp; &amp; 0 \end{array}\right|$$</p>
+<p>$$= ad\, D_{2(n-1)} - bc\, D_{2(n-1)} = (ad - bc) D_{2(n-1)}.$$</p>
+<p>据此递推下去，可得</p>
+<p>$$D_{2n} = (ad-bc)\, D_{2(n-1)} = (ad-bc)^2 D_{2(n-2)} = \cdots = (ad-bc)^{n-1} D_2$$</p>
+<p>$$= (ad-bc)^{n-1}(ad-bc) = (ad-bc)^n.$$</p>
+<p>所以 $D_{2n} = (ad - bc)^n$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.11" data-pid="1.6.11">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.11】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $2n$ 阶行列式：</p>
+<p>$$D_{2n} = \left|\begin{array}{ccccccc} a+b &amp; &amp; &amp; &amp; &amp; &amp; a-b \\ &amp; a+b &amp; &amp; &amp; a-b &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; a+b &amp; a-b &amp; &amp; \\ &amp; &amp; &amp; a-b &amp; a+b &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; a-b &amp; &amp; &amp; &amp; a+b &amp; \\ a-b &amp; &amp; &amp; &amp; &amp; &amp; a+b \end{array}\right|.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>**解法一**　按第一行展开，得</p>
+<p>$$D_{2n} = (a+b) \left|\begin{array}{ccccccc} a+b &amp; &amp; &amp; &amp; a-b &amp; 0 \\ &amp; \ddots &amp; &amp; \ddots &amp; &amp; \vdots \\ &amp; &amp; a+b &amp; a-b &amp; &amp; \vdots \\ &amp; &amp; a-b &amp; a+b &amp; &amp; \vdots \\ &amp; \ddots &amp; &amp; &amp; \ddots &amp; \vdots \\ a-b &amp; &amp; &amp; &amp; a+b &amp; 0 \\ 0 &amp; &amp; \cdots &amp; &amp; 0 &amp; a+b \end{array}\right|$$</p>
+<p>$$+ (a-b)(-1)^{1+2n} \left|\begin{array}{ccccccc} 0 &amp; a+b &amp; &amp; &amp; &amp; a-b \\ \vdots &amp; &amp; \ddots &amp; &amp; \ddots &amp; &amp; \\ \vdots &amp; &amp; &amp; a+b &amp; a-b &amp; &amp; \\ \vdots &amp; &amp; &amp; a-b &amp; a+b &amp; &amp; \\ \vdots &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ 0 &amp; a-b &amp; &amp; &amp; &amp; a+b \\ a-b &amp; 0 &amp; &amp; \cdots &amp; &amp; 0 \end{array}\right|$$</p>
+<p>$$= (a+b)^2 D_{2(n-1)} - (a-b)^2 D_{2(n-1)} = 4ab\, D_{2(n-1)},$$</p>
+<p>即 $D_{2n} = 4ab\, D_{2(n-1)}$.</p>
+<p>以此递推公式，得 $D_{2n} = (4ab)^n$.</p>
+<p>**解法二**　分别将第 $1, 2, \cdots, n$ 行加到第 $2n, 2n-1, \cdots, n+1$ 行，得</p>
+<p>$$D_{2n} = \left|\begin{array}{ccccccc} a+b &amp; &amp; &amp; &amp; &amp; &amp; a-b \\ &amp; a+b &amp; &amp; &amp; a-b &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; a+b &amp; a-b &amp; &amp; \\ &amp; &amp; &amp; 2a &amp; 2a &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; 2a &amp; &amp; &amp; &amp; 2a &amp; \\ 2a &amp; &amp; &amp; &amp; &amp; &amp; 2a \end{array}\right|.$$</p>
+<p>第 1 列减第 $2n$ 列，第 2 列减第 $2n-1$ 列，$\cdots$，第 $n$ 列减第 $n+1$ 列，得</p>
+<p>$$D_{2n} = \left|\begin{array}{ccccccc} 2b &amp; &amp; &amp; &amp; &amp; &amp; a-b \\ &amp; 2b &amp; &amp; &amp; a-b &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; &amp; &amp; 2b &amp; a-b &amp; &amp; \\ &amp; &amp; &amp; 2a &amp; &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; 2a &amp; &amp; &amp; &amp; 2a &amp; \\ 2a &amp; &amp; &amp; &amp; &amp; &amp; 2a \end{array}\right| = (4ab)^n.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.12" data-pid="1.6.12">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.12】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $n$（$n \geqslant 2$）阶行列式</p>
+<p>$$D_n = \begin{vmatrix} 1 &amp; 2 &amp; 3 &amp; \cdots &amp; n \\ n+1 &amp; n+2 &amp; n+3 &amp; \cdots &amp; 2n \\ 2n+1 &amp; 2n+2 &amp; 2n+3 &amp; \cdots &amp; 3n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ (n-1)n+1 &amp; (n-1)n+2 &amp; (n-1)n+3 &amp; \cdots &amp; n^2 \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>当 $n = 2$ 时，$D_2 = \begin{vmatrix} 1 &amp; 2 \\ 3 &amp; 4 \end{vmatrix} = -2$；</p>
+<p>当 $n \geqslant 3$ 时，将 $D_n$ 的第一行乘 $-1$ 后分别加到其余各行，得</p>
+<p>$$D_n = \begin{vmatrix} 1 &amp; 2 &amp; \cdots &amp; n \\ n &amp; n &amp; \cdots &amp; n \\ 2n &amp; 2n &amp; \cdots &amp; 2n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ (n-1)n &amp; (n-1)n &amp; \cdots &amp; (n-1)n \end{vmatrix} = 0.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.13" data-pid="1.6.13">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.13】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算</p>
+<p>$$D_n = \begin{vmatrix} 1+x_1y_1 &amp; 1+x_1y_2 &amp; \cdots &amp; 1+x_1y_n \\ 1+x_2y_1 &amp; 1+x_2y_2 &amp; \cdots &amp; 1+x_2y_n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1+x_ny_1 &amp; 1+x_ny_2 &amp; \cdots &amp; 1+x_ny_n \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>当 $n = 2$ 时，</p>
+<p>$$D_2 = \begin{vmatrix} 1+x_1y_1 &amp; 1+x_1y_2 \\ 1+x_2y_1 &amp; 1+x_2y_2 \end{vmatrix} = \begin{vmatrix} 1 &amp; 1+x_1y_2 \\ 1 &amp; 1+x_2y_2 \end{vmatrix} + \begin{vmatrix} x_1y_1 &amp; 1+x_1y_2 \\ x_2y_1 &amp; 1+x_2y_2 \end{vmatrix}$$</p>
+<p>$$= (x_2 - x_1)y_2 + y_1 \begin{vmatrix} x_1 &amp; 1 \\ x_2 &amp; 1 \end{vmatrix} = (x_2 - x_1)(y_2 - y_1);$$</p>
+<p>当 $n \geqslant 3$ 时，</p>
+<p>$$D_n = \begin{vmatrix} 1 &amp; 1+x_1y_2 &amp; \cdots &amp; 1+x_1y_n \\ 1 &amp; 1+x_2y_2 &amp; \cdots &amp; 1+x_2y_n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 1+x_ny_2 &amp; \cdots &amp; 1+x_ny_n \end{vmatrix} + \begin{vmatrix} x_1y_1 &amp; 1+x_1y_2 &amp; \cdots &amp; 1+x_1y_n \\ x_2y_1 &amp; 1+x_2y_2 &amp; \cdots &amp; 1+x_2y_n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_ny_1 &amp; 1+x_ny_2 &amp; \cdots &amp; 1+x_ny_n \end{vmatrix} = 0 + 0 = 0.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.14" data-pid="1.6.14">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.14】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求五阶行列式的值：</p>
+<p>$$D_5 = \begin{vmatrix} a &amp; b &amp; 0 &amp; 0 &amp; 0 \\ c &amp; a &amp; b &amp; 0 &amp; 0 \\ 0 &amp; c &amp; a &amp; b &amp; 0 \\ 0 &amp; 0 &amp; c &amp; a &amp; b \\ 0 &amp; 0 &amp; 0 &amp; c &amp; a \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>把行列式按第一行展开得：</p>
+<p>$$D_5 = aD_4 - bcD_3, \qquad D_4 = aD_3 - bcD_2,$$</p>
+<p>$$D_3 = aD_2 - bcD_1 = a \begin{vmatrix} a &amp; b \\ c &amp; a \end{vmatrix} - bca = a^3 - 2abc.$$</p>
+<p>把 $D_2, D_3$ 的结果代入 $D_4$，得</p>
+<p>$$D_4 = a(a^3 - 2abc) - bc(a^2 - bc) = a^4 - 3a^2bc + b^2c^2,$$</p>
+<p>把 $D_3, D_4$ 的结果代入 $D_5$，得</p>
+<p>$$D_5 = a(a^4 - 3a^2bc + b^2c^2) - bc(a^3 - 2abc) = a^5 - 4a^3bc + 3ab^2c^2.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.15" data-pid="1.6.15">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.15】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算行列式</p>
+<p>$$D_4 = \begin{vmatrix} a_1^3 &amp; a_2^3 &amp; a_3^3 &amp; a_4^3 \\ a_1^2b_1 &amp; a_2^2b_2 &amp; a_3^2b_3 &amp; a_4^2b_4 \\ a_1b_1^2 &amp; a_2b_2^2 &amp; a_3b_3^2 &amp; a_4b_4^2 \\ b_1^3 &amp; b_2^3 &amp; b_3^3 &amp; b_4^3 \end{vmatrix}, \quad a_i \neq 0 \ (i = 1, 2, 3, 4).$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>第 $i$ 列提取公因子 $a_i^3$（$i = 1, 2, 3, 4$），可得范德蒙行列式，再利用范德蒙行列式的结果，得</p>
+<p>$$D_4 = a_1^3 a_2^3 a_3^3 a_4^3 \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ \frac{b_1}{a_1} &amp; \frac{b_2}{a_2} &amp; \frac{b_3}{a_3} &amp; \frac{b_4}{a_4} \\ \left(\frac{b_1}{a_1}\right)^2 &amp; \left(\frac{b_2}{a_2}\right)^2 &amp; \left(\frac{b_3}{a_3}\right)^2 &amp; \left(\frac{b_4}{a_4}\right)^2 \\ \left(\frac{b_1}{a_1}\right)^3 &amp; \left(\frac{b_2}{a_2}\right)^3 &amp; \left(\frac{b_3}{a_3}\right)^3 &amp; \left(\frac{b_4}{a_4}\right)^3 \end{vmatrix}$$</p>
+<p>$$= a_1^3 a_2^3 a_3^3 a_4^3 \prod_{1 \leqslant j &lt; i \leqslant 4} \left(\frac{b_i}{a_i} - \frac{b_j}{a_j}\right) = \prod_{1 \leqslant j &lt; i \leqslant 4} (a_jb_i - a_ib_j).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.16" data-pid="1.6.16">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.16】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>利用范德蒙行列式计算：</p>
+<p>（1）$D_{n+1} = \begin{vmatrix} a^n &amp; (a-1)^n &amp; \cdots &amp; (a-n)^n \\ a^{n-1} &amp; (a-1)^{n-1} &amp; \cdots &amp; (a-n)^{n-1} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a &amp; a-1 &amp; \cdots &amp; a-n \\ 1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix}$；</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（2）$D_n = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n \\ x_1^2 &amp; x_2^2 &amp; x_3^2 &amp; \cdots &amp; x_n^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_1^{n-2} &amp; x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} \\ x_1^n &amp; x_2^n &amp; x_3^n &amp; \cdots &amp; x_n^n \end{vmatrix}.$</p>
+<p>（1）将第 $(n+1)$ 行依次与前面各行交换到第一行（共交换了 $n$ 次），再将新的行列式的第 $(n+1)$ 行依次与前面各行交换到第二行（共交换了 $n-1$ 次），$\cdots\cdots$ 这样继续做下去，共经过交换 $n + (n-1) + (n-2) + \cdots + 2 + 1 = \dfrac{n(n+1)}{2}$ 次后，就可得到一个范德蒙行列式</p>
+<p>$$D_{n+1} = (-1)^{\frac{n(n+1)}{2}} \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ a &amp; a-1 &amp; \cdots &amp; a-n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a^{n-1} &amp; (a-1)^{n-1} &amp; \cdots &amp; (a-n)^{n-1} \\ a^n &amp; (a-1)^n &amp; \cdots &amp; (a-n)^n \end{vmatrix}$$</p>
+<p>$$= (-1)^{\frac{n(n+1)}{2}} \prod_{0 \leqslant j &lt; i \leqslant n} \left[(a-i) - (a-j)\right]$$</p>
+<p>$$= (-1)^{\frac{n(n+1)}{2}} \prod_{0 \leqslant j &lt; i \leqslant n} (j-i) = (-1)^{\frac{n(n+1)}{2}} \prod_{k=1}^{n} (-1)^k k!$$</p>
+<p>$$= (-1)^{\frac{n(n+1)}{2}} (-1)^{1+2+\cdots+n} \prod_{k=1}^{n} k! = \prod_{k=1}^{n} k!.$$</p>
+<p>（2）考虑 $n+1$ 阶范德蒙行列式</p>
+<p>$$f(x) = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ x_1 &amp; x_2 &amp; x_3 &amp; \cdots &amp; x_n &amp; x \\ x_1^2 &amp; x_2^2 &amp; x_3^2 &amp; \cdots &amp; x_n^2 &amp; x^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ x_1^{n-2} &amp; x_2^{n-2} &amp; x_3^{n-2} &amp; \cdots &amp; x_n^{n-2} &amp; x^{n-2} \\ x_1^{n-1} &amp; x_2^{n-1} &amp; x_3^{n-1} &amp; \cdots &amp; x_n^{n-1} &amp; x^{n-1} \\ x_1^n &amp; x_2^n &amp; x_3^n &amp; \cdots &amp; x_n^n &amp; x^n \end{vmatrix}$$</p>
+<p>$$= (x - x_1)(x - x_2)\cdots(x - x_n) \prod_{1 \leqslant j &lt; i \leqslant n} (x_i - x_j),$$</p>
+<p>显然行列式 $D_n$ 就是辅助行列式 $f(x)$ 中元素 $x^{n-1}$ 的余子式 $M_{n,n+1}$，即</p>
+<p>$$D_n = M_{n,n+1} = (-1)^{n+(n+1)} A_{n,n+1} = -A_{n,n+1}.$$</p>
+<p>又由 $f(x)$ 的表达式知，$x^{n-1}$ 的系数为</p>
+<p>$$A_{n,n+1} = -(x_1 + x_2 + \cdots + x_n) \prod_{1 \leqslant j &lt; i \leqslant n} (x_i - x_j).$$</p>
+<p>注意到 $x^{n-1}$ 只在 $(x-x_1)(x-x_2)\cdots(x-x_n)$ 中出现，并且 $\prod\limits_{1 \leqslant j &lt; i \leqslant n} (x_i - x_j)$ 与 $x$ 无关. 于是</p>
+<p>$$D_n = (x_1 + x_2 + \cdots + x_n) \prod_{1 \leqslant j &lt; i \leqslant n} (x_i - x_j).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.17" data-pid="1.6.17">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.17】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $n$ 阶行列式</p>
+<p>$$D_n = \begin{vmatrix} 1+a_1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1+a_2 &amp; \cdots &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 1 &amp; \cdots &amp; 1+a_n \end{vmatrix},$$</p>
+<p>其中 $a_1 a_2 \cdots a_n \neq 0$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>**解法一（利用性质化三角行列式）**</p>
+<p>$$D_n \xrightarrow[\ \cdots\ ]{\ r_2 - r_1,\ r_3 - r_1,\ \cdots,\ r_n - r_1\ } \begin{vmatrix} 1+a_1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ -a_1 &amp; a_2 &amp; 0 &amp; \cdots &amp; 0 \\ -a_1 &amp; 0 &amp; a_3 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ -a_1 &amp; 0 &amp; 0 &amp; \cdots &amp; a_n \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{提公因子}\ } a_1 a_2 a_3 \cdots a_n \begin{vmatrix} \frac{1+a_1}{a_1} &amp; \frac{1}{a_2} &amp; \frac{1}{a_3} &amp; \cdots &amp; \frac{1}{a_n} \\ -1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ -1 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ -1 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ c_1 + (c_2 + c_3 + \cdots + c_n)\ } a_1 a_2 a_3 \cdots a_n \begin{vmatrix} \frac{1+a_1}{a_1} + \sum\limits_{i=2}^{n} \frac{1}{a_i} &amp; \frac{1}{a_2} &amp; \frac{1}{a_3} &amp; \cdots &amp; \frac{1}{a_n} \\ 0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= a_1 a_2 a_3 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p>
+<p>**解法二（升阶法）**　将 $D_n$ 加一列、一行，成 $n+1$ 阶行列式</p>
+<p>$$D_n = \begin{vmatrix} 1+a_1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1+a_2 &amp; \cdots &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 1 &amp; \cdots &amp; 1+a_n \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; 1+a_1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; 1 &amp; 1+a_2 &amp; \cdots &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 1 &amp; 1 &amp; \cdots &amp; 1+a_n \end{vmatrix}$$</p>
+<p>$$\xrightarrow[\ \cdots\ ]{\ r_2 - r_1,\ r_3 - r_1,\ \cdots,\ r_{n+1} - r_1\ } \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ -1 &amp; a_1 &amp; 0 &amp; \cdots &amp; 0 \\ -1 &amp; 0 &amp; a_2 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ -1 &amp; 0 &amp; 0 &amp; \cdots &amp; a_n \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{提公因子}\ } a_1 a_2 \cdots a_n \begin{vmatrix} 1 &amp; \frac{1}{a_1} &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ -1 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ -1 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ -1 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ c_1 + (c_2 + \cdots + c_{n+1})\ } a_1 a_2 \cdots a_n \begin{vmatrix} 1 + \sum\limits_{i=1}^{n} \frac{1}{a_i} &amp; \frac{1}{a_1} &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ 0 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p>
+<p>**解法三（拆成两个行列式之和，再用递推法）**</p>
+<p>$$D_n = \begin{vmatrix} 1+a_1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ 1 &amp; 1+a_2 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1+a_3 &amp; \cdots &amp; 1 &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1+a_{n-1} &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \end{vmatrix}$$</p>
+<p>$$+ \begin{vmatrix} 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; a_n \end{vmatrix}.$$</p>
+<p>前一个行列式中，前 $n-1$ 行分别减第 $n$ 行，得</p>
+<p>$$\begin{vmatrix} a_1 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; a_2 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; a_{n-1} &amp; 0 \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \end{vmatrix} = a_1 a_2 a_3 \cdots a_{n-1}.$$</p>
+<p>后一个行列式，按第 $n$ 列展开，得 $a_n D_{n-1}$，故</p>
+<p>$$D_n = a_1 a_2 a_3 \cdots a_{n-1} + a_n D_{n-1}.$$</p>
+<p>依此类推，得</p>
+<p>$$D_{n-1} = a_1 a_2 a_3 \cdots a_{n-2} + a_{n-1} D_{n-2},$$</p>
+<p>$$D_{n-2} = a_1 a_2 a_3 \cdots a_{n-3} + a_{n-2} D_{n-3}, \ \cdots,$$</p>
+<p>$$D_2 = \begin{vmatrix} 1+a_1 &amp; 1 \\ 1 &amp; 1+a_2 \end{vmatrix} = a_1 + a_2 + a_1 a_2,$$</p>
+<p>因此</p>
+<p>$$D_n = a_1 a_2 a_3 \cdots a_{n-1} + a_n D_{n-1}$$</p>
+<p>$$= a_1 a_2 a_3 \cdots a_{n-1} + a_n(a_1 a_2 a_3 \cdots a_{n-2} + a_{n-1} D_{n-2})$$</p>
+<p>$$= a_1 a_2 a_3 \cdots a_{n-1} + a_1 a_2 a_3 \cdots a_{n-2} a_n + a_{n-1} a_n D_{n-2}$$</p>
+<p>$$= a_1 a_2 a_3 \cdots a_{n-1} + a_1 a_2 a_3 \cdots a_{n-2} a_n + a_{n-1} a_n(a_1 a_2 a_3 \cdots a_{n-3} + a_{n-2} D_{n-3})$$</p>
+<p>$$= a_1 a_2 a_3 \cdots a_{n-1} + a_1 a_2 \cdots a_{n-2} a_n + a_1 a_2 \cdots a_{n-3} a_{n-1} a_n + a_{n-2} a_{n-1} a_n D_{n-3}$$</p>
+<p>$$= \cdots\cdots$$</p>
+<p>$$= a_1 a_2 \cdots a_{n-1} + a_1 a_2 \cdots a_{n-2} a_n + \cdots + a_1 a_2 a_4 \cdots a_n + a_3 a_4 \cdots a_n D_2$$</p>
+<p>$$= a_1 a_2 \cdots a_{n-1} + a_1 a_2 \cdots a_{n-2} a_n + \cdots + a_1 a_2 a_4 \cdots a_n + a_3 a_4 \cdots a_n(a_1 + a_2 + a_1 a_2)$$</p>
+<p>$$= a_1 a_2 \cdots a_n + (a_1 a_2 \cdots a_{n-1} + a_1 a_2 \cdots a_{n-2} a_n + \cdots + a_1 a_2 a_4 \cdots a_n + a_1 a_3 a_4 \cdots a_n$$</p>
+<p>$$+ a_2 a_3 \cdots a_n).$$</p>
+<p>等式右边共有 $n+1$ 项，其中括号内子项分别缺因子 $a_n, a_{n-1}, a_{n-2}, \cdots, a_1$，故</p>
+<p>$$D_n = a_1 a_2 \cdots a_n \left(1 + \frac{1}{a_1} + \frac{1}{a_2} + \cdots + \frac{1}{a_n}\right) = a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p>
+<p>**解法四（数学归纳法）**</p>
+<p>当 $n = 2$ 时，</p>
+<p>$$D_2 = \begin{vmatrix} 1+a_1 &amp; 1 \\ 1 &amp; 1+a_2 \end{vmatrix} = (1+a_1)(1+a_2) - 1$$</p>
+<p>$$= a_1 a_2 + a_1 + a_2 = a_1 a_2 \left(1 + \frac{1}{a_1} + \frac{1}{a_2}\right) = a_1 a_2 \left(1 + \sum\limits_{i=1}^{2} \frac{1}{a_i}\right).$$</p>
+<p>设 $n = k$ 时，$D_k = a_1 a_2 \cdots a_k \left(1 + \sum\limits_{i=1}^{k} \dfrac{1}{a_i}\right)$ 成立，则 $n = k+1$ 时，由解法三知，</p>
+<p>$$D_{k+1} = a_1 a_2 \cdots a_k + a_{k+1} D_k$$</p>
+<p>$$= a_1 a_2 \cdots a_k a_{k+1} \frac{1}{a_{k+1}} + a_1 a_2 \cdots a_k a_{k+1} \left(1 + \sum\limits_{i=1}^{k} \frac{1}{a_i}\right)$$</p>
+<p>$$= a_1 a_2 \cdots a_{k+1} \left(1 + \sum\limits_{i=1}^{k+1} \frac{1}{a_i}\right)$$</p>
+<p>成立，因此</p>
+<p>$$D_n = a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p>
+<p>**解法五（将 $D_n$ 化成行和相等的行列式）**</p>
+<p>$$D_n = \begin{vmatrix} 1+a_1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1+a_2 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1 &amp; 1+a_3 &amp; \cdots &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1+a_n \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \begin{matrix} c_1 \text{ 提公因子 } a_1 \\ c_2 \text{ 提公因子 } a_2 \\ \cdots \\ c_n \text{ 提公因子 } a_n \end{matrix}\ } a_1 a_2 \cdots a_n \begin{vmatrix} 1+\frac{1}{a_1} &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ \frac{1}{a_1} &amp; 1+\frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ \frac{1}{a_1} &amp; \frac{1}{a_2} &amp; \cdots &amp; 1+\frac{1}{a_n} \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ c_1 + (c_2 + c_3 + \cdots + c_n)\ } a_1 a_2 \cdots a_n \begin{vmatrix} 1+\sum\limits_{i=1}^{n} \frac{1}{a_i} &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ 1+\sum\limits_{i=1}^{n} \frac{1}{a_i} &amp; 1+\frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1+\sum\limits_{i=1}^{n} \frac{1}{a_i} &amp; \frac{1}{a_2} &amp; \cdots &amp; 1+\frac{1}{a_n} \end{vmatrix}$$</p>
+<p>$$= a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right) \begin{vmatrix} 1 &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ 1 &amp; 1+\frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; \frac{1}{a_2} &amp; \cdots &amp; 1+\frac{1}{a_n} \end{vmatrix}$$</p>
+<p>$$= a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right) \begin{vmatrix} 1 &amp; \frac{1}{a_2} &amp; \cdots &amp; \frac{1}{a_n} \\ 0 &amp; 1 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; 1 \end{vmatrix}$$</p>
+<p>$$= a_1 a_2 \cdots a_n \left(1 + \sum\limits_{i=1}^{n} \frac{1}{a_i}\right).$$</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型3：证明题</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.6.18" data-pid="1.6.18">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.18】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>证明 $\begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; C_2^1 &amp; \cdots &amp; C_n^1 \\ 1 &amp; C_3^2 &amp; \cdots &amp; C_{n+1}^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; C_n^{n-1} &amp; \cdots &amp; C_{2n-2}^{n-2} \end{vmatrix} = 1.$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证</p>
+<p>$$\text{左边} = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; C_2^1 &amp; C_3^1 &amp; \cdots &amp; C_n^1 \\ 1 &amp; C_3^2 &amp; C_4^2 &amp; \cdots &amp; C_{n+1}^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; C_n^{n-1} &amp; C_{n+1}^{n-1} &amp; \cdots &amp; C_{2n-2}^{n-2} \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{从最后一行开始依次减去其前面一行}\ } \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; C_2^1 - 1 &amp; C_3^1 - 1 &amp; \cdots &amp; C_n^1 - 1 \\ 0 &amp; C_3^2 - C_2^1 &amp; C_4^2 - C_3^1 &amp; \cdots &amp; C_{n+1}^2 - C_n^1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; C_n^{n-1} - C_{n-1}^{n-2} &amp; C_{n+1}^{n-1} - C_n^{n-2} &amp; \cdots &amp; C_{2n-2}^{n-1} - C_{2n-3}^{n-2} \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} C_1^1 &amp; C_2^1 &amp; \cdots &amp; C_{n-1}^1 \\ C_2^2 &amp; C_3^2 &amp; \cdots &amp; C_n^2 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ C_{n-1}^{n-1} &amp; C_n^{n-1} &amp; \cdots &amp; C_{2n-3}^{n-1} \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ \text{重复上面的步骤}\ } \begin{vmatrix} C_1^1 &amp; C_2^1 &amp; \cdots &amp; C_{n-1}^1 \\ 0 &amp; C_3^2 - C_2^1 &amp; \cdots &amp; C_n^2 - C_{n-1}^1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; C_n^{n-1} - C_{n-1}^{n-2} &amp; \cdots &amp; C_{2n-3}^{n-1} - C_{2n-4}^{n-2} \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} C_2^2 &amp; \cdots &amp; C_{n-1}^2 \\ \cdots &amp; \cdots &amp; \cdots \\ C_{n-1}^{n-1} &amp; \cdots &amp; C_{2n-4}^{n-1} \end{vmatrix} = \cdots = \begin{vmatrix} 1 &amp; C_{n-1}^{n-2} \\ 1 &amp; C_n^{n-1} \end{vmatrix} = 1 = \text{右边}.$$</p>
+<p>点评：逐行（或列）相减，从最后一行开始依次减去前面一行，再利用组合公式 $C_n^k - C_n^{k-1} = C_{n-1}^{k-1}$，逐渐化简行列式.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型4：关于克莱姆法则</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.6.19" data-pid="1.6.19">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.19】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>由 $D_n = \begin{vmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 \\ 1 &amp; 1 &amp; \cdots &amp; 1 \\ \cdots\cdots\cdots \\ 1 &amp; 1 &amp; \cdots &amp; 1 \end{vmatrix} = 0$，证明：奇偶排列个数各为 $\dfrac{n!}{2}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　由行列式的定义，</p>
+<p>$$D_n = \sum_{i_1 \cdots i_n} (-1)^{\tau(i_1 \cdots i_n)} = 0,$$</p>
+<p>故 $1$ 和 $-1$ 个数相同，即奇偶排列个数相同，均为 $\dfrac{n!}{2}$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.20" data-pid="1.6.20">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $a^2 \neq b^2$，试证方程组</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$\begin{cases} ax_1 + bx_{2n} = 1, \\ ax_2 + bx_{2n-1} = 1, \\ \cdots\cdots\cdots \\ ax_n + bx_{n+1} = 1, \\ bx_n + ax_{n+1} = 1, \\ bx_{n-1} + ax_{n+2} = 1, \\ \cdots\cdots\cdots \\ bx_1 + ax_{2n} = 1 \end{cases}$$</p>
+<p>有唯一解，并求解.</p>
+<p>由 6.10 知，方程组的系数行列式为</p>
+<p>$$D = \left|\begin{array}{ccccccc} a &amp; &amp; &amp; &amp; &amp; &amp; b \\ &amp; a &amp; &amp; &amp; &amp; b &amp; \\ &amp; &amp; \ddots &amp; &amp; \ddots &amp; &amp; \\ &amp; &amp; &amp; a &amp; b &amp; &amp; \\ &amp; &amp; &amp; b &amp; a &amp; &amp; \\ &amp; &amp; \ddots &amp; &amp; &amp; \ddots &amp; \\ &amp; b &amp; &amp; &amp; &amp; &amp; a \\ b &amp; &amp; &amp; &amp; &amp; &amp; a \end{array}\right| = (a^2 - b^2)^n.$$</p>
+<p>由于 $a^2 \neq b^2$，故 $D \neq 0$. 由克莱姆法则知该方程组只有唯一解. 将方程组改写成</p>
+<p>$$\begin{cases} ax_1 + bx_{2n} = 1, \\ bx_1 + ax_{2n} = 1, \\ ax_2 + bx_{2n-1} = 1, \\ bx_2 + ax_{2n-1} = 1, \\ \cdots\cdots\cdots \\ ax_{n-1} + bx_{n+1} = 1, \\ bx_{n-1} + ax_{n+1} = 1, \end{cases}$$</p>
+<p>从而原方程组的解为</p>
+<p>$$x_i = \frac{1}{a+b} \ (i = 1, 2, \cdots, 2n).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.21" data-pid="1.6.21">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.21】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>线性方程组</p>
+<p>$$\begin{cases} x_1 + x_2 + x_3 + x_4 = 1, \\ a_1x_1 + a_2x_2 + a_3x_3 + a_4x_4 = b, \\ a_1^2x_1 + a_2^2x_2 + a_3^2x_3 + a_4^2x_4 = b^2, \\ a_1^3x_1 + a_2^3x_2 + a_3^3x_3 + a_4^3x_4 = b^3 \end{cases}$$</p>
+<p>有唯一解的条件是什么？并求唯一解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>方程组的系数行列式为</p>
+<p>$$D = \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ a_1 &amp; a_2 &amp; a_3 &amp; a_4 \\ a_1^2 &amp; a_2^2 &amp; a_3^2 &amp; a_4^2 \\ a_1^3 &amp; a_2^3 &amp; a_3^3 &amp; a_4^3 \end{vmatrix}$$</p>
+<p>$$= (a_4 - a_1)(a_4 - a_2)(a_4 - a_3)(a_3 - a_1)(a_3 - a_2)(a_2 - a_1).$$</p>
+<p>由克莱姆法则可知，当 $D \neq 0$ 时，即 $a_i \neq a_j$（$i \neq j$）时方程组有唯一解. 此时</p>
+<p>$$x_1 = \frac{1}{D} \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ b &amp; a_2 &amp; a_3 &amp; a_4 \\ b^2 &amp; a_2^2 &amp; a_3^2 &amp; a_4^2 \\ b^3 &amp; a_2^3 &amp; a_3^3 &amp; a_4^3 \end{vmatrix}$$</p>
+<p>$$= \frac{(a_4-b)(a_4-a_2)(a_4-a_3)(a_3-b)(a_3-a_2)(a_2-b)}{(a_4-a_1)(a_4-a_2)(a_4-a_3)(a_3-a_1)(a_3-a_2)(a_2-a_1)}$$</p>
+<p>$$= \frac{(a_4-b)(a_3-b)(a_2-b)}{(a_4-a_1)(a_3-a_1)(a_2-a_1)},$$</p>
+<p>$$x_2 = \frac{1}{D} \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ a_1 &amp; b &amp; a_3 &amp; a_4 \\ a_1^2 &amp; b^2 &amp; a_3^2 &amp; a_4^2 \\ a_1^3 &amp; b^3 &amp; a_3^3 &amp; a_4^3 \end{vmatrix} = \frac{(a_4-b)(a_3-b)(b-a_1)}{(a_4-a_2)(a_3-a_2)(a_2-a_1)},$$</p>
+<p>$$x_3 = \frac{1}{D} \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ a_1 &amp; a_2 &amp; b &amp; a_4 \\ a_1^2 &amp; a_2^2 &amp; b^2 &amp; a_4^2 \\ a_1^3 &amp; a_2^3 &amp; b^3 &amp; a_4^3 \end{vmatrix} = \frac{(a_4-b)(b-a_1)(b-a_2)}{(a_4-a_3)(a_3-a_1)(a_3-a_2)},$$</p>
+<p>$$x_4 = \frac{1}{D} \begin{vmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ a_1 &amp; a_2 &amp; a_3 &amp; b \\ a_1^2 &amp; a_2^2 &amp; a_3^2 &amp; b^2 \\ a_1^3 &amp; a_2^3 &amp; a_3^3 &amp; b^3 \end{vmatrix} = \frac{(b-a_1)(b-a_2)(b-a_3)}{(a_4-a_1)(a_4-a_2)(a_4-a_3)}.$$</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型5：综合例题</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-1.6.22" data-pid="1.6.22">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.22】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>记 $\begin{vmatrix} x-2 &amp; x-1 &amp; x-2 &amp; x-3 \\ 2x-2 &amp; 2x-1 &amp; 2x-2 &amp; 2x-3 \\ 3x-3 &amp; 3x-2 &amp; 3x-5 &amp; 3x-5 \\ 4x &amp; 4x-3 &amp; 5x-7 &amp; 4x-3 \end{vmatrix}$ 为 $f(x)$，则 $f(x) = 0$ 的根的个数为＿＿＿.</p>
+<p>（A）1　　（B）2　　（C）3　　（D）4</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>行列式 $f(x)$ 的第一行分别乘以 $-2, -3, -4$ 加到第二、三、四行上去，得</p>
+<p>$$f(x) = \begin{vmatrix} x-2 &amp; x-1 &amp; x-2 &amp; x-3 \\ 2 &amp; 1 &amp; 2 &amp; 3 \\ 3 &amp; 1 &amp; 1 &amp; 4 \\ 8 &amp; 1 &amp; x+1 &amp; 9 \end{vmatrix}.$$</p>
+<p>根据行列式的定义，$f(x)$ 为二次多项式. 所以，$f(x) = 0$ 的根的个数为 2.</p>
+<p>故应选（B）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.23" data-pid="1.6.23">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.23】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>方程 $\begin{vmatrix} a_1 &amp; a_2 &amp; a_3 &amp; a_4+x \\ a_1 &amp; a_2 &amp; a_3+x &amp; a_4 \\ a_1 &amp; a_2+x &amp; a_3 &amp; a_4 \\ a_1+x &amp; a_2 &amp; a_3 &amp; a_4 \end{vmatrix} = 0$ 的根为＿＿＿.</p>
+<p>（A）$a_1 + a_2, a_3 + a_4$　　　　（B）$0, a_1 + a_2 + a_3 + a_4$</p>
+<p>（C）$a_1 a_2 a_3 a_4, 0$　　　　　（D）$0, -a_1 - a_2 - a_3 - a_4$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>记方程左端的行列式为 $D$，本题的关键是求 $D$ 的值，此行列式的计算可使用升阶法.</p>
+<p>$$D = \begin{vmatrix} 1 &amp; a_1 &amp; a_2 &amp; a_3 &amp; a_4 \\ 0 &amp; a_1 &amp; a_2 &amp; a_3 &amp; a_4+x \\ 0 &amp; a_1 &amp; a_2 &amp; a_3+x &amp; a_4 \\ 0 &amp; a_1 &amp; a_2+x &amp; a_3 &amp; a_4 \\ 0 &amp; a_1+x &amp; a_2 &amp; a_3 &amp; a_4 \end{vmatrix} = \begin{vmatrix} 1 &amp; a_1 &amp; a_2 &amp; a_3 &amp; a_4 \\ -1 &amp; 0 &amp; 0 &amp; 0 &amp; x \\ -1 &amp; 0 &amp; 0 &amp; x &amp; 0 \\ -1 &amp; 0 &amp; x &amp; 0 &amp; 0 \\ -1 &amp; x &amp; 0 &amp; 0 &amp; 0 \end{vmatrix}.$$</p>
+<p>当 $x = 0$ 时，$D = 0$.</p>
+<p>当 $x \neq 0$ 时，</p>
+<p>$$D = \begin{vmatrix} 1 + \frac{a_1+a_2+a_3+a_4}{x} &amp; a_1 &amp; a_2 &amp; a_3 &amp; a_4 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; x \\ 0 &amp; 0 &amp; 0 &amp; x &amp; 0 \\ 0 &amp; 0 &amp; x &amp; 0 &amp; 0 \\ 0 &amp; x &amp; 0 &amp; 0 &amp; 0 \end{vmatrix} = \left(1 + \frac{a_1+a_2+a_3+a_4}{x}\right)x^4.$$</p>
+<p>从而方程 $D = 0$ 的根为 $0$，$-a_1 - a_2 - a_3 - a_4$.</p>
+<p>故应选（D）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.24" data-pid="1.6.24">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.24】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $f(x) = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 3-x &amp; 5-3x^2 &amp; 3x^2-1 \\ 2x^2-1 &amp; 3x^5-1 &amp; 7x^8-1 \end{vmatrix}$，</p>
+<p>证明：可以找出数 $q$（$0 &lt; q &lt; 1$），使 $f'(q) = 0$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　由题意可知</p>
+<p>$$f(0) = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 3 &amp; 5 &amp; -1 \\ -1 &amp; -1 &amp; -1 \end{vmatrix} = 0, \qquad f(1) = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ 2 &amp; 2 &amp; 2 \\ 1 &amp; 2 &amp; 6 \end{vmatrix} = 0,$$</p>
+<p>由罗尔定理可知，存在一个 $q \in (0, 1)$，使 $f'(q) = 0$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.25" data-pid="1.6.25">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.25】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求 $\dfrac{\mathrm{d}^2}{\mathrm{d}x^2} \begin{vmatrix} a_{11}+x &amp; a_{12} &amp; a_{13} \\ a_{21} &amp; a_{22}+x &amp; a_{23} \\ a_{31} &amp; a_{32} &amp; a_{33}+x \end{vmatrix}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>记行列式为 $D_3(x)$，由行列式的定义，则 $D_3(x)$ 可表示为</p>
+<p>$$D_3(x) = (a_{11}+x)(a_{22}+x)(a_{33}+x) + \varphi(x),$$</p>
+<p>其中 $\varphi(x)$ 为一次多项式. 所以</p>
+<p>$$\frac{\mathrm{d}D_3(x)}{\mathrm{d}x} = (a_{22}+x)(a_{33}+x) + (a_{11}+x)(a_{33}+x) + (a_{11}+x)(a_{22}+x) + \varphi'(x),$$</p>
+<p>$$\frac{\mathrm{d}^2 D_3(x)}{\mathrm{d}x^2} = (a_{33}+x) + (a_{22}+x) + (a_{33}+x) + (a_{11}+x) + (a_{11}+x) + (a_{22}+x) + \varphi''(x)$$</p>
+<p>$$= 2(a_{11} + a_{22} + a_{33}) + 6x.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.26" data-pid="1.6.26">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.26】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $f(x) = C_0 + C_1x + C_2x^2 + \cdots + C_nx^n$，证明：若 $f(x)$ 有 $n+1$ 个不同的根，则 $f(x)$ 是零多项式.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证　令 $a_0, a_1, \cdots, a_n$ 是 $f(x)$ 的 $n+1$ 个不同的根，即 $a_i \neq a_j$，$(i \neq j, i, j = 0, 1, 2, \cdots, n)$. 因为 $f(a_i) = 0$，$(i = 0, 1, 2, \cdots, n)$，所以有线性方程组</p>
+<p>$$\begin{cases} C_0 + C_1a_0 + C_2a_0^2 + \cdots + C_na_0^n = 0, \\ C_0 + C_1a_1 + C_2a_1^2 + \cdots + C_na_1^n = 0, \\ \cdots\cdots\cdots\cdots\cdots\cdots\cdots\cdots \\ C_0 + C_1a_n + C_2a_n^2 + \cdots + C_na_n^n = 0, \end{cases}$$</p>
+<p>其系数行列式为</p>
+<p>$$D_{n+1} = \begin{vmatrix} 1 &amp; a_0 &amp; a_0^2 &amp; \cdots &amp; a_0^n \\ 1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^n \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp; a_n^n \end{vmatrix} = \prod_{0 \leqslant j &lt; i \leqslant n} (a_i - a_j).$$</p>
+<p>由于当 $i \neq j$ 时，$a_i \neq a_j$，所以 $D_{n+1} \neq 0$.</p>
+<p>由克莱姆法则，方程组只有零解，即 $C_0 = C_1 = \cdots = C_n = 0$，</p>
+<p>所以 $f(x) = 0$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.27" data-pid="1.6.27">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.27】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求经过点 $A(1, 1, 2)$，$B(3, -2, 0)$ 和 $C(0, 5, -5)$ 三点的平面方程.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由空间解析几何知识，可设平面方程为：</p>
+<p>$$ax + by + cz + d = 0.$$</p>
+<p>由于 A、B、C 三点在平面上，故点的坐标满足平面方程，即</p>
+<p>$$\begin{cases} a + b + 2c + d = 0, \\ 3a - 2b + d = 0, \\ 5b - 5c + d = 0. \end{cases}$$</p>
+<p>设 $(x, y, z)$ 是平面上任一点，则有齐次线性方程组</p>
+<p>$$\begin{cases} ax + by + cz + d = 0, \\ a + b + 2c + d = 0, \\ 3a - 2b + d = 0, \\ 5b - 5c + d = 0. \end{cases}$$</p>
+<p>因为 $a, b, c, d$ 不全为零，即上述齐次线性方程组有非零解，所以系数行列式为零，即</p>
+<p>$$\begin{vmatrix} x &amp; y &amp; z &amp; 1 \\ 1 &amp; 1 &amp; 2 &amp; 1 \\ 3 &amp; -2 &amp; 0 &amp; 1 \\ 0 &amp; 5 &amp; -5 &amp; 1 \end{vmatrix} = 0.$$</p>
+<p>整理可得：$29x + 16y + 5z - 55 = 0$.</p>
+<p>所以平面方程为 $29x + 16y + 5z - 55 = 0$.</p>
+<p>点评：根据题设条件构造方程组，再利用克莱姆法则转化为行列式的计算.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.28" data-pid="1.6.28">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.28】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $1998, 2196, 2394, 1800$ 都能被 18 整除，不计算行列式的值，证明行列式</p>
+<p>$$D_4 = \begin{vmatrix} 1 &amp; 9 &amp; 9 &amp; 8 \\ 2 &amp; 1 &amp; 9 &amp; 6 \\ 2 &amp; 3 &amp; 9 &amp; 4 \\ 1 &amp; 8 &amp; 0 &amp; 0 \end{vmatrix}$$</p>
+<p>能被 18 整除.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>证</p>
+<p>$$D_4 = \begin{vmatrix} 1 &amp; 9 &amp; 9 &amp; 8 \\ 2 &amp; 1 &amp; 9 &amp; 6 \\ 2 &amp; 3 &amp; 9 &amp; 4 \\ 1 &amp; 8 &amp; 0 &amp; 0 \end{vmatrix} \xrightarrow{\ c_4 + 10c_3,\ c_4 + 100c_2,\ c_4 + 1000c_1\ } \begin{vmatrix} 1 &amp; 9 &amp; 9 &amp; 1998 \\ 2 &amp; 1 &amp; 9 &amp; 2196 \\ 2 &amp; 3 &amp; 9 &amp; 2394 \\ 1 &amp; 8 &amp; 0 &amp; 1800 \end{vmatrix}.$$</p>
+<p>因 $1998, 2196, 2394$ 和 $1800$ 都能被 18 整除，所以行列式的第四列可提出公因子 18，即 $D_4 = 18m$，这里 $m$ 显然是一个整数，故 $D_4$ 能被 18 整除.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-1.6.29" data-pid="1.6.29">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【6.29】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>计算 $f(x+1) - f(x)$，其中</p>
+<p>$$f(x) = \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x \\ 1 &amp; 2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x^2 \\ 1 &amp; 3 &amp; 3 &amp; 0 &amp; \cdots &amp; 0 &amp; x^3 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; C_n^2 &amp; C_n^3 &amp; \cdots &amp; C_n^{n-1} &amp; x^n \\ 1 &amp; n+1 &amp; C_{n+1}^2 &amp; C_{n+1}^3 &amp; \cdots &amp; C_{n+1}^{n-1} &amp; x^{n+1} \end{vmatrix}.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$f(x+1) - f(x)$$</p>
+<p>$$= \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x+1 \\ 1 &amp; 2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x^2+2x+1 \\ 1 &amp; 3 &amp; 3 &amp; 0 &amp; \cdots &amp; 0 &amp; x^3+3x^2+3x+1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; C_n^2 &amp; C_n^3 &amp; \cdots &amp; C_n^{n-1} &amp; x^n + nx^{n-1} + C_n^2 x^{n-2} + \cdots + 1 \\ 1 &amp; n+1 &amp; C_{n+1}^2 &amp; C_{n+1}^3 &amp; \cdots &amp; C_{n+1}^{n-1} &amp; x^{n+1} + (n+1)x^n + C_{n+1}^2 x^{n-1} + \cdots + 1 \end{vmatrix}$$</p>
+<p>$$- \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x \\ 1 &amp; 2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; x^2 \\ 1 &amp; 3 &amp; 3 &amp; 0 &amp; \cdots &amp; 0 &amp; x^3 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; C_n^2 &amp; C_n^3 &amp; \cdots &amp; C_n^{n-1} &amp; x^n \\ 1 &amp; n+1 &amp; C_{n+1}^2 &amp; C_{n+1}^3 &amp; \cdots &amp; C_{n+1}^{n-1} &amp; x^{n+1} \end{vmatrix}$$</p>
+<p>$$= \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 1 \\ 1 &amp; 2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 2x+1 \\ 1 &amp; 3 &amp; 3 &amp; 0 &amp; \cdots &amp; 0 &amp; 3x^2+3x+1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; C_n^2 &amp; C_n^3 &amp; \cdots &amp; C_n^{n-1} &amp; nx^{n-1} + C_n^2 x^{n-2} + \cdots + 1 \\ 1 &amp; n+1 &amp; C_{n+1}^2 &amp; C_{n+1}^3 &amp; \cdots &amp; C_{n+1}^{n-1} &amp; (n+1)x^n + C_{n+1}^2 x^{n-1} + \cdots + 1 \end{vmatrix}$$</p>
+<p>$$\xrightarrow{\ c_{n+1} + (-c_1 - xc_2 - x^2c_3 - \cdots - x^{n-1}c_n)\ } \begin{vmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; 2 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 1 &amp; 3 &amp; 3 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 1 &amp; n &amp; C_n^2 &amp; C_n^3 &amp; \cdots &amp; C_n^{n-1} &amp; 0 \\ 1 &amp; n+1 &amp; C_{n+1}^2 &amp; C_{n+1}^3 &amp; \cdots &amp; C_{n+1}^{n-1} &amp; (n+1)x^n \end{vmatrix}$$</p>
+<p>$$= (n+1)!\, x^n.$$</p>
+<p>点评：此例的特点是 $f(x+1)$ 与 $f(x)$ 的前 $n$ 列是完全相同的. 所以两个行列式之差可以写成一个行列式，这个行列式的前 $n$ 列与 $f(x)$ 的前 $n$ 列相同，第 $n+1$ 列的元素为 $f(x+1)$ 与 $f(x)$ 第 $n+1$ 列相应元素之差.</p></div>
+</div></div>
+</article>
+</section>
+<nav class="chapter-nav">
+<a href="../index.html">← 返回总目录</a>
+<a href="chapter-02.html">第二章　矩阵 →</a>
+</nav>
+</main></div>
+<button class="back-top" id="backTop" type="button" title="回到顶部">↑</button>
+<div class="float-nav">
+<button id="prevProb" type="button">‹ 上一题</button>
+<button id="nextProb" type="button">下一题 ›</button>
+</div>
+<script src="../assets/vendor/katex/katex.min.js"></script>
+<script src="../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../assets/script.js"></script>
+</body></html>

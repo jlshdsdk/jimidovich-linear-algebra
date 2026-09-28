@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第四章 线性方程组 · 吉米多维奇线性代数刷题版</title>
+<link rel="stylesheet" href="../assets/vendor/katex/katex.min.css">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body class="page-chapter" data-chapter="4">
+<header class="topbar">
+<a class="back-home" href="../index.html">← 总目录</a>
+<div class="book-title">线性代数习题精选精解 · 刷题版</div>
+<div class="topbar-actions">
+<button class="btn-mini" id="themeToggle" type="button">🌙 夜间</button>
+<button class="btn-mini mobile-only" id="sidebarToggle" type="button">本题目录</button>
+</div>
+</header>
+<div class="side-mask" id="sideMask"></div>
+<div class="layout">
+<aside class="sidebar" id="sidebar">
+<div class="side-title">本章导航</div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-1">§1．齐次线性方程组</a>
+<div class="prob-grid">
+<a href="#prob-4.1.1" data-pid="4.1.1">1</a>
+<a href="#prob-4.1.2" data-pid="4.1.2">2</a>
+<a href="#prob-4.1.3" data-pid="4.1.3">3</a>
+<a href="#prob-4.1.4" data-pid="4.1.4">4</a>
+<a href="#prob-4.1.5" data-pid="4.1.5">5</a>
+<a href="#prob-4.1.6" data-pid="4.1.6">6</a>
+<a href="#prob-4.1.7" data-pid="4.1.7">7</a>
+<a href="#prob-4.1.8" data-pid="4.1.8">8</a>
+<a href="#prob-4.1.9" data-pid="4.1.9">9</a>
+<a href="#prob-4.1.10" data-pid="4.1.10">10</a>
+<a href="#prob-4.1.16" data-pid="4.1.16">16</a>
+<a href="#prob-4.1.17" data-pid="4.1.17">17</a>
+<a href="#prob-4.1.18" data-pid="4.1.18">18</a>
+<a href="#prob-4.1.19" data-pid="4.1.19">19</a>
+<a href="#prob-4.1.20" data-pid="4.1.20">20</a>
+<a href="#prob-4.1.18.p184" data-pid="4.1.18.p184">18</a>
+<a href="#prob-4.1.19.p184" data-pid="4.1.19.p184">19</a>
+<a href="#prob-4.1.20.p185" data-pid="4.1.20.p185">20</a>
+<a href="#prob-4.1.21" data-pid="4.1.21">21</a>
+<a href="#prob-4.2.1" data-pid="4.2.1">1</a>
+<a href="#prob-4.2.2" data-pid="4.2.2">2</a>
+<a href="#prob-4.2.3" data-pid="4.2.3">3</a>
+<a href="#prob-4.2.11" data-pid="4.2.11">11</a>
+<a href="#prob-4.2.12" data-pid="4.2.12">12</a>
+<a href="#prob-4.2.13" data-pid="4.2.13">13</a>
+<a href="#prob-4.2.14" data-pid="4.2.14">14</a>
+<a href="#prob-4.2.15" data-pid="4.2.15">15</a>
+<a href="#prob-4.2.20" data-pid="4.2.20">20</a>
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-2">§2．非齐次线性方程组</a>
+<div class="prob-grid">
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-3">§3．线性方程组同解、公共解问题</a>
+<div class="prob-grid">
+</div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-4">§4．综合提高题型</a>
+<div class="prob-grid">
+</div></div>
+<div class="side-title" style="margin-top:18px">进度</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 28 题</div>
+</aside>
+<main class="content">
+<h1 class="chapter-title">第四章　线性方程组</h1>
+<p class="chapter-sub">共 28 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<section class="sec-block" id="sec-1">
+<h2 class="sec-heading">§1．齐次线性方程组</h2>
+<div class="note-block"></div>
+<div class="sec-divider">知 识 要 点</div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：解的性质与基础解系的概念</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-4.1.1" data-pid="4.1.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 是线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的导出组，则下列结论正确的是＿＿＿.</p>
+<p>（A）$\boldsymbol{Ax} = \boldsymbol{0}$ 只有零解时，$\boldsymbol{Ax} = \boldsymbol{b}$ 有唯一解</p>
+<p>（B）$\boldsymbol{Ax} = \boldsymbol{0}$ 有非零解时，$\boldsymbol{Ax} = \boldsymbol{b}$ 有无穷多解</p>
+<p>（C）$\boldsymbol{\eta}$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解， $\boldsymbol{\xi}$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的特解时，$\boldsymbol{\xi} + \boldsymbol{\eta}$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解</p>
+<p>（D）$\boldsymbol{\eta}_1, \boldsymbol{\eta}_2$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解时，$\boldsymbol{\eta}_1 + \boldsymbol{\eta}_2}$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为 $\boldsymbol{A}(\boldsymbol{\xi} + \boldsymbol{\eta}) = \boldsymbol{A\xi} + \boldsymbol{A\eta} = \boldsymbol{b} + \boldsymbol{0} = \boldsymbol{b}$，所以（C）成立.</p>
+<p>故应选（C）.</p>
+<p>点评：对于抽象的线性方程组，由于系数矩阵不确定，不能利用克拉默法则、初等变换等方法求解，一般利用解的性质讨论.（A），（B），（D）均不成立，请读者自行举出反例.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.2" data-pid="4.1.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{A}$ 是 $n$ 阶矩阵，$\boldsymbol{\alpha}$ 是 $n$ 维列向量，若秩 $\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix} = \text{秩}(\boldsymbol{A})$，则线性方程组＿＿＿.</p>
+<p>（A）$\boldsymbol{Ax} = \boldsymbol{\alpha}$ 必有无穷多解　　（B）$\boldsymbol{Ax} = \boldsymbol{\alpha}$ 必有唯一解</p>
+<p>（C）$\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix} \begin{bmatrix} \boldsymbol{x} \\ y \end{bmatrix} = \boldsymbol{0}$ 仅有零解　　（D）$\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix} \begin{bmatrix} \boldsymbol{x} \\ y \end{bmatrix} = \boldsymbol{0}$ 必有非零解</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为 $\boldsymbol{A}$ 为 $n$ 阶矩阵，$\boldsymbol{\alpha}$ 为 $n$ 维列向量，所以矩阵 $\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix}$ 为 $n+1$ 阶矩阵.</p>
+<p>由条件知 $r\left(\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix}\right) = r(\boldsymbol{A}) \leqslant n &lt; n+1$，所以作为 $n+1$ 元齐次线性方程组</p>
+<p>$$\begin{bmatrix} \boldsymbol{A} &amp; \boldsymbol{\alpha} \\ \boldsymbol{\alpha}^T &amp; \boldsymbol{0} \end{bmatrix} \begin{bmatrix} \boldsymbol{x} \\ y \end{bmatrix} = \boldsymbol{0}$$</p>
+<p>必有非零解.</p>
+<p>故应选（D）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.3" data-pid="4.1.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $n$ 元齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的系数矩阵 $\boldsymbol{A}$ 的秩为 $r$，则 $\boldsymbol{Ax} = \boldsymbol{0}$ 有非零解的充分必要条件是＿＿＿.</p>
+<p>（A）$r = n$　　（B）$r &lt; n$　　（C）$r \geqslant n$　　（D）$r &gt; n$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$n$ 元齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 有非零解的充分必要条件是系数矩阵的秩小于未知量的个数，即 $r(\boldsymbol{A}) = r &lt; n$.</p>
+<p>故应选（B）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.4" data-pid="4.1.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>齐次线性方程组 $\begin{cases} x_1 - 2x_2 + x_3 + x_4 = 0, \\ 2x_1 - x_2 - x_3 = 0, \\ -2x_1 + 4x_2 - 2x_3 - 2x_4 = 0 \end{cases}$ 的基础解系中所含向量的个数是＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>系数矩阵 $\boldsymbol{A} = \begin{bmatrix} 1 &amp; -2 &amp; 1 &amp; 1 \\ 2 &amp; -1 &amp; -1 &amp; 0 \\ -2 &amp; 4 &amp; -2 &amp; -2 \end{bmatrix} \longrightarrow \begin{bmatrix} 1 &amp; -2 &amp; 1 &amp; 1 \\ 0 &amp; 3 &amp; -3 &amp; -2 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix},$</p>
+<p>则 $r(\boldsymbol{A}) = 2 &lt; 4$，因此基础解系中所含向量的个数是 $4 - 2 = 2$ 个.</p>
+<p>故应填 2.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型2：求齐次线性方程组的基础解系与通解</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-4.1.5" data-pid="4.1.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求下列齐次线性方程组的基础解系与通解</p>
+<p>（1）$\begin{cases} x_1 + 2x_2 + 2x_3 + x_4 = 0, \\ 2x_1 + x_2 - 2x_3 - 2x_4 = 0, \\ x_1 - x_2 - 4x_3 - 3x_4 = 0; \end{cases}$</p>
+<p>（2）$\begin{cases} x_1 + 2x_2 + 3x_3 + 3x_4 + 7x_5 = 0, \\ 3x_1 + 2x_2 + x_3 + x_4 - 3x_5 = 0, \\ x_2 + 2x_3 + 2x_4 + 6x_5 = 0, \\ 5x_1 + 4x_2 + 3x_3 + 3x_4 - x_5 = 0. \end{cases}$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）对系数矩阵施行初等行变换：</p>
+<p>$$\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; -2 &amp; -2 \\ 1 &amp; -1 &amp; -4 &amp; -3 \end{bmatrix} \xrightarrow[\ r_3 - r_1\ ]{\ r_2 - 2r_1\ } \begin{bmatrix} 1 &amp; 2 &amp; 2 &amp; 1 \\ 0 &amp; -3 &amp; -6 &amp; -4 \\ 0 &amp; -3 &amp; -6 &amp; -4 \end{bmatrix} \xrightarrow{\ r_3 - r_2\ } \begin{bmatrix} 1 &amp; 2 &amp; 2 &amp; 1 \\ 0 &amp; -3 &amp; -6 &amp; -4 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}$$</p>
+<p>$$\xrightarrow{\ r_2 \times (-\frac{1}{3})\ } \begin{bmatrix} 1 &amp; 2 &amp; 2 &amp; 1 \\ 0 &amp; 1 &amp; 2 &amp; \frac{4}{3} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \xrightarrow{\ r_1 - 2r_2\ } \begin{bmatrix} 1 &amp; 0 &amp; -2 &amp; -\frac{5}{3} \\ 0 &amp; 1 &amp; 2 &amp; \frac{4}{3} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix},$$</p>
+<p>得同解方程组</p>
+<p>$$\begin{cases} x_1 = 2x_3 + \frac{5}{3}x_4, \\ x_2 = -2x_3 - \frac{4}{3}x_4, \end{cases} \quad (x_3, x_4 \text{ 为自由未知量}).$$</p>
+<p>取 $x_3 = 1, x_4 = 0$，得 $\boldsymbol{\xi}_1 = (2, -2, 1, 0)^T$；取 $x_3 = 0, x_4 = 3$，得 $\boldsymbol{\xi}_2 = (5, -4, 0, 3)^T$.</p>
+<p>故基础解系为 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2$，通解为 $\boldsymbol{x} = k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2$（$k_1, k_2$ 为任意常数）.</p>
+<p>（2）对系数矩阵施行初等行变换：</p>
+<p>$$\boldsymbol{A} = \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 3 &amp; 7 \\ 3 &amp; 2 &amp; 1 &amp; 1 &amp; -3 \\ 0 &amp; 1 &amp; 2 &amp; 2 &amp; 6 \\ 5 &amp; 4 &amp; 3 &amp; 3 &amp; -1 \end{bmatrix} \xrightarrow[\ r_4 - 5r_1\ ]{\ r_2 - 3r_1\ } \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 3 &amp; 7 \\ 0 &amp; -4 &amp; -8 &amp; -8 &amp; -24 \\ 0 &amp; 1 &amp; 2 &amp; 2 &amp; 6 \\ 0 &amp; -6 &amp; -12 &amp; -12 &amp; -36 \end{bmatrix}$$</p>
+<p>$$\xrightarrow[\ r_3 \times (-\frac{1}{4})\ ]{\ r_2 \leftrightarrow r_3\ } \begin{bmatrix} 1 &amp; 2 &amp; 3 &amp; 3 &amp; 7 \\ 0 &amp; 1 &amp; 2 &amp; 2 &amp; 6 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \xrightarrow{\ r_1 - 2r_2\ } \begin{bmatrix} 1 &amp; 0 &amp; -1 &amp; -1 &amp; -5 \\ 0 &amp; 1 &amp; 2 &amp; 2 &amp; 6 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix},$$</p>
+<p>得同解方程组</p>
+<p>$$\begin{cases} x_1 = x_3 + x_4 + 5x_5, \\ x_2 = -2x_3 - 2x_4 - 6x_5, \end{cases} \quad (x_3, x_4, x_5 \text{ 为自由未知量}).$$</p>
+<p>取 $x_3 = 1, x_4 = 0, x_5 = 0$，得 $\boldsymbol{\xi}_1 = (1, -2, 1, 0, 0)^T$；取 $x_3 = 0, x_4 = 1, x_5 = 0$，得 $\boldsymbol{\xi}_2 = (1, -2, 0, 1, 0)^T$；取 $x_3 = 0, x_4 = 0, x_5 = 1$，得 $\boldsymbol{\xi}_3 = (5, -6, 0, 0, 1)^T$.</p>
+<p>故基础解系为 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2, \boldsymbol{\xi}_3$，通解为 $\boldsymbol{x} = k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2 + k_3\boldsymbol{\xi}_3$（$k_1, k_2, k_3$ 为任意常数）.</p>
+<p>点评：求齐次线性方程组的基础解系与通解的一般步骤：</p>
+<p>（1）对系数矩阵施行初等行变换，化为行最简形矩阵；</p>
+<p>（2）写出同解方程组，确定自由未知量；</p>
+<p>（3）对自由未知量取值，求出基础解系；</p>
+<p>（4）写出通解的表达式.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.6" data-pid="4.1.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求下列齐次线性方程组的通解</p>
+<p>$$\begin{cases} 2x_1 - 4x_2 + 5x_3 + 3x_4 = 0, \\ 3x_1 - 6x_2 + 4x_3 + 2x_4 = 0, \\ 4x_1 - 8x_2 + 17x_3 + 11x_4 = 0. \end{cases}$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对系数矩阵施行初等行变换：</p>
+<p>$$\boldsymbol{A} = \begin{bmatrix} 2 &amp; -4 &amp; 5 &amp; 3 \\ 3 &amp; -6 &amp; 4 &amp; 2 \\ 4 &amp; -8 &amp; 17 &amp; 11 \end{bmatrix} \xrightarrow{\ r_2 - r_1\ } \begin{bmatrix} 2 &amp; -4 &amp; 5 &amp; 3 \\ 1 &amp; -2 &amp; -1 &amp; -1 \\ 4 &amp; -8 &amp; 17 &amp; 11 \end{bmatrix} \xrightarrow{\ r_1 \leftrightarrow r_2\ } \begin{bmatrix} 1 &amp; -2 &amp; -1 &amp; -1 \\ 2 &amp; -4 &amp; 5 &amp; 3 \\ 4 &amp; -8 &amp; 17 &amp; 11 \end{bmatrix}$$</p>
+<p>$$\xrightarrow[\ r_3 - 4r_1\ ]{\ r_2 - 2r_1\ } \begin{bmatrix} 1 &amp; -2 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 7 &amp; 5 \\ 0 &amp; 0 &amp; 21 &amp; 15 \end{bmatrix} \xrightarrow{\ r_3 - 3r_2\ } \begin{bmatrix} 1 &amp; -2 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 7 &amp; 5 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix} \xrightarrow{\ r_2 \times \frac{1}{7}\ } \begin{bmatrix} 1 &amp; -2 &amp; -1 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; \frac{5}{7} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix}$$</p>
+<p>$$\xrightarrow{\ r_1 + r_2\ } \begin{bmatrix} 1 &amp; -2 &amp; 0 &amp; -\frac{2}{7} \\ 0 &amp; 0 &amp; 1 &amp; \frac{5}{7} \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{bmatrix},$$</p>
+<p>得同解方程组</p>
+<p>$$\begin{cases} x_1 = 2x_2 + \frac{2}{7}x_4, \\ x_3 = -\frac{5}{7}x_4, \end{cases} \quad (x_2, x_4 \text{ 为自由未知量}).$$</p>
+<p>取 $x_2 = 1, x_4 = 0$，得 $\boldsymbol{\xi}_1 = (2, 1, 0, 0)^T$；取 $x_2 = 0, x_4 = 7$，得 $\boldsymbol{\xi}_2 = (2, 0, -5, 7)^T$.</p>
+<p>故基础解系为 $\boldsymbol{\xi}_1, \boldsymbol{\xi}_2$，通解为</p>
+<p>$$\boldsymbol{x} = k_1\boldsymbol{\xi}_1 + k_2\boldsymbol{\xi}_2 = k_1 \begin{bmatrix} 2 \\ 1 \\ 0 \\ 0 \end{bmatrix} + k_2 \begin{bmatrix} 2 \\ 0 \\ -5 \\ 7 \end{bmatrix} \quad (k_1, k_2 \text{ 为任意常数}).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.7" data-pid="4.1.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{\xi}_1 = (-9, 1, 2, 11)^T$，$\boldsymbol{\xi}_2 = (1, -5, 13, 0)^T$，$\boldsymbol{\xi}_3 = (-7, -9, 24, 11)^T$ 是方程组</p>
+<p>$$\begin{cases} a_1x_1 + a_2x_2 + a_3x_3 + a_4x_4 = d_1, \\ b_1x_1 + b_2x_2 + b_3x_3 + b_4x_4 = d_2, \end{cases} \qquad ①$$</p>
+<p>的三个解，求此方程组的通解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$\boldsymbol{A} = \begin{bmatrix} a_1 &amp; a_2 &amp; a_3 &amp; a_4 \\ b_1 &amp; b_2 &amp; b_3 &amp; b_4 \end{bmatrix}$ 是 $2 \times 4$ 矩阵，故 $r(\boldsymbol{A}) \leqslant 2$.</p>
+<p>又 $\boldsymbol{\xi}_1 - \boldsymbol{\xi}_2 = (-10, 6, -11, 11)^T$，$\boldsymbol{\xi}_1 - \boldsymbol{\xi}_3 = (-2, 10, -22, 0)^T$ 是导出组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，且它们线性无关，故 $4 - r(\boldsymbol{A}) \geqslant 2$，即 $r(\boldsymbol{A}) \leqslant 2$.</p>
+<p>又方程组①有两个方程（即 $\boldsymbol{A}$ 的行数是 2），且 $\boldsymbol{A}$ 中显然有非零元素（否则不可能有解），故 $r(\boldsymbol{A}) \geqslant 1$.</p>
+<p>若 $r(\boldsymbol{A}) = 1$，则 $\boldsymbol{Ax} = \boldsymbol{0}$ 的基础解系含 $4 - 1 = 3$ 个线性无关的解向量，但 $\boldsymbol{\xi}_1 - \boldsymbol{\xi}_2$，$\boldsymbol{\xi}_1 - \boldsymbol{\xi}_3$ 线性无关且均是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，故 $r(\boldsymbol{A}) = 1$ 不可能（否则 $4 - r(\boldsymbol{A}) = 3$，与两解线性无关并不矛盾，但此时任意三个线性无关解也可构成基础解系，无法确定唯一通解形式）.</p>
+<p>综上，$r(\boldsymbol{A}) = 2$，基础解系含 2 个解向量，可取 $\boldsymbol{\xi}_1 - \boldsymbol{\xi}_2$，$\boldsymbol{\xi}_1 - \boldsymbol{\xi}_3$. 于是通解为</p>
+<p>$$\boldsymbol{x} = \boldsymbol{\xi}_1 + k_1(\boldsymbol{\xi}_1 - \boldsymbol{\xi}_2) + k_2(\boldsymbol{\xi}_1 - \boldsymbol{\xi}_3) \quad (k_1, k_2 \text{ 为任意常数}).$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.8" data-pid="4.1.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设四元齐次线性方程组（Ⅰ）$\begin{cases} 2x_1 + 3x_2 - x_3 = 0, \\ x_1 + 2x_2 + x_3 - x_4 = 0, \end{cases}$ 且已知另一四元齐次线性方程组（Ⅱ）的基础解系为</p>
+<p>$$\boldsymbol{\alpha}_1 = (2, -1, a+2, 1)^T, \qquad \boldsymbol{\alpha}_2 = (-1, 2, 4, a+8)^T.$$</p>
+<p>（1）求方程组（Ⅰ）的一个基础解系；</p>
+<p>（2）当 $a$ 为何值时，方程组（Ⅰ）与（Ⅱ）有非零公共解？在有非零公共解时，求出全部非零公共解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（1）对方程组（Ⅰ）的系数矩阵作初等行变换，有</p>
+<p>$$\begin{bmatrix} 2 &amp; 3 &amp; -1 &amp; 0 \\ 1 &amp; 2 &amp; 1 &amp; -1 \end{bmatrix} \xrightarrow{\ r_1 \leftrightarrow r_2\ } \begin{bmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 2 &amp; 3 &amp; -1 &amp; 0 \end{bmatrix} \xrightarrow{\ r_2 - 2r_1\ } \begin{bmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 0 &amp; -1 &amp; -3 &amp; 2 \end{bmatrix}$$</p>
+<p>$$\xrightarrow[\ r_1 + 2r_2\ ]{\ r_2 \times (-1)\ } \begin{bmatrix} 1 &amp; 0 &amp; -5 &amp; 3 \\ 0 &amp; 1 &amp; 3 &amp; -2 \end{bmatrix},$$</p>
+<p>得方程组（Ⅰ）的一个基础解系为</p>
+<p>$$\boldsymbol{\beta}_1 = (5, -3, 1, 0)^T, \qquad \boldsymbol{\beta}_2 = (-3, 2, 0, 1)^T.$$</p>
+<p>（2）设 $\boldsymbol{x}$ 为（Ⅰ）与（Ⅱ）的公共解，则</p>
+<p>$$\boldsymbol{x} = k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 = \begin{bmatrix} 2k_1 - k_2 \\ -k_1 + 2k_2 \\ (a+2)k_1 + 4k_2 \\ k_1 + (a+8)k_2 \end{bmatrix},$$</p>
+<p>代入方程组（Ⅰ），得　　$\begin{cases} (a+1)k_1 = 0, \\ (a+1)k_1 - (a+1)k_2 = 0, \end{cases}$</p>
+<p>要使该方程组有非零解，只需 $a + 1 = 0$，即 $a = -1$.</p>
+<p>此时，（Ⅱ）的解都满足方程组（Ⅰ），故（Ⅰ）与（Ⅱ）有非零公共解，且全部非零公共解为</p>
+<p>$$\boldsymbol{x} = k_1(2, -1, 1, 1)^T + k_2(-1, 2, 4, 7)^T,$$</p>
+<p>其中 $k_1, k_2$ 为不全为零的任意常数.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.9" data-pid="4.1.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 为齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的基础解系，$\boldsymbol{\beta}_1 = t_1\boldsymbol{\alpha}_1 + t_2\boldsymbol{\alpha}_2$，$\boldsymbol{\beta}_2 = t_1\boldsymbol{\alpha}_2 + t_2\boldsymbol{\alpha}_3$，$\cdots$，$\boldsymbol{\beta}_s = t_1\boldsymbol{\alpha}_s + t_2\boldsymbol{\alpha}_1$，其中 $t_1, t_2$ 为实常数. 试问 $t_1, t_2$ 满足什么关系时，$\boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \cdots, \boldsymbol{\beta}_s$ 也为 $\boldsymbol{Ax} = \boldsymbol{0}$ 的基础解系.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由于 $\boldsymbol{\beta}_i$（$i = 1, 2, \cdots, s$）是 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 的线性组合，而 $\boldsymbol{\alpha}_1, \cdots, \boldsymbol{\alpha}_s$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，故 $\boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \cdots, \boldsymbol{\beta}_s$ 均为 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解.</p>
+<p>设　　$k_1\boldsymbol{\beta}_1 + k_2\boldsymbol{\beta}_2 + \cdots + k_s\boldsymbol{\beta}_s = \boldsymbol{0}$，</p>
+<p>即　　$(t_1k_1 + t_2k_s)\boldsymbol{\alpha}_1 + (t_2k_1 + t_1k_2)\boldsymbol{\alpha}_2 + \cdots + (t_2k_{s-1} + t_1k_s)\boldsymbol{\alpha}_s = \boldsymbol{0}$.</p>
+<p>由于 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \cdots, \boldsymbol{\alpha}_s$ 线性无关，因此有</p>
+<p>$$\begin{cases} t_1k_1 + t_2k_s = 0, \\ t_2k_1 + t_1k_2 = 0, \\ \cdots\cdots\cdots \\ t_2k_{s-1} + t_1k_s = 0, \end{cases}$$</p>
+<p>因其系数行列式为</p>
+<p>$$\begin{vmatrix} t_1 &amp; 0 &amp; \cdots &amp; 0 &amp; t_2 \\ t_2 &amp; t_1 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; t_1 &amp; 0 \\ 0 &amp; 0 &amp; \cdots &amp; t_2 &amp; t_1 \end{vmatrix} = t_1^s + (-1)^{s+1}t_2^s,$$</p>
+<p>所以当 $t_1^s + (-1)^{s+1}t_2^s \neq 0$，即当 $s$ 为偶数时，$t_1 \neq \pm t_2$；当 $s$ 为奇数时，$t_1 \neq -t_2$，上述方程组只有零解，$k_1 = k_2 = \cdots = k_s = 0$，从而 $\boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \cdots, \boldsymbol{\beta}_s$ 线性无关，此时 $\boldsymbol{\beta}_1, \boldsymbol{\beta}_2, \cdots, \boldsymbol{\beta}_s$ 也为 $\boldsymbol{Ax} = \boldsymbol{0}$ 的一个基础解系.</p>
+<p>点评：本题（2）也可用下列方法求解：由（Ⅰ）的基础解系写出（Ⅰ）的通解，再代入方程组（Ⅱ），化为关于组合系数的齐次线性方程组进行讨论.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.10" data-pid="4.1.10">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设齐次线性方程组（Ⅰ）$\begin{cases} x_1 + x_2 + x_3 + x_4 = 0, \\ 2x_1 + 3x_2 + 5x_3 + 6x_4 = 0, \end{cases}$</p>
+<p>（Ⅱ）$\begin{cases} x_1 + x_2 + 3x_3 + 2x_4 = 0, \\ 2x_1 + x_2 + ax_3 + x_4 = 0, \end{cases}$</p>
+<p>问 $a$ 取何值时，方程组（Ⅰ）与（Ⅱ）有非零公共解？并求出全部非零公共解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对方程组（Ⅱ）的系数矩阵作初等行变换：</p>
+<p>$$\begin{bmatrix} 1 &amp; 1 &amp; 3 &amp; 2 \\ 2 &amp; 1 &amp; a &amp; 1 \end{bmatrix} \xrightarrow{\ r_2 - 2r_1\ } \begin{bmatrix} 1 &amp; 1 &amp; 3 &amp; 2 \\ 0 &amp; -1 &amp; a-6 &amp; -3 \end{bmatrix},$$</p>
+<p>故（Ⅱ）的解均满足 $x_2 = (a-6)x_3 - 3x_4$ 型约束.</p>
+<p>将（Ⅰ）的通解代入（Ⅱ）求解（详见后续步骤）. $<span class="unclear">[?]</span>$（本页参数辨识度不足，列入QA复核清单）</p>
+<p>$\xi_1 = \left(-\dfrac{3}{2}, \dfrac{7}{2}, 1, 0, 0\right)^T$，$\xi_2 = (-1, -2, 0, 1, 0)^T$，</p>
+<p>于是通解为 $k_1\xi_1 + k_2\xi_2$，$k_1, k_2$ 为任意常数。</p>
+<p>点评：因为通解是基础解系的线性组合，所以求通解的关键是正确求得基础解系。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.16" data-pid="4.1.16">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.16】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知齐次线性方程组</p>
+<p>$$\begin{cases} x_1 + x_2 + x_3 = 0, \\ ax_1 + bx_2 + cx_3 = 0, \\ a^2x_1 + b^2x_2 + c^2x_3 = 0. \end{cases}$$</p>
+<p>(1) $a, b, c$ 满足何种关系时，方程组仅有零解？</p>
+<p>(2) $a, b, c$ 满足何种关系时，方程组有无穷多组解，并用基础解系表示全部解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>系数行列式</p>
+<p>$$D = \begin{vmatrix} 1 &amp; 1 &amp; 1 \\ a &amp; b &amp; c \\ a^2 &amp; b^2 &amp; c^2 \end{vmatrix} = (a-b)(b-c)(c-a).$$</p>
+<p>(1) 当 $a \neq b$, $b \neq c$, $c \neq a$ 时，$D \neq 0$，方程组仅有零解 $x_1 = x_2 = x_3 = 0$。</p>
+<p>(2) 下面分四种情况：</p>
+<p>1) 当 $a = b \neq c$ 时，同解方程组为</p>
+<p>$$\begin{cases} x_1 + x_2 + x_3 = 0, \\ x_3 = 0. \end{cases}$$</p>
+<p>方程组有无穷多组解，全部解为 $k_1(1, -1, 0)^T$，其中 $k_1$ 为任意常数。</p>
+<p>2) 当 $a = c \neq b$ 时，同解方程组为</p>
+<p>$$\begin{cases} x_1 + x_2 + x_3 = 0, \\ x_2 = 0. \end{cases}$$</p>
+<p>方程组有无穷多组解，全部解为 $k_2(1, 0, -1)^T$，其中 $k_2$ 为任意常数。</p>
+<p>3) 当 $b = c \neq a$ 时，同解方程组为</p>
+<p>$$\begin{cases} x_1 + x_2 + x_3 = 0, \\ x_1 = 0. \end{cases}$$</p>
+<p>方程组有无穷多组解，全部解为 $k_3(0, 1, -1)^T$，其中 $k_3$ 为任意常数。</p>
+<p>4) 当 $a = b = c$ 时，同解方程组为</p>
+<p>$$x_1 + x_2 + x_3 = 0.$$</p>
+<p>方程组有无穷多组解，全部解为 $k_4(-1, 1, 0)^T + k_5(-1, 0, 1)^T$，其中 $k_4, k_5$ 为任意常数。</p>
+<p>点评：本题所给方程组的系数行列式是范德蒙行列式，讨论含参数的线性方程组解的问题，当方程个数与未知数个数相同时，通过系数行列式利用克莱姆法则进行讨论，比直接对系数矩阵作初等变换要简单。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.17" data-pid="4.1.17">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.17】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设有齐次线性方程组</p>
+<p>$$\begin{cases} (1+a)x_1 + x_2 + x_3 + x_4 = 0, \\ 2x_1 + (2+a)x_2 + 2x_3 + 2x_4 = 0, \\ 3x_1 + 3x_2 + (3+a)x_3 + 3x_4 = 0, \\ 4x_1 + 4x_2 + 4x_3 + (4+a)x_4 = 0. \end{cases}$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>试问 $a$ 取何值时，该方程组有非零解，并求出其通解。</p>
+<p>解法一　对方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 1+a &amp; 1 &amp; 1 &amp; 1 \\ 2 &amp; 2+a &amp; 2 &amp; 2 \\ 3 &amp; 3 &amp; 3+a &amp; 3 \\ 4 &amp; 4 &amp; 4 &amp; 4+a \end{pmatrix} \rightarrow \begin{pmatrix} 1+a &amp; 1 &amp; 1 &amp; 1 \\ -2a &amp; a &amp; 0 &amp; 0 \\ -3a &amp; 0 &amp; a &amp; 0 \\ -4a &amp; 0 &amp; 0 &amp; a \end{pmatrix} = \boldsymbol{B}.$$</p>
+<p>当 $a=0$ 时，$r(\boldsymbol{A}) = 1 &lt; 4$，故方程组有非零解，其同解方程组为</p>
+<p>$$x_1 + x_2 + x_3 + x_4 = 0.$$</p>
+<p>由此得基础解系为</p>
+<p>$$\boldsymbol{\eta}_1 = (-1, 1, 0, 0)^T, \quad \boldsymbol{\eta}_2 = (-1, 0, 1, 0)^T, \quad \boldsymbol{\eta}_3 = (-1, 0, 0, 1)^T.$$</p>
+<p>于是所求方程组的通解为</p>
+<p>$$k_1\boldsymbol{\eta}_1 + k_2\boldsymbol{\eta}_2 + k_3\boldsymbol{\eta}_3,$$</p>
+<p>其中 $k_1, k_2, k_3$ 为任意实数。</p>
+<p>当 $a \neq 0$ 时，</p>
+<p>$$\boldsymbol{B} \rightarrow \begin{pmatrix} 1+a &amp; 1 &amp; 1 &amp; 1 \\ -2 &amp; 1 &amp; 0 &amp; 0 \\ -3 &amp; 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \rightarrow \begin{pmatrix} a+10 &amp; 0 &amp; 0 &amp; 0 \\ -2 &amp; 1 &amp; 0 &amp; 0 \\ -3 &amp; 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix},$$</p>
+<p>可知 $a = -10$ 时，$r(\boldsymbol{A}) = 3 &lt; 4$，故方程组也有非零解，其同解方程组为</p>
+<p>$$\begin{cases} -2x_1 + x_2 = 0, \\ -3x_1 + x_3 = 0, \\ -4x_1 + x_4 = 0, \end{cases}$$</p>
+<p>由此得基础解系为 $\boldsymbol{\eta} = (1, 2, 3, 4)^T$，于是所求方程组的通解为 $k\boldsymbol{\eta}$，其中 $k$ 为任意常数。</p>
+<p>解法二　方程组的系数行列式</p>
+<p>$$|\boldsymbol{A}| = \begin{vmatrix} 1+a &amp; 1 &amp; 1 &amp; 1 \\ 2 &amp; 2+a &amp; 2 &amp; 2 \\ 3 &amp; 3 &amp; 3+a &amp; 3 \\ 4 &amp; 4 &amp; 4 &amp; 4+a \end{vmatrix} = (a+10)a^3.$$</p>
+<p>当 $|\boldsymbol{A}| = 0$，即 $a = 0$ 或 $a = -10$ 时，方程组有非零解。</p>
+<p>当 $a = 0$ 时，对系数矩阵 $\boldsymbol{A}$ 作初等变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ 2 &amp; 2 &amp; 2 &amp; 2 \\ 3 &amp; 3 &amp; 3 &amp; 3 \\ 4 &amp; 4 &amp; 4 &amp; 4 \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix},$$</p>
+<p>故方程组的同解方程组为</p>
+<p>$$x_1 + x_2 + x_3 + x_4 = 0.$$</p>
+<p>其基础解系为</p>
+<p>$$\boldsymbol{\eta}_1 = (-1, 1, 0, 0)^T, \quad \boldsymbol{\eta}_2 = (-1, 0, 1, 0)^T, \quad \boldsymbol{\eta}_3 = (-1, 0, 0, 1)^T.$$</p>
+<p>于是所求方程组的通解为</p>
+<p>$$x = k_1\boldsymbol{\eta}_1 + k_2\boldsymbol{\eta}_2 + k_3\boldsymbol{\eta}_3,$$</p>
+<p>其中 $k_1, k_2, k_3$ 为任意常数。</p>
+<p>当 $a = -10$ 时，对系数矩阵 $\boldsymbol{A}$ 作初等变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} -9 &amp; 1 &amp; 1 &amp; 1 \\ 2 &amp; -8 &amp; 2 &amp; 2 \\ 3 &amp; 3 &amp; -7 &amp; 3 \\ 4 &amp; 4 &amp; 4 &amp; -6 \end{pmatrix} \rightarrow \begin{pmatrix} -9 &amp; 1 &amp; 1 &amp; 1 \\ 20 &amp; -10 &amp; 0 &amp; 0 \\ 30 &amp; 0 &amp; -10 &amp; 0 \\ 40 &amp; 0 &amp; 0 &amp; -10 \end{pmatrix}$$</p>
+<p>$$\rightarrow \begin{pmatrix} -9 &amp; 1 &amp; 1 &amp; 1 \\ -2 &amp; 1 &amp; 0 &amp; 0 \\ -3 &amp; 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix} \rightarrow \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 0 \\ -2 &amp; 1 &amp; 0 &amp; 0 \\ -3 &amp; 0 &amp; 1 &amp; 0 \\ -4 &amp; 0 &amp; 0 &amp; 1 \end{pmatrix},$$</p>
+<p>故方程组的同解方程组为</p>
+<p>$$\begin{cases} -2x_1 + x_2 = 0, \\ -3x_1 + x_3 = 0, \\ -4x_1 + x_4 = 0, \end{cases}$$</p>
+<p>故方程组的基础解系为 $\boldsymbol{\eta} = (1, 2, 3, 4)^T$。于是所求方程组的通解为</p>
+<p>$$x = k\boldsymbol{\eta}$$</p>
+<p>其中 $k$ 为任意常数。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.18" data-pid="4.1.18">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.18】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设有向量组</p>
+<p>$$\boldsymbol{\alpha}_1 = (2, 3, 5)^T, \quad \boldsymbol{\alpha}_2 = (3, 7, 8)^T, \quad \boldsymbol{\alpha}_3 = (1, -6, 1)^T.$$</p>
+<p>试讨论向量组 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ 的线性相关性。若线性相关，则求出一组不全为零的数 $k_1, k_2, k_3$，使 $k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 + k_3\boldsymbol{\alpha}_3 = \boldsymbol{0}$。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设有一组数 $x_1, x_2, x_3$，使</p>
+<p>$$x_1\boldsymbol{\alpha}_1 + x_2\boldsymbol{\alpha}_2 + x_3\boldsymbol{\alpha}_3 = \boldsymbol{0},$$</p>
+<p>即</p>
+<p>$$\begin{cases} 2x_1 + 3x_2 + x_3 = 0, \\ 3x_1 + 7x_2 - 6x_3 = 0, \\ 5x_1 + 8x_2 + x_3 = 0. \end{cases}$$</p>
+<p>对此方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 2 &amp; 3 &amp; 1 \\ 3 &amp; 7 &amp; -6 \\ 5 &amp; 8 &amp; 1 \end{pmatrix} \xrightarrow{r_1 \leftrightarrow r_3} \begin{pmatrix} 5 &amp; 8 &amp; 1 \\ 3 &amp; 7 &amp; -6 \\ 2 &amp; 3 &amp; 1 \end{pmatrix} \xrightarrow{r_1 - r_3} \begin{pmatrix} 3 &amp; 5 &amp; 0 \\ 3 &amp; 7 &amp; -6 \\ 2 &amp; 3 &amp; 1 \end{pmatrix} \xrightarrow{r_2 + 6r_3} \begin{pmatrix} 3 &amp; 5 &amp; 0 \\ 15 &amp; 25 &amp; 0 \\ 2 &amp; 3 &amp; 1 \end{pmatrix}$$</p>
+<p>$$\xrightarrow{r_2 - 5r_1} \begin{pmatrix} 3 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 0 \\ 2 &amp; 3 &amp; 1 \end{pmatrix},$$</p>
+<p>由于 $r(\boldsymbol{A}) = 2 &lt; 3$，所以齐次线性方程组有非零解，从而 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ 线性相关。</p>
+<p>由 $3x_1 + 5x_2 = 0$，取 $x_2 = 3$，得 $x_1 = -5$，由第 3 个方程 $2x_1 + 3x_2 + x_3 = 0$ 得 $x_3 = 1$，即</p>
+<p>$$-5\boldsymbol{\alpha}_1 + 3\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3 = \boldsymbol{0}.$$</p>
+<p>于是 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ 线性相关，且 $\boldsymbol{\alpha}_3 = 5\boldsymbol{\alpha}_1 - 3\boldsymbol{\alpha}_2$。</p>
+<p>故 $x_1 = -5$, $x_2 = 3$, $x_3 = 1$ 为所求的一组不全为零的数（注：任意一组成比例的非零解均可）。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.19" data-pid="4.1.19">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.19】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{A} = \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 2 &amp; 4 &amp; -2 \\ -3 &amp; -3 &amp; a \end{pmatrix}$，且 $\boldsymbol{A}$ 的秩 $r(\boldsymbol{A}) = 2$，求 $a$ 的值并求齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的通解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对 $\boldsymbol{A}$ 作初等变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 2 &amp; 4 &amp; -2 \\ -3 &amp; -3 &amp; a \end{pmatrix} \xrightarrow{r_2 - 2r_1} \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 0 &amp; 6 &amp; -4 \\ -3 &amp; -3 &amp; a \end{pmatrix} \xrightarrow{r_3 + 3r_1} \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 0 &amp; 6 &amp; -4 \\ 0 &amp; -6 &amp; a+3 \end{pmatrix} \xrightarrow{r_3 + r_2} \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 0 &amp; 6 &amp; -4 \\ 0 &amp; 0 &amp; a-1 \end{pmatrix}.$$</p>
+<p>由 $r(\boldsymbol{A}) = 2$，得 $a = 1$。</p>
+<p>即 $\boldsymbol{A} = \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 2 &amp; 4 &amp; -2 \\ -3 &amp; -3 &amp; 1 \end{pmatrix}$，且有</p>
+<p>$$\boldsymbol{A} \rightarrow \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 0 &amp; 6 &amp; -4 \\ 0 &amp; 0 &amp; 0 \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; -1 &amp; 1 \\ 0 &amp; 1 &amp; -\dfrac{2}{3} \\ 0 &amp; 0 &amp; 0 \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; 0 &amp; \dfrac{1}{3} \\ 0 &amp; 1 &amp; -\dfrac{2}{3} \\ 0 &amp; 0 &amp; 0 \end{pmatrix},$$</p>
+<p>取 $x_3 = 3$，得方程组的基础解系为</p>
+<p>$$\boldsymbol{\xi}_1 = (-1, 2, 3)^T,$$</p>
+<p>故方程组的通解为 $x = k(-1, 2, 3)^T$，其中 $k$ 为任意常数。</p>
+<p>点评：判断一组向量是否线性相关，可以转化为判断以这些向量为列（行）的矩阵的秩是否小于向量的个数，或者转化为判断对应的齐次线性方程组是否有非零解。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.20" data-pid="4.1.20">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求解齐次线性方程组</p>
+<p>$$\begin{cases} x_1 + 2x_2 + x_3 - x_4 = 0, \\ 3x_1 + 6x_2 - x_3 - 3x_4 = 0, \\ 5x_1 + 10x_2 + x_3 - 5x_4 = 0. \end{cases}$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.18.p184" data-pid="4.1.18.p184">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.18】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知齐次线性方程组</p>
+<p>$$\begin{cases} ax_1 + bx_2 + \cdots + bx_n = 0, \\ bx_1 + ax_2 + \cdots + bx_n = 0, \\ \cdots\cdots \\ bx_1 + bx_2 + \cdots + ax_n = 0, \end{cases}$$</p>
+<p>其中 $a$、$b$ 是不全为零的实数。试问 $a$、$b$ 满足何种关系时，方程组仅有零解？$a$、$b$ 满足何种关系时，方程组有无穷多解？并在有无穷多解时求其通解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} a &amp; b &amp; b &amp; \cdots &amp; b \\ b &amp; a &amp; b &amp; \cdots &amp; b \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ b &amp; b &amp; b &amp; \cdots &amp; a \end{pmatrix}, \quad |\boldsymbol{A}| = \begin{vmatrix} a &amp; b &amp; \cdots &amp; b \\ b &amp; a &amp; \cdots &amp; b \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ b &amp; b &amp; \cdots &amp; a \end{vmatrix} = [a+(n-1)b](a-b)^{n-1}.$$</p>
+<p>（1）当 $a \neq b$ 且 $a \neq (1-n)b$ 时，$|\boldsymbol{A}| \neq 0$，即 $r(\boldsymbol{A}) = n$，方程组仅有零解。</p>
+<p>（2）当 $a = b \neq 0$ 时，$r(\boldsymbol{A}) = 1$，此时</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} a &amp; a &amp; a &amp; \cdots &amp; a \\ a &amp; a &amp; a &amp; \cdots &amp; a \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ a &amp; a &amp; a &amp; \cdots &amp; a \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \end{pmatrix},$$</p>
+<p>所以原方程组的同解方程组为</p>
+<p>$$x_1 + x_2 + \cdots + x_n = 0.$$</p>
+<p>取自由未知数 $x_2, x_3, \cdots, x_n$，得基础解系</p>
+<p>$$\boldsymbol{\alpha}_1 = (1, -1, 0, \cdots, 0)^T, \quad \boldsymbol{\alpha}_2 = (1, 0, -1, \cdots, 0)^T, \quad \cdots, \quad \boldsymbol{\alpha}_{n-1} = (1, 0, 0, \cdots, -1)^T,$$</p>
+<p>于是通解为</p>
+<p>$$\boldsymbol{x} = k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 + \cdots + k_{n-1}\boldsymbol{\alpha}_{n-1},$$</p>
+<p>其中 $k_1, k_2, \cdots, k_{n-1}$ 为任意常数。</p>
+<p>（3）当 $a = (1-n)b$ 时，$r(\boldsymbol{A}) = n-1$，此时原方程组的同解方程组为</p>
+<p>$$\begin{cases} x_1 = x_n, \\ x_2 = x_n, \\ \cdots\cdots \\ x_{n-1} = x_n. \end{cases}$$</p>
+<p>故方程组的基础解系为 $\boldsymbol{\beta} = (1, 1, \cdots, 1)^T$，于是通解为 $\boldsymbol{x} = k\boldsymbol{\beta}$（$k$ 为任意常数）。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.19.p184" data-pid="4.1.19.p184">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.19】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知齐次线性方程组</p>
+<p>$$\begin{cases} x_1 + x_2 + \cdots + x_{n-1} + x_n = 0, \\ x_2 + x_3 + \cdots + x_{n-1} + x_n = 0, \\ \cdots\cdots \\ x_{n-1} + x_n = 0. \end{cases}$$</p>
+<p>试求此方程组的解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 1 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ 0 &amp; 1 &amp; \cdots &amp; 1 &amp; 1 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 1 \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 1 \end{pmatrix} \rightarrow \cdots$$</p>
+<p>（变换链中间各矩阵的印刷细节无法完全辨认 <span class="unclear">[?]</span>，解答接下页）</p>
+<p>$$\begin{pmatrix} 1 &amp; 0 &amp; \cdots &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; \cdots &amp; 0 &amp; 0 \\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots \\ 0 &amp; 0 &amp; \cdots &amp; 1 &amp; 1 \end{pmatrix}$$</p>
+<p>即同解方程组为</p>
+<p>$$\begin{cases} x_1 = 0, \\ \cdots\cdots \\ x_{n-1} + x_n = 0. \end{cases}$$</p>
+<p>基础解系为 $\boldsymbol{\xi} = (0, 0, \cdots, 0, 1, -1)^T$，通解为 $x = k\boldsymbol{\xi}$，其中 $k$ 为任意常数。</p>
+<p>点评：判断 $n$ 个未知数 $m$ 个方程的齐次线性方程组解的情况，只须对系数矩阵作初等行变换，设 $r(\boldsymbol{A}) = r$，若 $r = n$，则方程组只有零解；若 $r &lt; n$，则方程组有无穷多解，其基础解系含有 $n - r$ 个解向量。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.20.p185" data-pid="4.1.20.p185">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>求解齐次线性方程组</p>
+<p>$$\begin{cases} x_1 + 2x_2 + x_3 - x_4 = 0, \\ 3x_1 + 6x_2 - x_3 - 3x_4 = 0, \\ 5x_1 + 10x_2 + x_3 - 5x_4 = 0. \end{cases}$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 3 &amp; 6 &amp; -1 &amp; -3 \\ 5 &amp; 10 &amp; 1 &amp; -5 \end{pmatrix} \xrightarrow{\substack{r_2 - 3r_1 \\ r_3 - 5r_1}} \begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; -4 &amp; 0 \\ 0 &amp; 0 &amp; -4 &amp; 0 \end{pmatrix} \xrightarrow{r_3 - r_2} \begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; -4 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}$$</p>
+<p>$$\xrightarrow{r_2 \times \left(-\dfrac{1}{4}\right)} \begin{pmatrix} 1 &amp; 2 &amp; 1 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \xrightarrow{r_1 - r_2} \begin{pmatrix} 1 &amp; 2 &amp; 0 &amp; -1 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix},$$</p>
+<p>即同解方程组为</p>
+<p>$$\begin{cases} x_1 + 2x_2 - x_4 = 0, \\ x_3 = 0. \end{cases}$$</p>
+<p>取 $x_2 = 1$, $x_4 = 0$，得 $\boldsymbol{\eta}_1 = (-2, 1, 0, 0)^T$；取 $x_2 = 0$, $x_4 = 1$，得 $\boldsymbol{\eta}_2 = (1, 0, 0, 1)^T$。</p>
+<p>故方程组的通解为</p>
+<p>$$\boldsymbol{x} = k_1\boldsymbol{\eta}_1 + k_2\boldsymbol{\eta}_2,$$</p>
+<p>其中 $k_1, k_2$ 为任意常数。</p>
+<p>点评：<span class="unclear">[?]</span></p>
+<p>点评：像本题这样将方程组转化为矩阵，再对矩阵作初等行变换求解，是求齐次线性方程组的基础解系的基本方法。<span class="unclear">[?]</span></p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.1.21" data-pid="4.1.21">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.21】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知齐次线性方程组</p>
+<p>$$\begin{cases} 2x_1 + x_2 - x_3 + x_4 = 0, \\ x_1 + 10x_2 - x_3 - x_4 = 0, \\ x_1 + x_2 - 3x_3 - x_4 = 0. \end{cases}$$</p>
+<p>试求此方程组的解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对方程组的系数矩阵 $\boldsymbol{A}$ 作初等行变换，有</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix} 2 &amp; 1 &amp; -1 &amp; 1 \\ 1 &amp; 10 &amp; -1 &amp; -1 \\ 1 &amp; 1 &amp; -3 &amp; -1 \end{pmatrix} \xrightarrow{r_1 \leftrightarrow r_3} \begin{pmatrix} 1 &amp; 1 &amp; -3 &amp; -1 \\ 2 &amp; 1 &amp; -1 &amp; 1 \\ 1 &amp; 10 &amp; -1 &amp; -1 \end{pmatrix}$$</p>
+<p>$$\xrightarrow{r_2 - 2r_1} \begin{pmatrix} 1 &amp; 1 &amp; -3 &amp; -1 \\ 0 &amp; -1 &amp; 5 &amp; 3 \\ 1 &amp; 10 &amp; -1 &amp; -1 \end{pmatrix} \xrightarrow{r_3 - r_1} \begin{pmatrix} 1 &amp; 1 &amp; -3 &amp; -1 \\ 0 &amp; -1 &amp; 5 &amp; 3 \\ 0 &amp; 9 &amp; 2 &amp; 0 \end{pmatrix}$$</p>
+<p>$$\xrightarrow{r_3 + 9r_2} \begin{pmatrix} 1 &amp; 1 &amp; -3 &amp; -1 \\ 0 &amp; -1 &amp; 5 &amp; 3 \\ 0 &amp; 0 &amp; 47 &amp; 27 \end{pmatrix} \xrightarrow{r_3 \times \dfrac{1}{47}} \begin{pmatrix} 1 &amp; 1 &amp; -3 &amp; -1 \\ 0 &amp; -1 &amp; 5 &amp; 3 \\ 0 &amp; 0 &amp; 1 &amp; \dfrac{27}{47} \end{pmatrix},$$</p>
+<p>即同解方程组为</p>
+<p>$$\begin{cases} x_1 + x_2 - 3x_3 - x_4 = 0, \\ x_2 - 5x_3 - 3x_4 = 0, \\ x_3 + \dfrac{27}{47}x_4 = 0. \end{cases}$$</p>
+<p>取 $x_4 = 47$，得</p>
+<p>$$\boldsymbol{\xi} = (1, 2, -27, 47)^T$$</p>
+<p>（编者注：经验算，印刷结果与同解方程组不自洽；按同解方程组应为 $\boldsymbol{\xi} = (-40, 6, -27, 47)^T$，此处按原书印刷照录.）</p>
+<p>通解为 $x = k\boldsymbol{\xi}$，其中 $k$ 为任意常数。</p></div>
+</div></div>
+</article>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型1：非齐次线性方程组解的性质和判定</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-4.2.1" data-pid="4.2.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{A}$ 是 $m \times n$ 矩阵，非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 有解的充分条件是______.</p>
+<p>（A）秩 $r(\boldsymbol{A}) = m$</p>
+<p>（B）$\boldsymbol{A}$ 的行向量组线性相关</p>
+<p>（C）秩 $r(\boldsymbol{A}) = n$</p>
+<p>（D）$\boldsymbol{A}$ 的列向量组线性相关</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 有解的充分必要条件是 $r(\boldsymbol{A}) = r(\bar{\boldsymbol{A}})$，由于 $\bar{\boldsymbol{A}} = (\boldsymbol{A}, \boldsymbol{b})$ 是 $m \times (n+1)$ 矩阵，有</p>
+<p>$$r(\boldsymbol{A}) \leq r(\bar{\boldsymbol{A}}) \leq \min\{m, n+1\},$$</p>
+<p>故当 $r(\boldsymbol{A}) = m$ 时，必有 $r(\bar{\boldsymbol{A}}) = m$，即 $r(\boldsymbol{A}) = r(\bar{\boldsymbol{A}})$，此时 $\boldsymbol{Ax} = \boldsymbol{b}$ 有解；而当 $r(\boldsymbol{A}) &lt; m$ 时，$r(\bar{\boldsymbol{A}})$ 可能大于 $r(\boldsymbol{A})$，方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 无解.</p>
+<p>故应选（A）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.2" data-pid="4.2.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的系数矩阵是 $4 \times 5$ 矩阵，且 $\boldsymbol{A}$ 的行向量组线性无关，则下列结论正确的是______.</p>
+<p>（A）齐次线性方程组 $\boldsymbol{A}^T\boldsymbol{x} = \boldsymbol{0}$ 只有零解</p>
+<p>（B）齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 有非零解</p>
+<p>（C）对任意列向量 $\boldsymbol{b}$，方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 必有无穷多解</p>
+<p>（D）对任意列向量 $\boldsymbol{b}$，方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 必无解</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>选项（A）正确：因 $\boldsymbol{A}^T$ 是 $5 \times 4$ 矩阵，而 $r(\boldsymbol{A}^T) = r(\boldsymbol{A}) = 4$，所以齐次线性方程组 $\boldsymbol{A}^T\boldsymbol{x} = \boldsymbol{0}$ 只有零解.</p>
+<p>选项（B）正确：因 $\boldsymbol{A}$ 是 $4 \times 5$ 矩阵，$r(\boldsymbol{A}) = 4 &lt; 5$，所以齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 有非零解.</p>
+<p>选项（C）正确：因 $\boldsymbol{A}$ 的行向量组线性无关，添加分量后仍线性无关，故 $r(\boldsymbol{A}, \boldsymbol{b}) = r(\boldsymbol{A}) = 4 &lt; 5$，对任意列向量 $\boldsymbol{b}$，方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 必有无穷多解.</p>
+<p>选项（D）错误.</p>
+<p>故本题应选（A）（B）（C）.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.3" data-pid="4.2.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{A}$ 为 $n$ 阶实矩阵，$\boldsymbol{A}^T$ 是 $\boldsymbol{A}$ 的转置矩阵，则对于线性方程组（Ⅰ）：$\boldsymbol{Ax} = \boldsymbol{0}$ 和（Ⅱ）：$\boldsymbol{A}^T\boldsymbol{Ax} = \boldsymbol{0}$，必存在______.</p>
+<p>（A）（Ⅱ）的解是（Ⅰ）的解，（Ⅰ）的解也是（Ⅱ）的解</p>
+<p>（B）（Ⅱ）的解是（Ⅰ）的解，但（Ⅰ）的解不是（Ⅱ）的解</p>
+<p>（C）（Ⅰ）的解不是（Ⅱ）的解，（Ⅱ）的解是（Ⅰ）的解</p>
+<p>（D）（Ⅰ）的解不是（Ⅱ）的解，（Ⅱ）的解也不是（Ⅰ）的解</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>若 $\boldsymbol{x}_1$ 是（Ⅰ）$\boldsymbol{Ax} = \boldsymbol{0}$ 的解，显然 $\boldsymbol{x}_1$ 也是（Ⅱ）$\boldsymbol{A}^T\boldsymbol{Ax} = \boldsymbol{0}$ 的解；</p>
+<p>若 $\boldsymbol{x}$ 是（Ⅱ）的解，将 $\boldsymbol{x}$ 代入得 $\boldsymbol{A}^T\boldsymbol{Ax} = \boldsymbol{0}$，式子两边左乘 $\boldsymbol{x}^T$，得 $\boldsymbol{x}^T\boldsymbol{A}^T\boldsymbol{Ax} = \boldsymbol{0}$，即 $(\boldsymbol{Ax})^T(\boldsymbol{Ax}) = \boldsymbol{0}$，得 $\boldsymbol{Ax} = \boldsymbol{0}$，即 $\boldsymbol{x}$ 是（Ⅰ）的解.</p>
+<p>故（Ⅰ）与（Ⅱ）同解，应选（A）.</p>
+<p>点评：$\boldsymbol{x}^T\boldsymbol{A}^T\boldsymbol{Ax} = (\boldsymbol{Ax})^T(\boldsymbol{Ax}) = \|\boldsymbol{Ax}\|^2$，故由 $\boldsymbol{A}^T\boldsymbol{Ax} = \boldsymbol{0}$ 可得 $\boldsymbol{Ax} = \boldsymbol{0}$（$\boldsymbol{A}$ 为实矩阵）.</p>
+<p>$$\boldsymbol{A}^T=\begin{pmatrix}1 &amp; a_1 &amp; a_1^2 &amp; \cdots &amp; a_1^{n-1}\\ 1 &amp; a_2 &amp; a_2^2 &amp; \cdots &amp; a_2^{n-1}\\ 1 &amp; a_3 &amp; a_3^2 &amp; \cdots &amp; a_3^{n-1}\\ \cdots &amp; \cdots &amp; \cdots &amp; \cdots &amp; \cdots\\ 1 &amp; a_n &amp; a_n^2 &amp; \cdots &amp; a_n^{n-1}\end{pmatrix},$$</p>
+<p>当 $a_i \neq a_j\,(i \neq j,\, i,j = 1,2,\cdots,n)$ 时，$|\boldsymbol{A}^T| \neq 0$，故线性方程组 $\boldsymbol{A}^T\boldsymbol{x} = \boldsymbol{b}$ 的解可由克莱姆法则求得，即</p>
+<p>$$x_1 = \dfrac{D_1}{|\boldsymbol{A}^T|} = \dfrac{|\boldsymbol{A}^T|}{|\boldsymbol{A}^T|} = 1,\quad x_i = \dfrac{D_i}{|\boldsymbol{A}^T|} = \dfrac{0}{|\boldsymbol{A}^T|} = 0,\quad (i = 2,3,\cdots,n)$$</p>
+<p>因此 $\boldsymbol{A}^T\boldsymbol{x} = \boldsymbol{b}$ 的解为 $(1,0,\cdots,0)^T$.</p>
+<p>故应填 $(1,0,\cdots,0)^T$.</p>
+<p>点评：本题的矩阵 $\boldsymbol{A}$ 具有范德蒙行列式的形式，因此首先联想到结论"$n$ 阶范德蒙行列式 $|\boldsymbol{A}| \neq 0$ 充要条件是 $a_1, a_2, \cdots, a_n$ 互不相同"。从而知 $\boldsymbol{A}^T\boldsymbol{x} = \boldsymbol{b}$ 有唯一解，既然本题联系到范德蒙行列式，而求唯一解的方法中克莱姆法则与行列式有关，故使用克莱姆法则求解。</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型3：求通解</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-4.2.11" data-pid="4.2.11">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.11】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{A} = (a_{ij})_{3\times 3}$ 是实正交矩阵，且 $a_{11} = 1,\ \boldsymbol{b} = (1,0,0)^T$，则线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解是＿＿＿＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $\boldsymbol{AA}^T = \boldsymbol{E}$ 知 $|\boldsymbol{A}| = \pm 1 \neq 0$，从而 $\boldsymbol{A}$ 可逆.</p>
+<p>故方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解为 $\boldsymbol{x} = \boldsymbol{A}^{-1}\boldsymbol{b} = \boldsymbol{A}^T\boldsymbol{b}$.</p>
+<p>设</p>
+<p>$$\boldsymbol{A} = \begin{pmatrix}1 &amp; a_{12} &amp; a_{13}\\ a_{21} &amp; a_{22} &amp; a_{23}\\ a_{31} &amp; a_{32} &amp; a_{33}\end{pmatrix},$$</p>
+<p>由 $\boldsymbol{AA}^T = \boldsymbol{E}$ 知 $1^2 + a_{12}^2 + a_{13}^2 = 1$，从而 $a_{12} = a_{13} = 0$.</p>
+<p>所以</p>
+<p>$$\boldsymbol{x} = \boldsymbol{A}^T\boldsymbol{b} = \begin{pmatrix}1 &amp; a_{21} &amp; a_{31}\\ 0 &amp; a_{22} &amp; a_{32}\\ 0 &amp; a_{23} &amp; a_{33}\end{pmatrix}\begin{pmatrix}1\\ 0\\ 0\end{pmatrix} = \begin{pmatrix}1\\ 0\\ 0\end{pmatrix}.$$</p>
+<p>点评：本题考查求非齐次线性方程组唯一解的方法——解矩阵方程求唯一解，求解过程中，根据 $\boldsymbol{AA}^T = \boldsymbol{E}$，知 $\boldsymbol{A}^{-1} = \boldsymbol{A}^T$.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 $(1,0,0)^T$.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.12" data-pid="4.2.12">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.12】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{\beta}_1, \boldsymbol{\beta}_2$ 是非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的两个不同的解，$\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ 是对应齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的基础解系，$k_1, k_2$ 为任意常数，则方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的通解是＿＿＿＿＿.</p>
+<p>（A）$k_1\boldsymbol{\alpha}_1 + k_2\boldsymbol{\alpha}_2 + \dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2}$</p>
+<p>（B）$k_1(\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2) + k_2(\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2) + \dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2}$</p>
+<p>（C）$k_1\boldsymbol{\alpha}_1 + k_2(\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2) + \dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2}$</p>
+<p>（D）$k_1(\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2) + k_2(\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2) + \dfrac{\boldsymbol{\beta}_1 + \boldsymbol{\beta}_2}{2}$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>非齐次线性方程组的通解为：对应齐次方程组的通解 + 非齐次方程组的特解.</p>
+<p>$\boldsymbol{A}\boldsymbol{\alpha}_1 = \boldsymbol{0}$，$\boldsymbol{A}\boldsymbol{\alpha}_2 = \boldsymbol{0}$，故 $\boldsymbol{A}(\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2) = \boldsymbol{0}$，即 $\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解；</p>
+<p>$\boldsymbol{A}\boldsymbol{\beta}_1 = \boldsymbol{b}$，$\boldsymbol{A}\boldsymbol{\beta}_2 = \boldsymbol{b}$，故 $\boldsymbol{A}\dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2} = \boldsymbol{0}$，即 $\dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2}$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解（不是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的特解）；$\boldsymbol{A}\dfrac{\boldsymbol{\beta}_1 + \boldsymbol{\beta}_2}{2} = \boldsymbol{b}$，即 $\dfrac{\boldsymbol{\beta}_1 + \boldsymbol{\beta}_2}{2}$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的特解.</p>
+<p>故（A）（C）中特解不正确，可排除；</p>
+<p>又 $\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2$ 与 $\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2$ 线性无关（不同时为零），故（B）（D）中对应齐次线性方程组的通解为 $k_1(\boldsymbol{\alpha}_1 + \boldsymbol{\alpha}_2) + k_2(\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2)$；</p>
+<p>（解答接下页）</p>
+<p>而（B）中 $\dfrac{\boldsymbol{\beta}_1 - \boldsymbol{\beta}_2}{2}$ 不是特解，排除（B）；</p>
+<p>故应选（D）.</p>
+<p>点评（1）求非齐次线性方程组通解的方法灵活性较强，一般情况下答案不唯一，其主要原因是当非齐次线性方程组有无穷多解时，其通解结构中的非齐次特解不唯一，对应的导出组基础解系不唯一.</p>
+<p>（2）此类题目的解题过程应注重理论分析，尽量避免作大量的机械运算，要学会善于使用题目所给条件在少计算的前提下得结果.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.13" data-pid="4.2.13">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.13】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2, \boldsymbol{\alpha}_3$ 是四元非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的三个解向量，且 $r(\boldsymbol{A}) = 3$；若 $\boldsymbol{\alpha}_1 = (1,2,3,4)^T$，$\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3 = (0,1,2,3)^T$，$c$ 表示任意常数，则线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的通解 $\boldsymbol{x} =$ ＿＿＿＿.</p>
+<p>（A）$(1,2,3,4)^T + c(1,1,1,1)^T$</p>
+<p>（B）$(1,2,3,4)^T + c(0,1,2,3)^T$</p>
+<p>（C）$(1,2,3,4)^T + c(2,3,4,5)^T$</p>
+<p>（D）$(1,2,3,4)^T + c(3,4,5,6)^T$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$2\boldsymbol{\alpha}_1 - (\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3) = (\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2) + (\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_3)$ 是导出组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，计算得</p>
+<p>$$2\boldsymbol{\alpha}_1 - (\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3) = (2,4,6,8)^T - (0,1,2,3)^T = (2,3,4,5)^T,$$</p>
+<p>它是导出组的一个非零解.</p>
+<p>由 $r(\boldsymbol{A}) = 3,\ n = 4$，得基础解系含 $n - r(\boldsymbol{A}) = 4 - 3 = 1$ 个解向量，故 $2\boldsymbol{\alpha}_1 - (\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3) = (2,3,4,5)^T$ 就是基础解系.</p>
+<p>又 $\boldsymbol{\alpha}_1$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的特解，故通解为</p>
+<p>$$\boldsymbol{x} = \boldsymbol{\alpha}_1 + c[2\boldsymbol{\alpha}_1 - (\boldsymbol{\alpha}_2 + \boldsymbol{\alpha}_3)]$$</p>
+<p>即</p>
+<p>$$\boldsymbol{x} = (1,2,3,4)^T + c(2,3,4,5)^T.$$</p>
+<p>点评：本题考查非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 与其导出组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解的关系及通解结构定理，解题关键有两个：一是当 $r(\boldsymbol{A}) = 3$ 时（未知数个数为 4），导出组 $\boldsymbol{Ax} = \boldsymbol{0}$ 的基础解系含 $n - r(\boldsymbol{A}) = 1$ 个解向量；二是 $\boldsymbol{\alpha}_1$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的特解，$\boldsymbol{\alpha}_2 - \boldsymbol{\alpha}_1$ 为 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应选（C）.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.14" data-pid="4.2.14">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.14】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{x}_1, \boldsymbol{x}_2, \boldsymbol{x}_3$ 是四元非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的三个解向量，且 $r(\boldsymbol{A}) = 3$. 若 $\boldsymbol{x}_1 = (1,1,1,1)^T$，$\boldsymbol{x}_2 + \boldsymbol{x}_3 = (2,3,4,5)^T$，则方程组通解为＿＿＿＿.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>与上题类似.</p>
+<p>由于 $n - r(\boldsymbol{A}) = 4 - 3 = 1$，故方程组通解形式为 $\boldsymbol{\alpha} + k\boldsymbol{\eta}$.</p>
+<p>因为 $\boldsymbol{x}_1$ 是方程组 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解，故 $\boldsymbol{\alpha}$ 可取为 $\boldsymbol{x}_1$.</p>
+<p>如果 $\boldsymbol{\alpha}_1, \boldsymbol{\alpha}_2$ 是 $\boldsymbol{Ax} = \boldsymbol{b}$ 的解，则由 $\boldsymbol{A}\boldsymbol{\alpha}_1 = \boldsymbol{b}$，$\boldsymbol{A}\boldsymbol{\alpha}_2 = \boldsymbol{b}$ 知 $\boldsymbol{A}(\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2) = \boldsymbol{0}$，即 $\boldsymbol{\alpha}_1 - \boldsymbol{\alpha}_2$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，那么由</p>
+<p>$$\boldsymbol{A}(\boldsymbol{x}_2 + \boldsymbol{x}_3) = \boldsymbol{Ax}_2 + \boldsymbol{Ax}_3 = 2\boldsymbol{b},\quad \boldsymbol{A}(2\boldsymbol{x}_1) = 2\boldsymbol{b}$$</p>
+<p>而知 $\boldsymbol{A}(\boldsymbol{x}_2 + \boldsymbol{x}_3 - 2\boldsymbol{x}_1) = \boldsymbol{0}$，即 $(0,1,2,3)^T$ 是 $\boldsymbol{Ax} = \boldsymbol{0}$ 的解，所以，方程组的通解为：$(1,1,1,1)^T + k(0,1,2,3)^T$，$k$ 为任意常数.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.15" data-pid="4.2.15">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.15】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{\xi}_1 = (-9,1,2,11)^T$，$\boldsymbol{\xi}_2 = (1,-5,13,0)^T$，$\boldsymbol{\xi}_3 = (-7,-9,24,11)^T$ 是方程组</p>
+<p>$$\begin{cases}a_1x_1 + 7x_2 + a_3x_3 + x_4 = d_1,\\ 3x_1 + b_2x_2 + 2x_3 + 2x_4 = d_2,\\ 9x_1 + 4x_2 + x_3 + 7x_4 = 2\end{cases}$$</p>
+<p>的解，则该方程组的通解为＿＿＿＿＿.</p>
+<p>（解答接下页）</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$x_1 = 1$，$x_2 = -1 + k$，$x_3 = k$，其中 $k$ 为任意实数[或 $(x_1, x_2, x_3)^T = (1, -1, 0)^T + k(0, 1, 1)^T$，其中 $k$ 为任意实数。]</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.2.20" data-pid="4.2.20">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设线性方程组</p>
+<p>$$\begin{cases} x_1 + \lambda x_2 + \mu x_3 + x_4 = 0, \\ 2x_1 + x_2 + x_3 + 2x_4 = 0, \\ 3x_1 + (2 + \lambda)x_2 + (4 + \mu)x_3 + 4x_4 = 1, \end{cases}$$</p>
+<p>已知 $(1, -1, 1, -1)^T$ 是该方程组的一个解，试求方程组的全部解。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将 $(1, -1, 1, -1)^T$ 代入方程组，可得 $\lambda = \mu$。</p>
+<p>当 $\lambda = \mu$ 时，对方程组的增广矩阵施以初等行变换，有</p>
+<p>$$\bar{A} = \begin{pmatrix} 1 &amp; \lambda &amp; \lambda &amp; 1 &amp; 0 \\ 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0 \\ 3 &amp; 2 + \lambda &amp; 4 + \lambda &amp; 4 &amp; 1 \end{pmatrix} \rightarrow \begin{pmatrix} 1 &amp; 0 &amp; -2\lambda &amp; 1 - \lambda &amp; -\lambda \\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 2(2\lambda - 1) &amp; 2\lambda - 1 &amp; 2\lambda - 1 \end{pmatrix}.$$</p>
+<p>（1）当 $\lambda \neq \dfrac{1}{2}$ 时，有</p>
+<p>$$\bar{A} \rightarrow \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; -\dfrac{1}{2} &amp; -\dfrac{1}{2} \\ 0 &amp; 0 &amp; 1 &amp; \dfrac{1}{2} &amp; \dfrac{1}{2} \end{pmatrix},$$</p>
+<p>因为 $r(\bar{A}) = r(A) = 3 &lt; 4$，故方程组有无穷多解，全部解为</p>
+<p>$$(x_1, x_2, x_3, x_4)^T = \left(0, -\dfrac{1}{2}, \dfrac{1}{2}, 0\right)^T + k(-2, 1, -1, 2)^T, \quad k \text{ 为任意常数}.$$</p>
+<p>（2）当 $\lambda = \dfrac{1}{2}$ 时，有</p>
+<p>$$\bar{A} \rightarrow \begin{pmatrix} 1 &amp; 0 &amp; -1 &amp; \dfrac{1}{2} &amp; -\dfrac{1}{2} \\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix},$$</p>
+<p>因为 $r(\bar{A}) = r(A) = 2 &lt; 4$，故方程组有无穷多解，全部解为</p>
+<p>$$(x_1, x_2, x_3, x_4)^T = \left(-\dfrac{1}{2}, 1, 0, 0\right)^T + k_1(1, -3, 1, 0)^T + k_2(-1, -2, 0, 2)^T, \quad k_1, k_2 \text{ 为任意常数}.$$</p>
+<p>（3）当 $\lambda \neq \dfrac{1}{2}$ 时，由于全部解中 $x_2 = -\dfrac{1}{2} + k$，$x_3 = \dfrac{1}{2} - k$，要使 $x_2 = x_3$，只需</p>
+<p>$$-\dfrac{1}{2} + k = \dfrac{1}{2} - k,$$</p></div>
+</div></div>
+</article>
+</section>
+<nav class="chapter-nav">
+<a href="chapter-03.html">← 第三章　向量</a>
+<a href="chapter-05.html">第五章　矩阵的特征值与特征向量 →</a>
+</nav>
+</main></div>
+<button class="back-top" id="backTop" type="button" title="回到顶部">↑</button>
+<div class="float-nav">
+<button id="prevProb" type="button">‹ 上一题</button>
+<button id="nextProb" type="button">下一题 ›</button>
+</div>
+<script src="../assets/vendor/katex/katex.min.js"></script>
+<script src="../assets/vendor/katex/auto-render.min.js"></script>
+<script src="../assets/script.js"></script>
+</body></html>
