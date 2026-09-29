@@ -120,7 +120,7 @@
 <a href="#prob-5.3.21" data-pid="5.3.21">21</a>
 <a href="#prob-5.3.22" data-pid="5.3.22">22</a>
 <a href="#prob-5.3.23" data-pid="5.3.23">23</a>
-<a href="#prob-5.3.24" data-pid="5.3.24">24</a>
+<a href="#prob-5.3.14" data-pid="5.3.14">14</a>
 <a href="#prob-5.3.25" data-pid="5.3.25">25</a>
 <a href="#prob-5.3.26" data-pid="5.3.26">26</a>
 <a href="#prob-5.3.27" data-pid="5.3.27">27</a>
@@ -146,6 +146,7 @@
 <a href="#prob-5.4.8" data-pid="5.4.8">8</a>
 <a href="#prob-5.4.9" data-pid="5.4.9">9</a>
 <a href="#prob-5.4.10" data-pid="5.4.10">10</a>
+<a href="#prob-5.4.10.p296" data-pid="5.4.10.p296">10</a>
 <a href="#prob-5.4.11" data-pid="5.4.11">11</a>
 <a href="#prob-5.4.12" data-pid="5.4.12">12</a>
 <a href="#prob-5.4.13" data-pid="5.4.13">13</a>
@@ -168,8 +169,6 @@
 <a href="#prob-5.4.29" data-pid="5.4.29">29</a>
 <a href="#prob-5.4.26.p306" data-pid="5.4.26.p306">26</a>
 <a href="#prob-5.4.27.p306" data-pid="5.4.27.p306">27</a>
-<a href="#prob-5.4.28.p306" data-pid="5.4.28.p306">28</a>
-<a href="#prob-5.4.29.p306" data-pid="5.4.29.p306">29</a>
 <a href="#prob-5.4.30" data-pid="5.4.30">30</a>
 <a href="#prob-5.4.31" data-pid="5.4.31">31</a>
 <a href="#prob-5.4.30.p308" data-pid="5.4.30.p308">30</a>
@@ -193,11 +192,11 @@
 <div class="prob-grid">
 </div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 144 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 143 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第五章　矩阵的特征值与特征向量</h1>
-<p class="chapter-sub">共 144 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<p class="chapter-sub">共 143 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
 <section class="sec-block" id="sec-1">
 <h2 class="sec-heading">§1．矩阵的特征值与特征向量</h2>
 <article class="problem" id="prob-5.1.1" data-pid="5.1.1">
@@ -1974,6 +1973,40 @@
 <p>即若 $A$ 与 $B$ 相似，则应有 $A^2 = PB^2P^{-1} = O$，与 $A^2 \neq O$ 矛盾，故 $A$ 与 $B$ 不相似。</p></div>
 </div></div>
 </article>
+<article class="problem" id="prob-5.3.14" data-pid="5.3.14">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【3.14】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设矩阵 $A=\begin{pmatrix}0&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;0\\0&amp;0&amp;y&amp;1\\0&amp;0&amp;1&amp;2\end{pmatrix}$，</p>
+<p>(1) 已知 $A$ 的一个特征值为 3，试求 $y$；</p>
+<p>(2) 求矩阵 $P$，使 $(AP)^T(AP)$ 为对角矩阵.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) 因为</p>
+<p>$$|\lambda E-A|=\begin{vmatrix}\lambda&amp;-1&amp;0&amp;0\\-1&amp;\lambda&amp;0&amp;0\\0&amp;0&amp;\lambda-y&amp;-1\\0&amp;0&amp;-1&amp;\lambda-2\end{vmatrix}=(\lambda^2-1)\left[\lambda^2-(y+2)\lambda+2y-1\right],$$</p>
+<p>将 $\lambda=3$ 代入 $|\lambda E-A|=0$，解得 $y=2$，于是</p>
+<p>$$A=\begin{pmatrix}0&amp;1&amp;0&amp;0\\1&amp;0&amp;0&amp;0\\0&amp;0&amp;2&amp;1\\0&amp;0&amp;1&amp;2\end{pmatrix}.$$</p>
+<p>(2) 由 $A^T=A$，得 $(AP)^T(AP)=P^TA^2P$，而矩阵</p>
+<p>$$A^2 = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 5 &amp; 4 \\ 0 &amp; 0 &amp; 4 &amp; 5 \end{pmatrix}$$</p>
+<p>的特征值求得为 $\lambda_1 = 1$（三重），$\lambda_2 = 9$.</p>
+<p>对应于 $\lambda_1 = 1$ 的线性无关的特征向量为</p>
+<p>$$\alpha_1 = (1, 0, 0, 0)^T, \quad \alpha_2 = (0, 1, 0, 0)^T, \quad \alpha_3 = (0, 0, -1, 1)^T$$</p>
+<p>将其正交化、单位化，得</p>
+<p>$$\beta_1 = (1, 0, 0, 0)^T, \quad \beta_2 = (0, 1, 0, 0)^T, \quad \beta_3 = \left(0, 0, -\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)^T$$</p>
+<p>对应于 $\lambda_2 = 9$ 的线性无关的特征向量为</p>
+<p>$$\alpha_4 = (0, 0, 1, 1)^T$$</p>
+<p>将其单位化，得</p>
+<p>$$\beta_4 = \left(0, 0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)^T$$</p>
+<p>于是</p>
+<p>$$P = (\beta_1, \beta_2, \beta_3, \beta_4) = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ 0 &amp; 0 &amp; \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \end{pmatrix}$$</p>
+<p>则</p>
+<p>$$P^T A^2 P = (AP)^T (AP) = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 9 \end{pmatrix}$$</p></div>
+</div></div>
+</article>
 <article class="problem" id="prob-5.3.16" data-pid="5.3.16">
 <div class="prob-head">
 <span class="prob-no" title="点击复制题号">【3.16】</span>
@@ -2132,40 +2165,17 @@
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>设 $\lambda$ 为 $A$ 的任一特征值，则 $\lambda^2 = 2\lambda$，所以 $\lambda = 0$ 或 $\lambda = 2$.</p>
-<p>因为 $r(A) = 1$，$A$ 为实对称矩阵，故 $A$ 的特征值为 $2, 0, 0, 0$.</p>
-<p>又 $\operatorname{tr}(A) = 2$，<span class="unclear">[?]</span></p>
-<p><span class="unclear">[?]</span>（此段解答中间步骤无法可靠辨认）</p>
-<p>故 $A$ 的属于特征值 $2$ 的特征向量为 $\alpha = (1,1,1,1)^T$<span class="unclear">[?]</span>，所以</p>
-<p>$$A = \frac{1}{2}\begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 &amp; 1 \end{pmatrix}$$</p>
-<p><span class="unclear">[?]</span>（最终结果的确认度中等：特征向量 $(1,1,1,1)^T$ 与 $A=(1/2)J$ 型结论由解答读数与数学自洽性共同支持，建议对照原图核对）</p></div>
-</div></div>
-</article>
-<article class="problem" id="prob-5.3.24" data-pid="5.3.24">
-<div class="prob-head">
-<span class="prob-no" title="点击复制题号">【3.24】</span>
-<div class="prob-actions">
-<button class="btn-done" type="button">标记已做</button>
-<button class="btn-sol" type="button">收起解析</button>
-</div></div>
-<div class="prob-stem"><p>设 $A$ 为四阶实对称矩阵，且满足 $A^2 = 2A$，$r(A) = 1$，$\alpha = (1, 1, 1, 1)^T$<span class="unclear">[?]</span> 是 $A$ 的属于特征值 $2$<span class="unclear">[?]</span> 的特征向量，求 $A$<span class="unclear">[?]</span>（题干细节辨认度低，多个条件存在 <span class="unclear">[?]</span>，建议对照原图核对）</p></div>
-<hr class="prob-divider">
-<div class="prob-sol"><div class="sol-inner">
-<span class="sol-label">解 析</span>
-<div class="sol-body"><p>$$A^2 = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 5 &amp; 4 \\ 0 &amp; 0 &amp; 4 &amp; 5 \end{pmatrix}$$</p>
-<p>的特征值求得为 $\lambda_1 = 1$（三重），$\lambda_2 = 9$.</p>
-<p>对应于 $\lambda_1 = 1$ 的线性无关的特征向量为</p>
-<p>$$\alpha_1 = (1, 0, 0, 0)^T, \quad \alpha_2 = (0, 1, 0, 0)^T, \quad \alpha_3 = (0, 0, -1, 1)^T$$</p>
-<p>将其正交化、单位化，得</p>
-<p>$$\beta_1 = (1, 0, 0, 0)^T, \quad \beta_2 = (0, 1, 0, 0)^T, \quad \beta_3 = \left(0, 0, -\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)^T$$</p>
-<p>对应于 $\lambda_2 = 9$ 的线性无关的特征向量为</p>
-<p>$$\alpha_4 = (0, 0, 1, 1)^T$$</p>
-<p>将其单位化，得</p>
-<p>$$\beta_4 = \left(0, 0, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right)^T$$</p>
-<p>于是</p>
-<p>$$P = (\beta_1, \beta_2, \beta_3, \beta_4) = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; -\frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \\ 0 &amp; 0 &amp; \frac{1}{\sqrt{2}} &amp; \frac{1}{\sqrt{2}} \end{pmatrix}$$</p>
+<div class="sol-body"><p>由此得矩阵的特征值</p>
+<p>$$\lambda_1=\lambda_2=a+1,\qquad \lambda_3=a-2.$$</p>
+<p>对于特征值 $\lambda_1=\lambda_2=a+1$，可得对应的两个线性无关的特征向量</p>
+<p>$$\alpha_1=\begin{pmatrix}1\\1\\0\end{pmatrix},\qquad \alpha_2=\begin{pmatrix}1\\0\\1\end{pmatrix}.$$</p>
+<p>对于特征值 $\lambda_3=a-2$，可得对应的特征向量</p>
+<p>$$\alpha_3=\begin{pmatrix}-1\\1\\1\end{pmatrix}.$$</p>
+<p>令矩阵</p>
+<p>$$P=(\alpha_1,\alpha_2,\alpha_3)=\begin{pmatrix}1&amp;1&amp;-1\\1&amp;0&amp;1\\0&amp;1&amp;1\end{pmatrix},\qquad \Lambda=\begin{pmatrix}a+1&amp;0&amp;0\\0&amp;a+1&amp;0\\0&amp;0&amp;a-2\end{pmatrix},$$</p>
 <p>则</p>
-<p>$$P^T A^2 P = (AP)^T (AP) = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 &amp; 0 \\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 9 \end{pmatrix}$$</p></div>
+<p>$$P^{-1}AP=\Lambda=\begin{pmatrix}a+1&amp;0&amp;0\\0&amp;a+1&amp;0\\0&amp;0&amp;a-2\end{pmatrix}.$$</p>
+<p>$$|A-E|=|P\Lambda P^{-1}-PP^{-1}|=|P|\cdot|\Lambda-E|\cdot|P^{-1}|=\begin{vmatrix}a&amp;0&amp;0\\0&amp;a&amp;0\\0&amp;0&amp;a-3\end{vmatrix}=a^2(a-3).$$</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.3.25" data-pid="5.3.25">
@@ -2659,15 +2669,35 @@
 <div class="sol-body"><p><span class="unclear">[?]</span>（解答开头数行多次读取不一致，无法可靠辨认，涉及 $\xi_0=(1,\lambda_0,\lambda_0^2)^T$ <span class="unclear">[?]</span>，并出现如下范德蒙德型矩阵 <span class="unclear">[?]</span>）</p>
 <p>$$\begin{pmatrix}1&amp;1&amp;1\\1&amp;\lambda_0&amp;\lambda_0^2\\1&amp;\lambda_0^2&amp;\lambda_0^4\end{pmatrix}$$</p>
 <p>（本页解答未完，接下页）</p>
-<p>（【4.10】解答续）</p>
-<p>记 $f(\lambda)=\lambda^{n-1}+\lambda^{n-2}+\cdots+\lambda+1=\dfrac{\lambda^n-1}{\lambda-1}$（$\lambda\neq 1$）．</p>
-<p>由 $\lambda_0\geq 2$，知 $\lambda_0^n-1\neq 0$，故 $f(\lambda_0)=\dfrac{\lambda_0^n-1}{\lambda_0-1}\neq 0$．</p>
-<p>从而</p>
-<p>$$E+A+A^2+\cdots+A^{n-1}=\begin{pmatrix}f(\lambda_0)&amp;f'(\lambda_0)&amp;\dfrac{f''(\lambda_0)}{2!}\\[4pt]0&amp;f(\lambda_0)&amp;f'(\lambda_0)\\[4pt]0&amp;0&amp;f(\lambda_0)\end{pmatrix},$$</p>
-<p>其中 $f(\lambda_0)\neq 0$，所以 $r(E+A+A^2+\cdots+A^{n-1})=3$．</p>
-<p>解法二：由 $\lambda_0\geq 2$，知 $A$ 的特征值全为 $\lambda_0$（$\lambda_0\neq 0,1$），故 $f(A)=E+A+\cdots+A^{n-1}$ 的特征值全为 $f(\lambda_0)\neq 0$，所以 $r(f(A))=3$．</p>
-<p>点评：此题利用矩阵多项式的特征值结论：若 $A$ 的特征值为 $\lambda$，则 $f(A)$ 的特征值为 $f(\lambda)$；以及矩阵多项式的秩与特征值是否为零的关系：若 $f(\lambda_0)\neq 0$，则矩阵满秩．</p></div>
-<div class="sol-answer"><span class="ans-tag">最终答案</span>$r(E+A+A^2+\cdots+A^{n-1})=3$．</div>
+<p>因此，$B+2E$ 的三个特征值分别为 $9,9,3$. 对应于特征值 $9$ 的全部特征向量为</p>
+<p>$$k_1P^{-1}\eta_1+k_2P^{-1}\eta_2=k_1\begin{pmatrix}1\\-1\\0\end{pmatrix}+k_2\begin{pmatrix}-1\\-1\\1\end{pmatrix},$$</p>
+<p>其中 $k_1,k_2$ 是不全为零的任意常数.</p>
+<p>对应于特征值 $3$ 的全部特征向量为</p>
+<p>$$k_3P^{-1}\eta_3=k_3\begin{pmatrix}0\\1\\1\end{pmatrix},$$</p>
+<p>其中 $k_3$ 是不为零的任意常数.</p>
+<p>点评：本题解法一使用具体矩阵求特征值、特征向量的计算方法，而解法二则使用抽象矩阵有关特征值、特征向量的结论求解. 比较可知，解法二较易，这也是此类问题的常用解题思路.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.4.10.p296" data-pid="5.4.10.p296">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\alpha=(1,k,1)^T$ 是矩阵 $A=\begin{pmatrix}2&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;2\end{pmatrix}$ 的逆矩阵 $A^{-1}$ 的特征向量. 求 $k$ 值和 $A^{-1}$ 的特征值，并问 $\alpha$ 是属于 $A^{-1}$ 的哪个特征值的特征向量.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设 $A^{-1}\alpha=\lambda\alpha$，则 $\lambda A\alpha=\alpha$，把 $\alpha,A$ 代入得：</p>
+<p>$$\lambda\begin{pmatrix}2&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;2\end{pmatrix}\begin{pmatrix}1\\k\\1\end{pmatrix}=\begin{pmatrix}1\\k\\1\end{pmatrix},$$</p>
+<p>展开得</p>
+<p>$$\lambda(k+3)=1,\qquad \lambda(2k+2)=k.\qquad (*)$$</p>
+<p>消去 $\lambda$ 得 $k^2+k-2=0$，从而得 $k_1=1$，$k_2=-2$，代入 $(*)$ 式，得 $\lambda_1=\dfrac{1}{4}$，$\lambda_2=1$.</p>
+<p>又 $A$ 的特征值和 $A^{-1}$ 的特征值互为倒数，故 $A$ 的特征值 $\mu_1=\dfrac{1}{\lambda_1}=4$，$\mu_2=\dfrac{1}{\lambda_2}=1$.</p>
+<p>由 $2+2+2=6=\mu_1+\mu_2+\mu_3=5+\mu_3$，故 $\mu_3=1$，即 $A^{-1}$ 的另一个特征值 $\lambda_3=\dfrac{1}{\mu_3}=1$. 所以 $A^{-1}$ 的特征值为 $1,1,\dfrac{1}{4}$.</p>
+<p>对于 $k_1=1$，有 $\lambda_1=\dfrac{1}{4}$，所以 $\alpha_1=(1,1,1)^T$ 是 $A^{-1}$ 的属于特征值 $\dfrac{1}{4}$ 的特征向量.</p>
+<p>对于 $k_2=-2$，有 $\lambda_2=1$，所以 $\alpha_2=(1,-2,1)^T$ 是 $A^{-1}$ 的属于特征值 $1$ 的特征向量.</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.11" data-pid="5.4.11">
@@ -2677,13 +2707,11 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>设 $\alpha_1,\alpha_2,\cdots,\alpha_{n-1}$ 是 $n$ 阶实对称矩阵 $A$ 的属于特征值 $1$ 的 $n-1$ 个线性无关特征向量，$\alpha=(1,1,\cdots,1)^T$ 是 $A$ 的属于特征值 $2$ 的特征向量<span class="unclear">[?]</span>，求 $\left|A-\dfrac{3}{2}E\right|$．</p></div>
+<div class="prob-stem"><p>设矩阵 $A=\begin{pmatrix}2&amp;1&amp;1\\1&amp;2&amp;1\\1&amp;1&amp;a\end{pmatrix}$ 可逆，向量 $\alpha=\begin{pmatrix}1\\b\\1\end{pmatrix}$ 是矩阵 $A^*$ 的一个特征向量，$\lambda$ 是 $\alpha$ 对应的特征值，其中 $A^*$ 是矩阵 $A$ 的伴随矩阵. 试求 $a,b$ 和 $\lambda$ 的值.</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>由实对称矩阵不同特征值的特征向量正交，知 $\alpha$ 与 $\alpha_1,\alpha_2,\cdots,\alpha_{n-1}$ 都正交，即齐次线性方程组</p>
-<p>$$\begin{pmatrix}\alpha_1^T\\ \alpha_2^T\\ \vdots\\ \alpha_{n-1}^T\end{pmatrix}x=0$$</p>
-<p>有非零解 $\alpha$，……（本页解答未完，接下页）</p>
+<div class="sol-body"><p>矩阵 $A^*$ 的属于特征值 $\lambda$ 的特征向量为 $\alpha$，由于矩阵 $A$ 可逆，故 $A^*$ 可逆，于是 $\lambda\neq 0$，$|A|$</p>
 <p>（【4.11】解答续）</p>
 <p>$\neq 0$，且 $A^*\alpha=\lambda\alpha$．</p>
 <p>两边同时左乘矩阵 $A$，得 $AA^*\alpha=\lambda A\alpha$，$A\alpha=\dfrac{|A|}{\lambda}\alpha$，即</p>
@@ -3067,14 +3095,24 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>设三阶矩阵 $A$ 的特征值为 $1,2,-3$，求 $|2A^{-1}+E|$ 的值．</p></div>
+<div class="prob-stem"><p>设 $A$ 是一个 $n$ 阶方阵，满足 $A^2=A$，$r(A)=r$ 且 $A$ 有两个不同的特征值.</p>
+<p>(1) 证明：$A$ 可对角化；</p>
+<p>(2) 求 $|A-2E|$ 的值.</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>由 $A$ 的特征值为 $1,2,-3$，知 $A^{-1}$ 的特征值为 $1,\dfrac{1}{2},-\dfrac{1}{3}$．</p>
-<p>故 $2A^{-1}+E$ 的特征值为</p>
-<p>$$2\cdot 1+1=3,\quad 2\cdot\frac{1}{2}+1=2,\quad 2\cdot\left(-\frac{1}{3}\right)+1=\frac{1}{3}.$$</p></div>
-<div class="sol-answer"><span class="ans-tag">最终答案</span>$|2A^{-1}+E|=3\times 2\times\dfrac{1}{3}=2$．</div>
+<div class="sol-body"><p>由 $A^2=A$ 可知 $A$ 的特征值只能是 $0$ 或 $1$；由于 $A$ 有两个不同的特征值，所以 $0$ 和 $1$ 都是 $A$ 的特征值.</p>
+<p>设特征值 $0$ 的重数为 $n-r$，特征值 $1$ 的重数为 $r$<span class="unclear">[?]</span>.</p>
+<p>对于特征值 $0$：又 $r(A)=r$，齐次方程组 $Ax=0$ 的基础解系含 $n-r$ 个向量，它们是 $A$ 的属于特征值 $0$ 的线性无关的特征向量.</p>
+<p>$$n=r(E)=r((E-A)+A)\leq r(E-A)+r(A)=r(E-A)+r,$$</p>
+<p>得 $r(E-A)=n-r$，属于特征值 $1$ 的线性无关的特征向量有 $r$ 个<span class="unclear">[?]</span>.</p>
+<p>于是 $A$ 恰有 $n$ 个线性无关的特征向量，故 $A$ 可对角化.</p>
+<p>取属于特征值 $1$ 的 $r$ 个线性无关特征向量 $x_1,x_2,\cdots,x_r$，属于特征值 $0$ 的 $n-r$ 个线性无关特征向量 $x_{r+1},\cdots,x_n$，令</p>
+<p>$$P=(x_1,x_2,\cdots,x_r,x_{r+1},\cdots,x_n),$$</p>
+<p>则</p>
+<p>$$P^{-1}AP=\begin{pmatrix}E_r&amp;O\\O&amp;O\end{pmatrix}.$$</p>
+<p>(2) 由 (1) 知存在可逆矩阵 $P$，使 $P^{-1}AP=\begin{pmatrix}E_r&amp;O\\O&amp;O\end{pmatrix}$，</p>
+<p>$$|A-2E|=|P|\left|\begin{pmatrix}E_r&amp;O\\O&amp;O\end{pmatrix}-2E\right||P^{-1}|=|-E_r|\cdot|-2E_{n-r}|=(-1)^r(-2)^{n-r}=(-1)^n2^{n-r}.$$</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.27" data-pid="5.4.27">
@@ -3098,28 +3136,17 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>设 $\lambda=2$ 是非奇异矩阵 $A$ 的特征值，求矩阵 $\left(\dfrac{1}{3}A^{2}\right)^{-1}$ 的一个特征值．</p></div>
+<div class="prob-stem"><p>如果 $n$ 阶矩阵满足 $(A-aE)(A-bE)=O$，其中 $a\neq b$，则 $A$ 可对角化.</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>由 $\lambda=2$ 是 $A$ 的特征值，知 $A^{2}$ 的特征值为 $\lambda^{2}=4$，$\left(\dfrac{1}{3}A^{2}\right)$ 的特征值为 $\dfrac{4}{3}$，从而 $\left(\dfrac{1}{3}A^{2}\right)^{-1}$ 的特征值为 $\dfrac{3}{4}$．</p></div>
+<div class="sol-body"><p>由 $(A-aE)(A-bE)=O$，有 $|A-aE|=0$ 或 $|A-bE|=0$，</p>
+<p>（【4.29】解答续）</p>
+<p>知 $\alpha_1,\alpha_2$ 是方程组 $Ax=0$ 的基础解系，故 $A$ 的特征值为 $\lambda_1=\lambda_2=0$．</p>
+<p><span class="unclear">[?]</span>（本页上部关于 $\lambda_3$ 的推导段无法可靠辨认，仅可确认结论为 $\lambda_3\neq 0$）</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.28" data-pid="5.4.28">
-<div class="prob-head">
-<span class="prob-no" title="点击复制题号">【4.28】</span>
-<div class="prob-actions">
-<button class="btn-done" type="button">标记已做</button>
-<button class="btn-sol" type="button">收起解析</button>
-</div></div>
-<div class="prob-stem"><p>已知 $\alpha=(1,2,3)^T$，<span class="unclear">[?]</span>（本行后半无法辨认），求三阶矩阵 $A$ 的三个特征值<span class="unclear">[?]</span>．</p></div>
-<hr class="prob-divider">
-<div class="prob-sol"><div class="sol-inner">
-<span class="sol-label">解 析</span>
-<div class="sol-body"><p><span class="unclear">[?]</span>（本页【4.28】解答区经多轮放大仍无法可靠辨认，含 $\alpha,A\alpha,A^{2}\alpha$ 线性无关的论证及特征值推导，数字无法确认，不作誊抄）</p></div>
-</div></div>
-</article>
-<article class="problem" id="prob-5.4.28.p306" data-pid="5.4.28.p306">
 <div class="prob-head">
 <span class="prob-no" title="点击复制题号">【4.28】</span>
 <div class="prob-actions">
@@ -3144,23 +3171,10 @@
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>[注] 本页图像与 p305 完全相同（经 MD5 校验：XD.pdf 该处存在成对重复页，原书此处的真实页面内容在本 PDF 中缺失）。以下为该图像的转写，同 p305。</p></div>
-</div></div>
-</article>
-<article class="problem" id="prob-5.4.29.p306" data-pid="5.4.29.p306">
-<div class="prob-head">
-<span class="prob-no" title="点击复制题号">【4.29】</span>
-<div class="prob-actions">
-<button class="btn-done" type="button">标记已做</button>
-<button class="btn-sol" type="button">收起解析</button>
-</div></div>
-<div class="prob-stem"><p><span class="unclear">[?]</span>（题号在本页下部出现，题干涉及三阶实对称矩阵及向量条件<span class="unclear">[?]</span>，具体内容无法可靠辨认，解答接下页）</p></div>
-<hr class="prob-divider">
-<div class="prob-sol"><div class="sol-inner">
-<span class="sol-label">解 析</span>
-<div class="sol-body"><p>（【4.29】解答续）</p>
-<p>知 $\alpha_1,\alpha_2$ 是方程组 $Ax=0$ 的基础解系，故 $A$ 的特征值为 $\lambda_1=\lambda_2=0$．</p>
-<p><span class="unclear">[?]</span>（本页上部关于 $\lambda_3$ 的推导段无法可靠辨认，仅可确认结论为 $\lambda_3\neq 0$）</p></div>
+<div class="sol-body"><p>令 $P=(x_1,x_2,\cdots,x_n)=$</p>
+<p>$$\begin{pmatrix}-a_2&amp;-a_3&amp;\cdots&amp;-a_n&amp;a_1\\ a_1&amp;0&amp;\cdots&amp;0&amp;a_2\\ 0&amp;a_1&amp;\cdots&amp;0&amp;a_3\\ \vdots&amp;\vdots&amp;&amp;\vdots&amp;\vdots\\ 0&amp;0&amp;\cdots&amp;a_1&amp;a_n\end{pmatrix},$$</p>
+<p>则</p>
+<p>$$P^{-1}BP=\begin{pmatrix}0&amp;&amp;&amp;&amp;\\&amp;0&amp;&amp;&amp;\\&amp;&amp;\ddots&amp;&amp;\\&amp;&amp;&amp;0&amp;\\&amp;&amp;&amp;&amp;\sum_{i=1}^{n}a_i^2\end{pmatrix}$$</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.30" data-pid="5.4.30">
@@ -3187,14 +3201,16 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>设 $\alpha=(1,2,1)^T$<span class="unclear">[?]</span>，$A\alpha=2\alpha$<span class="unclear">[?]</span>，……（题干后半在本页无法可靠辨认，问法<span class="unclear">[?]</span>）</p></div>
+<div class="prob-stem"><p>已知 $A$ 是三阶实对称矩阵，$\xi_1=(-1,1,0)^T$，$\xi_2=(-1,0,1)^T$ 是齐次线性方程组 $Ax=0$ 的两个解向量，且 $A\xi_3=3\xi_3$，$\xi_3=(1,1,1)^T$，求 $A$ 及 $|A+2E|$.</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>由 $A\alpha=2\alpha$ 知 $\alpha$ 是 $A$ 的属于特征值 $2$ 的特征向量．</p>
-<p>由 $A$ 为实对称矩阵，属于不同特征值的特征向量正交，设 $\beta=(x_1,x_2,x_3)^T$ 与 $\alpha$ 正交，即 $\alpha^T\beta=0$：</p>
-<p>$$x_1+2x_2+x_3=0,$$</p>
-<p>求得基础解系为 $\xi_1=(2,-1,0)^T<span class="unclear">[?]</span>$，$\xi_2=(1,0,-1)^T<span class="unclear">[?]</span>$．……（后续构造 $A=(\eta_1,\eta_2,\alpha)\operatorname{diag}(\cdots)(\eta_1,\eta_2,\alpha)^{-1}$，具体矩阵数字无法辨认<span class="unclear">[?]</span>）</p></div>
+<div class="sol-body"><p>取 $P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}-1&amp;-1&amp;1\\1&amp;0&amp;1\\0&amp;1&amp;1\end{pmatrix}$，则</p>
+<p>$$P^{-1}AP=\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;3\end{pmatrix},$$</p>
+<p>$$P^{-1}=\begin{pmatrix}-\dfrac{1}{3}&amp;\dfrac{2}{3}&amp;-\dfrac{1}{3}\\[2mm]-\dfrac{1}{3}&amp;-\dfrac{1}{3}&amp;\dfrac{2}{3}\\[2mm]\dfrac{1}{3}&amp;\dfrac{1}{3}&amp;\dfrac{1}{3}\end{pmatrix},$$</p>
+<p>所以</p>
+<p>$$A=P\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;3\end{pmatrix}P^{-1}=\begin{pmatrix}1&amp;1&amp;1\\1&amp;1&amp;1\\1&amp;1&amp;1\end{pmatrix},$$</p>
+<p>$$|A+2E|=\begin{vmatrix}3&amp;1&amp;1\\1&amp;3&amp;1\\1&amp;1&amp;3\end{vmatrix}=20.$$</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.31" data-pid="5.4.31">
@@ -3211,10 +3227,9 @@
 <div class="sol-body"><p>证：设 $Ax_1=\lambda_1 x_1$，$Ax_2=\lambda_2 x_2$，$\lambda_1\neq\lambda_2$．</p>
 <p>$$\lambda_1(x_1,x_2)=(Ax_1,x_2)=(x_1,Ax_2)=\lambda_2(x_1,x_2),$$</p>
 <p>于是 $(\lambda_1-\lambda_2)(x_1,x_2)=0$，由 $\lambda_1\neq\lambda_2$，所以 $(x_1,x_2)=0$，即 $x_1$ 与 $x_2$ 正交．原命题得证．</p>
-<p>[注] 本页图像与 p307 完全相同（经 MD5 校验：XD.pdf 该处存在成对重复页，原书此处的真实页面内容在本 PDF 中缺失）。以下为该图像的转写，同 p307。</p>
-<p>（【4.29】解答续）</p>
-<p>知 $\alpha_1,\alpha_2$ 是方程组 $Ax=0$ 的基础解系，故 $A$ 的特征值为 $\lambda_1=\lambda_2=0$．</p>
-<p><span class="unclear">[?]</span>（本页上部关于 $\lambda_3$ 的推导段无法可靠辨认，仅可确认结论为 $\lambda_3\neq 0$）</p></div>
+<p>$$B^T=(P^{-1})^T\begin{pmatrix}\sqrt[b]{\lambda_1}&amp;&amp;&amp;\\&amp;\sqrt[b]{\lambda_2}&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\sqrt[b]{\lambda_n}\end{pmatrix}P^T=P\begin{pmatrix}\sqrt[b]{\lambda_1}&amp;&amp;&amp;\\&amp;\sqrt[b]{\lambda_2}&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\sqrt[b]{\lambda_n}\end{pmatrix}P^{-1}=B,$$</p>
+<p>因此 $B$ 为实对称矩阵.</p>
+<p>点评：本题关键是把 $A$ 写成形式 $P\Lambda P^{-1}$，且 $\lambda_i$ 都为实数，可以开任意奇数次方.</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-5.4.31.p308" data-pid="5.4.31.p308">
@@ -3224,13 +3239,17 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>证明：设 $A$ 为实对称矩阵，$x_1,x_2$ 分别是 $A$ 的属于特征值 $\lambda_1,\lambda_2$ 的特征向量，且 $\lambda_1\neq\lambda_2$．求证：$x_1$ 与 $x_2$ 正交．</p></div>
+<div class="prob-stem"><p>已知 $\eta=(1,2,1)^T$，$A\eta=2\eta$，$A$ 是实对称矩阵，且 $\lambda_1=\lambda_2=0<span class="unclear">[?]</span>$，$\lambda_3=2<span class="unclear">[?]</span>$（此条件另一遍放大读为 $r(A)=2<span class="unclear">[?]</span>$），求 $A$ 及 $|A+2E|$.</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>证：设 $Ax_1=\lambda_1 x_1$，$Ax_2=\lambda_2 x_2$，$\lambda_1\neq\lambda_2$．</p>
-<p>$$\lambda_1(x_1,x_2)=(Ax_1,x_2)=(x_1,Ax_2)=\lambda_2(x_1,x_2),$$</p>
-<p>于是 $(\lambda_1-\lambda_2)(x_1,x_2)=0$，由 $\lambda_1\neq\lambda_2$，所以 $(x_1,x_2)=0$，即 $x_1$ 与 $x_2$ 正交．原命题得证．</p>
+<div class="sol-body"><p>$\eta$ 是 $A$ 的属于特征值 $2$ 的特征向量.</p>
+<p>设 $\beta=(x_1,x_2,x_3)^T$ 与 $\eta$ 正交，即 $\eta^T\beta=0$，得</p>
+<p>$$x_1+2x_2+x_3=0,$$</p>
+<p>基础解系为 $\xi_1=(-2,1,0)^T$，$\xi_2=(-1,0,1)^T$.</p>
+<p>将 $\xi_1,\xi_2$ 正交化，得</p>
+<p>$$\beta_1=\xi_1=(-2,1,0)^T,$$</p>
+<p>$$\beta_2=\xi_2-\dfrac{(\xi_2,\beta_1)}{(\beta_1,\beta_1)}\beta_1=(-1,0,1)^T-\dfrac{2}{5}(-2,1,0)^T=\left(-\dfrac{1}{5},-\dfrac{2}{5},1\right)^T<span class="unclear">[?]</span>,$$</p>
 <p>得其基础解系 $\xi_1=(0,1,0)^T$，$\xi_2=(-1,0,1)^T$。于是取</p>
 <p>$$P=(\xi_1,\xi_2,\xi_3),$$</p>
 <p>则</p>
