@@ -106,6 +106,7 @@
 <a href="#prob-4.4.3" data-pid="4.4.3">3</a>
 <a href="#prob-4.4.4" data-pid="4.4.4">4</a>
 <a href="#prob-4.4.5" data-pid="4.4.5">5</a>
+<a href="#prob-4.4.11" data-pid="4.4.11">11</a>
 <a href="#prob-4.4.12" data-pid="4.4.12">12</a>
 <a href="#prob-4.4.13" data-pid="4.4.13">13</a>
 <a href="#prob-4.4.14" data-pid="4.4.14">14</a>
@@ -141,11 +142,11 @@
 <div class="prob-grid">
 </div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 100 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 101 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第四章　线性方程组</h1>
-<p class="chapter-sub">共 100 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<p class="chapter-sub">共 101 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
 <section class="sec-block" id="sec-1">
 <h2 class="sec-heading">§1．齐次线性方程组</h2>
 <article class="problem" id="prob-4.1.1" data-pid="4.1.1">
@@ -1995,8 +1996,61 @@
 <p>当 $a = -\dfrac{n(n+1)}{2}$ 时，对系数矩阵 $A$ 作初等行变换，有</p>
 <p>$$A = \begin{pmatrix} 1-\dfrac{n(n+1)}{2} &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ 2 &amp; 2-\dfrac{n(n+1)}{2} &amp; 2 &amp; \cdots &amp; 2 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ n &amp; n &amp; n &amp; \cdots &amp; n-\dfrac{n(n+1)}{2} \end{pmatrix} \to \begin{pmatrix} 1-\dfrac{n(n+1)}{2} &amp; 1 &amp; 1 &amp; \cdots &amp; 1 \\ -2a &amp; a &amp; 0 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -na &amp; 0 &amp; 0 &amp; \cdots &amp; a \end{pmatrix} \to \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; \cdots &amp; 0 \\ -2 &amp; 1 &amp; 0 &amp; \cdots &amp; 0 \\ \vdots &amp; \vdots &amp; \vdots &amp; &amp; \vdots \\ -n &amp; 0 &amp; 0 &amp; \cdots &amp; 1 \end{pmatrix},$$</p>
 <p>故方程组的同解方程组为</p>
-<p>（本页至此截断，同解方程组及基础解系见下页）</p></div>
+<p>（本页至此截断，同解方程组及基础解系见下页）</p>
+<p>$$ \begin{aligned} &amp;-2x_1+x_2=0,\\ &amp;-3x_1+x_3=0,\\ &amp;\cdots\cdots\\ &amp;-nx_1+x_n=0, \end{aligned} $$</p>
+<p>由此得基础解系为 $\eta=(1,2,\dots,n)^T$，于是方程组的通解为 $k\eta$，其中 $k$ 为任意常数。</p></div>
 <div class="sol-answer"><span class="ans-tag">最终答案</span>故 $a \neq 2$，$b = 4$.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.11" data-pid="4.4.11">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.11】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设线性方程组</p>
+<p>$$ \begin{aligned} &amp;x_1+\lambda x_2+\mu x_3+x_4=0,\\ &amp;2x_1+x_2+x_3+2x_4=0,\\ &amp;3x_1+(2+\lambda)x_2+(4+\mu)x_3+4x_4=1. \end{aligned} $$</p>
+<p>已知 $(1,-1,1,-1)^T$ 是该方程组的一个解. 试求</p>
+<p>(1) 方程组的全部解，并用对应的齐次线性方程组的基础解系表示全部解；</p>
+<p>(2) 该方程组满足 $x_2=x_3$ 的全部解.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>将 $(1,-1,1,-1)^T$ 代入方程组，得</p>
+<p>$$1-\lambda+\mu-1=0.$$</p>
+<p>从而得 $\lambda=\mu$. 对增广矩阵作初等行变换</p>
+<p>$$ \begin{pmatrix} 1 &amp; \lambda &amp; \lambda &amp; 1 &amp; 0\\ 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0\\ 3 &amp; 2+\lambda &amp; 4+\lambda &amp; 4 &amp; 1 \end{pmatrix} \to \begin{pmatrix} 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0\\ 2 &amp; 2 &amp; 4 &amp; 3 &amp; 1\\ 1 &amp; \lambda &amp; \lambda &amp; 1 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; 2\lambda-1 &amp; 2\lambda-1 &amp; 0 &amp; 0 \end{pmatrix}. $$</p>
+<p>(1) 若 $2\lambda-1=0$，对增广矩阵进一步作初等行变换，得</p>
+<p>$$ \begin{pmatrix} 2 &amp; 0 &amp; -2 &amp; 1 &amp; -1\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; -1 &amp; \frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}. $$</p>
+<p>方程组的通解为</p>
+<p>$$\left(-\frac{1}{2},1,0,0\right)^T+k_1(1,-3,1,0)^T+k_2\left(-\frac{1}{2},-1,0,1\right)^T,\ k_1,k_2\ \text{为任意常数}.$$</p>
+<p>若 $2\lambda-1\neq 0$，对增广矩阵进一步作初等行变换，得</p>
+<p>$$ \begin{pmatrix} 2 &amp; 1 &amp; 1 &amp; 2 &amp; 0\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 2 &amp; 0 &amp; 0 &amp; 2 &amp; 0\\ 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 2 &amp; 1 &amp; 1 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2} \end{pmatrix}. $$</p>
+<p>方程组的通解为</p>
+<p>$$\left(0,-\frac{1}{2},\frac{1}{2},0\right)^T+k\left(-1,\frac{1}{2},-\frac{1}{2},1\right)^T,\ k\ \text{为任意常数}.$$</p>
+<p>(2) 方法1：当 $2\lambda-1=0$ 时，$x_2=x_3$，即</p>
+<p>$$1-3k_1-k_2=k_1,$$</p>
+<p>从而</p>
+<p>$$k_2=1-4k_1.$$</p>
+<p>通解为</p>
+<p>$$\left(-\frac{1}{2},1,0,0\right)^T+k_1(1,-3,1,0)^T+(1-4k_1)\left(-\frac{1}{2},-1,0,1\right)^T,$$</p>
+<p>即</p>
+<p>$$(-1,0,0,1)^T+k_1(3,1,1,-4)^T,\ k_1\ \text{为任意常数}.$$</p>
+<p>当 $2\lambda-1\neq 0$ 时，$x_2=x_3$，即</p>
+<p>$$-\frac{1}{2}+\frac{1}{2}k=\frac{1}{2}-\frac{1}{2}k.$$</p>
+<p>解得 $k=1$.</p>
+<p>方程组的解为</p>
+<p>$$\left(0,-\frac{1}{2},\frac{1}{2},0\right)^T+\left(-1,\frac{1}{2},-\frac{1}{2},1\right)^T=(-1,0,0,1)^T.$$</p>
+<p>方法2：原方程组中加一个方程 $x_2-x_3=0$.</p>
+<p>当 $2\lambda-1=0$ 时，增广矩阵为</p>
+<p>$$ \begin{pmatrix} 1 &amp; 0 &amp; -1 &amp; \frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; -1 &amp; \frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 1 &amp; 3 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 4 &amp; 1 &amp; 1\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; \frac{3}{4} &amp; -\frac{1}{4}\\ 0 &amp; 1 &amp; 0 &amp; \frac{1}{4} &amp; \frac{1}{4}\\ 0 &amp; 0 &amp; 1 &amp; \frac{1}{4} &amp; \frac{1}{4}\\ 0 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \end{pmatrix}. $$</p>
+<p>方程组的通解为</p>
+<p>$$\left(-\frac{1}{4},\frac{1}{4},\frac{1}{4},0\right)^T+k\left(-\frac{3}{4},-\frac{1}{4},-\frac{1}{4},1\right)^T,\ k\ \text{为任意常数}.$$</p>
+<p>当 $2\lambda-1\neq 0$ 时，增广矩阵为</p>
+<p>$$ \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2}\\ 0 &amp; -1 &amp; 1 &amp; 0 &amp; 0 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2}\\ 0 &amp; 0 &amp; 1 &amp; -\frac{1}{2} &amp; -\frac{1}{2} \end{pmatrix} $$</p>
+<p>$$ \to \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0\\ 0 &amp; 1 &amp; 0 &amp; -\frac{1}{2} &amp; -\frac{1}{2}\\ 0 &amp; 0 &amp; 1 &amp; \frac{1}{2} &amp; \frac{1}{2}\\ 0 &amp; 0 &amp; 0 &amp; -1 &amp; -1 \end{pmatrix} \to \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 &amp; -1\\ 0 &amp; 1 &amp; 0 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 1 &amp; 0 &amp; 0\\ 0 &amp; 0 &amp; 0 &amp; 1 &amp; 1 \end{pmatrix}, $$</p>
+<p>方程组解为 $(-1,0,0,1)^T$.</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-4.4.12" data-pid="4.4.12">
@@ -2642,25 +2696,19 @@
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>$$\begin{cases}x_1+2x_2+3x_3=0,\\2x_1+3x_2+5x_3=0,\\x_1+x_2+ax_3=0.\end{cases}$$</p>
-<p>(Ⅰ) 求 $a$ 的值；</p>
-<p>(Ⅱ) <span class="unclear">[?]</span>（该行印刷模糊，多轮放大读数不一致，无法可靠转写）</p>
-<p>设 $B=(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3)$，由题设知</p>
-<p>$$A\boldsymbol{\beta}_j=\boldsymbol{0}\quad(j=1,2,3),$$</p>
-<p>其中</p>
-<p>$$A=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;a\end{pmatrix}.$$</p>
-<p>将三个向量等式合并成矩阵等式，得</p>
-<p>$$AB=A(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3)=(A\boldsymbol{\beta}_1,A\boldsymbol{\beta}_2,A\boldsymbol{\beta}_3)=O.$$</p>
-<p>由 $B\neq O$ 知 $B$ 的列向量组不全为零向量，且均为 $A\boldsymbol{x}=\boldsymbol{0}$ 的解，故 $A\boldsymbol{x}=\boldsymbol{0}$ 有非零解，$r(A)&lt;3$，即 $|A|=0$．</p>
-<p>$$|A|=\begin{vmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;a\end{vmatrix}=2-a=0,$$</p>
-<p>解得 $a=2$．</p>
-<p>当 $a=2$ 时，$r(A)=2&lt;3$，基础解系含 $3-2=1$ 个向量．</p>
-<p>$$A=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;2\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;3\\0&amp;-1&amp;-1\\0&amp;0&amp;0\end{pmatrix},$$</p>
-<p>取 $x_3=1$，得基础解系</p>
-<p>$$\boldsymbol{\xi}=(-1,-1,1)^{T}.$$</p>
-<p>于是</p>
-<p>$$B=(k_1\boldsymbol{\xi},k_2\boldsymbol{\xi},k_3\boldsymbol{\xi}),$$</p>
-<p>其中 $k_1,k_2,k_3$ 为不全为零的任意常数．</p></div>
+<div class="sol-body"><p>$$\begin{cases}x_1+2x_2-2x_3=0,\\ 2x_1-x_2+\lambda x_3=0,\\ 3x_1+x_2-x_3=0.\end{cases}$$</p>
+<p>（1）求 $\lambda$ 的值；</p>
+<p>（2）证明 $|B|=0$.</p>
+<p>（1）因为 $B\neq O$，故 $B$ 中至少有一列是非零向量，依题意，所给齐次线性方程组有非零解，故必有系数行列式</p>
+<p>$$|A|=\begin{vmatrix}1&amp;2&amp;-2\\ 2&amp;-1&amp;\lambda\\ 3&amp;1&amp;-1\end{vmatrix}=5(\lambda-1)=0,$$</p>
+<p>由此可得 $\lambda=1$.</p>
+<p>（2）证法一　当 $\lambda=1$ 时，矩阵</p>
+<p>$$A=\begin{pmatrix}1&amp;2&amp;-2\\ 2&amp;-1&amp;1\\ 3&amp;1&amp;-1\end{pmatrix}\neq O,$$</p>
+<p>$r(A)\geqslant 1$，则方程组 $Ax=0$ 基础解系中含线性无关解的个数 $\leqslant 3-1$，故 $B$ 的列向量组的秩小于等于 $2$，因此 $|B|=0$.</p>
+<p>证法二　设 $B$ 的列向量为 $\beta_1,\beta_2,\beta_3$，由题意 $A\beta_1=O$，$A\beta_2=O$，$A\beta_3=O$，则</p>
+<p>$$AB=A(\beta_1,\beta_2,\beta_3)=O.$$</p>
+<p>因为 $A\neq O$，故必有 $|B|=0$.</p>
+<p>否则，若 $|B|\neq 0$，则 $B$ 可逆，从而由 $AB=O$ 可得 $A=O$，与 $A\neq O$ 矛盾，故 $|B|=0$.</p></div>
 </div></div>
 </article>
 <article class="problem" id="prob-4.4.40" data-pid="4.4.40">
@@ -2670,17 +2718,19 @@
 <button class="btn-done" type="button">标记已做</button>
 <button class="btn-sol" type="button">收起解析</button>
 </div></div>
-<div class="prob-stem"><p>已知 $A=\begin{pmatrix}1&amp;2&amp;-2\\2&amp;1&amp;2\\2&amp;-2&amp;1\end{pmatrix}$，则 $A^{-1}=$______．</p>
-<p>(A) $\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\2&amp;-2&amp;1\end{pmatrix}$　(B) $\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\-2&amp;2&amp;1\end{pmatrix}$</p>
-<p>(C) $\dfrac{1}{9}\begin{pmatrix}-1&amp;-2&amp;-2\\-2&amp;-1&amp;2\\-2&amp;2&amp;-1\end{pmatrix}$　(D) $\dfrac{1}{9}\begin{pmatrix}-1&amp;-2&amp;-2\\-2&amp;-1&amp;2\\2&amp;-2&amp;-1\end{pmatrix}$</p></div>
+<div class="prob-stem"><p>设</p>
+<p>$$\alpha=\begin{pmatrix}1\\ 2\\ 1\end{pmatrix},\quad \beta=\begin{pmatrix}1\\ \tfrac{1}{2}\\ 0\end{pmatrix},\quad \gamma=\begin{pmatrix}0\\ 0\\ 8\end{pmatrix},\quad A=\alpha\beta^{\mathrm{T}},\quad B=\beta^{\mathrm{T}}\alpha,$$</p>
+<p>其中 $\beta^{\mathrm{T}}$ 是 $\beta$ 的转置，求解方程</p>
+<p>$$2B^2A^2X=A^4X+B^4X+\gamma.$$</p></div>
 <hr class="prob-divider">
 <div class="prob-sol"><div class="sol-inner">
 <span class="sol-label">解 析</span>
-<div class="sol-body"><p>本题主要考查逆矩阵概念、矩阵乘法和转置运算．</p>
-<p>由矩阵 $A$ 可知，$A$ 的第1行与第2列的对应元素乘积之和 $=1\times 2+2\times 1+(-2)\times 2=0$，即 $A$ 的第1行与第2列正交，即</p>
-<p>$$AA^{T}=\begin{pmatrix}9&amp;0&amp;0\\0&amp;9&amp;0\\0&amp;0&amp;9\end{pmatrix}=9E.$$</p>
-<p>于是 $A\cdot\dfrac{1}{9}A^{T}=E$，故 $A^{-1}=\dfrac{1}{9}A^{T}=\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\-2&amp;2&amp;1\end{pmatrix}$．</p>
-<p>故应选（B）．</p>
+<div class="sol-body"><p>由题设得</p>
+<p>$$A=\begin{pmatrix}1\\ 2\\ 1\end{pmatrix}\begin{pmatrix}1&amp;\tfrac{1}{2}&amp;0\end{pmatrix}=\begin{pmatrix}1&amp;\frac{1}{2}&amp;0\\ 2&amp;1&amp;0\\ 1&amp;\frac{1}{2}&amp;0\end{pmatrix},$$</p>
+<p>$$B=\begin{pmatrix}1&amp;\tfrac{1}{2}&amp;0\end{pmatrix}\begin{pmatrix}1\\ 2\\ 1\end{pmatrix}=2.$$</p>
+<p>又 $A^2=\alpha\beta^{\mathrm{T}}\alpha\beta^{\mathrm{T}}=\alpha(\beta^{\mathrm{T}}\alpha)\beta^{\mathrm{T}}=2A$，$A^4=8A$，代入原方程，得</p>
+<p>$$16Ax=8Ax+16X+\gamma,$$</p>
+<p>即</p>
 <p>$$8(A-2E)X=\boldsymbol{\gamma}.$$</p>
 <p>令 $X=(x_1,x_2,x_3)^{T}$，代入上式，得到非齐次线性方程组</p>
 <p>$$\begin{cases}-x_1+\frac{1}{2}x_2=0,\\ 2x_1-x_2=0,\\ x_1+\frac{1}{2}x_2-2x_3=1.\end{cases}$$</p>
