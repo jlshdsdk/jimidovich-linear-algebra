@@ -117,17 +117,35 @@
 <a href="#prob-4.4.20" data-pid="4.4.20">20</a>
 <a href="#prob-4.4.21" data-pid="4.4.21">21</a>
 <a href="#prob-4.4.22" data-pid="4.4.22">22</a>
+<a href="#prob-4.4.25" data-pid="4.4.25">25</a>
+<a href="#prob-4.4.26" data-pid="4.4.26">26</a>
+<a href="#prob-4.4.27" data-pid="4.4.27">27</a>
+<a href="#prob-4.4.28" data-pid="4.4.28">28</a>
+<a href="#prob-4.4.29" data-pid="4.4.29">29</a>
+<a href="#prob-4.4.30" data-pid="4.4.30">30</a>
+<a href="#prob-4.4.31" data-pid="4.4.31">31</a>
+<a href="#prob-4.4.32" data-pid="4.4.32">32</a>
+<a href="#prob-4.4.33" data-pid="4.4.33">33</a>
+<a href="#prob-4.4.34" data-pid="4.4.34">34</a>
+<a href="#prob-4.4.35" data-pid="4.4.35">35</a>
+<a href="#prob-4.4.36" data-pid="4.4.36">36</a>
+<a href="#prob-4.4.37" data-pid="4.4.37">37</a>
+<a href="#prob-4.4.38" data-pid="4.4.38">38</a>
+<a href="#prob-4.4.39" data-pid="4.4.39">39</a>
+<a href="#prob-4.4.40" data-pid="4.4.40">40</a>
+<a href="#prob-4.4.41" data-pid="4.4.41">41</a>
+<a href="#prob-4.4.42" data-pid="4.4.42">42</a>
 </div></div>
 <div class="sec-group">
 <a class="sec-link" href="#sec-5">§4. 综合提高题型</a>
 <div class="prob-grid">
 </div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 82 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 100 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第四章　线性方程组</h1>
-<p class="chapter-sub">共 82 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<p class="chapter-sub">共 100 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
 <section class="sec-block" id="sec-1">
 <h2 class="sec-heading">§1．齐次线性方程组</h2>
 <article class="problem" id="prob-4.1.1" data-pid="4.1.1">
@@ -2207,7 +2225,515 @@
 <p>$$A=\begin{pmatrix} 0&amp;1&amp;0&amp;0&amp;0\\ 0&amp;0&amp;1&amp;0&amp;0\\ 0&amp;0&amp;0&amp;1&amp;0\\ 0&amp;0&amp;0&amp;0&amp;1\\ 0&amp;0&amp;0&amp;0&amp;0 \end{pmatrix}\ <span class="unclear">[?]</span>,\qquad \lambda E-A=\begin{pmatrix} \lambda&amp;-1&amp;0&amp;0&amp;0\\ 0&amp;\lambda&amp;-1&amp;0&amp;0\\ 0&amp;0&amp;\lambda&amp;-1&amp;0\\ 0&amp;0&amp;0&amp;\lambda&amp;-1\\ 0&amp;0&amp;0&amp;0&amp;\lambda \end{pmatrix}\ <span class="unclear">[?]</span>$$</p>
 <p>$$|\lambda E-A|=\lambda^2(\lambda^3-\lambda-1)\ <span class="unclear">[?]</span>$$</p>
 <p>通解（基础解系/特解向量读数存疑）：</p>
-<p>$$x=k(0,1,0,0,0)^T+l(0,0,0,1,0)^T+(1,0,0,0,0)^T.\ <span class="unclear">[?]</span>$$</p></div>
+<p>$$x=k(0,1,0,0,0)^T+l(0,0,0,1,0)^T+(1,0,0,0,0)^T.\ <span class="unclear">[?]</span>$$</p>
+<p>$$k+\sum_{i=1}^{r}k_i=0,\tag{②}$$</p>
+<p>把②式代入①得</p>
+<p>$$-\sum_{i=1}^{r}k_i\boldsymbol{\alpha}_i=\boldsymbol{0}.$$</p>
+<p>由于 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_r$ 为 $Ax=\boldsymbol{0}$ 的基础解系，$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\cdots,\boldsymbol{\alpha}_r$ 必线性无关，所以 $k_1=k_2=\cdots=k_r=0$，把 $k_1=k_2=\cdots=k_r=0$ 代入②得：$k=0$.</p>
+<p>故向量组 $\boldsymbol{\beta},\boldsymbol{\beta}+\boldsymbol{\alpha}_1,\cdots,\boldsymbol{\beta}+\boldsymbol{\alpha}_r$ 线性无关.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.25" data-pid="4.4.25">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.25】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{\alpha}_1=(1,4,0,2)^T$，$\boldsymbol{\alpha}_2=(2,7,1,3)^T$，$\boldsymbol{\alpha}_3=(0,1,-1,a)^T$，$\boldsymbol{\beta}=(3,10,b,4)^T$.</p>
+<p>问：(1) $a,b$ 取何值时，$\boldsymbol{\beta}$ 不能由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示？</p>
+<p>(2) $a,b$ 取何值时，$\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示？并写出此表达式.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设 $x_1\boldsymbol{\alpha}_1+x_2\boldsymbol{\alpha}_2+x_3\boldsymbol{\alpha}_3=\boldsymbol{\beta}$，则有方程组</p>
+<p>$$\begin{cases} x_1+2x_2=3,\\ 4x_1+7x_2+x_3=10,\\ x_2-x_3=b,\\ 2x_1+3x_2+ax_3=4, \end{cases}$$</p>
+<p>对方程组的增广矩阵施以初等行变换，</p>
+<p>$$\overline{A}=\begin{pmatrix}1&amp;2&amp;0&amp;3\\4&amp;7&amp;1&amp;10\\0&amp;1&amp;-1&amp;b\\2&amp;3&amp;a&amp;4\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;0&amp;3\\0&amp;1&amp;-1&amp;2\\0&amp;1&amp;-1&amp;b\\0&amp;-1&amp;a&amp;-2\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;0&amp;3\\0&amp;1&amp;-1&amp;2\\0&amp;0&amp;a-1&amp;0\\0&amp;0&amp;0&amp;b-2\end{pmatrix}.$$</p>
+<p>所以</p>
+<p>(1) 当 $b\neq 2$ 时，$r(A)\neq r(\overline{A})$，方程组无解，从而 $\boldsymbol{\beta}$ 不能由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示.</p>
+<p>(2) 当 $b=2$ 时，$r(A)=r(\overline{A})$，方程组有解，从而 $\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示.</p>
+<p>（ⅰ）当 $a=1$ 时，</p>
+<p>$$\overline{A}\to\begin{pmatrix}1&amp;2&amp;0&amp;3\\0&amp;1&amp;-1&amp;2\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}\to\begin{pmatrix}1&amp;0&amp;2&amp;-1\\0&amp;1&amp;-1&amp;2\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix},$$</p>
+<p>原方程组可变为</p>
+<p>$$\begin{cases} x_1=-2x_3-1,\\ x_2=x_3+2. \end{cases}$$</p>
+<p>所以方程组的通解为</p>
+<p>$$k\begin{pmatrix}-2\\1\\1\end{pmatrix}+\begin{pmatrix}-1\\2\\0\end{pmatrix},$$</p>
+<p>从而 $\boldsymbol{\beta}=(-2k-1)\boldsymbol{\alpha}_1+(k+2)\boldsymbol{\alpha}_2+k\boldsymbol{\alpha}_3$，$k$ 为任意常数.</p>
+<p>（ⅱ）当 $a\neq 1$ 时，</p>
+<p>$$\overline{A}=\begin{pmatrix}1&amp;2&amp;0&amp;3\\4&amp;7&amp;1&amp;10\\0&amp;1&amp;-1&amp;2\\2&amp;3&amp;a&amp;4\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;0&amp;3\\0&amp;-1&amp;1&amp;-2\\0&amp;0&amp;a-1&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;0&amp;3\\0&amp;-1&amp;1&amp;-2\\0&amp;0&amp;1&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}.$$</p>
+<p>从而 $r(A)=r(\overline{A})=3$，方程组有唯一解，从而 $\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示，且表示式唯一．</p>
+<p>原方程组可变为</p>
+<p>$$\begin{cases}x_1+2x_2=3,\\-x_2+x_3=-2,\\x_3=0,\end{cases}$$</p>
+<p>解得 $x_1=3,\ x_2=-2,\ x_3=0$.<span class="unclear">[?]</span></p>
+<p>从而 $\boldsymbol{\beta}=3\boldsymbol{\alpha}_1-2\boldsymbol{\alpha}_2+0\boldsymbol{\alpha}_3$，即 $\boldsymbol{\beta}=3\boldsymbol{\alpha}_1-2\boldsymbol{\alpha}_2$.<span class="unclear">[?]</span></p>
+<p>从而 $\boldsymbol{\beta}=(3,10,2,4)^T$<span class="unclear">[?]</span>，</p>
+<p>$(3,10,2,4)^T=-\boldsymbol{\alpha}_1+2\boldsymbol{\alpha}_2+0\boldsymbol{\alpha}_3$<span class="unclear">[?]</span>（页面上以竖直列向量对照排印，个别分量无法辨认）．</p>
+<p>（ⅰ）当 $a=1$ 时，线性方程组的通解为 $k(-2,1,1)^T+(-1,2,0)^T$，从而 $\boldsymbol{\beta}=(-2k-1)\boldsymbol{\alpha}_1+(k+2)\boldsymbol{\alpha}_2+k\boldsymbol{\alpha}_3$，$k$ 为任意常数；</p>
+<p>（ⅱ）当 $a\neq 1$ 时，线性方程组有唯一解，从而 $\boldsymbol{\beta}=3\boldsymbol{\alpha}_1-2\boldsymbol{\alpha}_2$．<span class="unclear">[?]</span></p>
+<p>所以无论 $a$ 取何值，只要 $b=2$，$\boldsymbol{\beta}$ 都可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.26" data-pid="4.4.26">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.26】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\boldsymbol{\alpha}_1=(1,a,b)^T$，$\boldsymbol{\alpha}_2=(1,1,1)^T$，$\boldsymbol{\alpha}_3=(c,0,0)^T$，$\boldsymbol{\beta}=(1,1,c)^T$，三条平面直线的方程（即）</p>
+<p>$$(1):a_1x+b_1y=c_1,\ (2):a_2x+b_2y=c_2,\ (3):a_3x+b_3y=c_3,$$</p>
+<p>其中 $a_i^2+b_i^2\neq 0$，$i=1,2,3$，试讨论这三条直线的位置关系．<span class="unclear">[?]</span>（题干问句部分两种读取并存，另一读取为"试讨论 $a,b,c$ 的关系，使 $\boldsymbol{\beta}$ 可以表示为 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 的线性组合"）</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$x_1\begin{pmatrix}1\\a\\b\end{pmatrix}+x_2\begin{pmatrix}1\\1\\1\end{pmatrix}+x_3\begin{pmatrix}c\\0\\0\end{pmatrix}=\begin{pmatrix}1\\1\\c\end{pmatrix}$$</p>
+<p>对方程组的增广矩阵施以初等行变换，</p>
+<p>$$\begin{pmatrix}1&amp;a&amp;b&amp;1\\1&amp;1&amp;1&amp;1\\c&amp;0&amp;0&amp;c\end{pmatrix}\to\begin{pmatrix}1&amp;a&amp;b&amp;1\\0&amp;1-a&amp;1-b&amp;0\\0&amp;-ac&amp;-bc&amp;0\end{pmatrix}\to\begin{pmatrix}1&amp;a&amp;b&amp;1\\0&amp;1-a&amp;1-b&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>即 $r_3+c r_2\to r_3$，得</p>
+<p>$$\begin{pmatrix}1&amp;a&amp;b&amp;1\\0&amp;1-a&amp;1-b&amp;0\\0&amp;c(1-a)&amp;c(1-b)&amp;0\end{pmatrix}\to\begin{pmatrix}1&amp;a&amp;b&amp;1\\0&amp;1-a&amp;1-b&amp;0\\0&amp;0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>（变换链中第四个矩阵第三行元素的两种读法反复变化，无法可靠确认<span class="unclear">[?]</span>）</p>
+<p>（1）当 $c=0$ 时，$\boldsymbol{\beta}=(1,1,0)$，原方程组即为</p>
+<p>$$x_2+ay=1,\ x+y+z=1,<span class="unclear">[?]</span>\ 0=0$$</p>
+<p>此时 $r(A)=r(\overline{A})=2$，方程组有无穷多解，$\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示，但表示法不唯一（任何两条直线的交点在第三条直线上<span class="unclear">[?]</span>）．</p>
+<p>（2）当 $a=b$ 时，$r(A)=r(\overline{A})=1$<span class="unclear">[?]</span>，$\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示，且表示法有无穷多种（两条直线（或三条直线）重合<span class="unclear">[?]</span>）．</p>
+<p>（3）当 $c\neq 0$ 且 $a\neq b$ 时，$r(A)=r(\overline{A})=3$，方程组有唯一解，$\boldsymbol{\beta}$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 唯一线性表示（三条直线相交于一点<span class="unclear">[?]</span>）．</p>
+<p>$$\begin{pmatrix}1&amp;1&amp;0&amp;2&amp;m+1\\0&amp;0&amp;1&amp;1&amp;1\\0&amp;0&amp;0&amp;0&amp;m+2\\0&amp;0&amp;0&amp;0&amp;0\end{pmatrix}.$$</p>
+<p>从而 $\lambda^2-(m+1)\lambda-(m+2)=0$[内容超出图像可辨认范围]，$\lambda=0,1,10$.</p>
+<p>$\lambda=0$（即 $m+1=0,m+2=2<span class="unclear">[?]</span>$），$\lambda=1$（即 $m+1=1,m+2=2<span class="unclear">[?]</span>$），$\lambda=10$（即 $m+2=10,m=8$）.</p>
+<p>当 $\lambda=1$ 时，</p>
+<p>$$\begin{pmatrix}1&amp;1&amp;0&amp;2&amp;1\\0&amp;0&amp;1&amp;1&amp;1\\0&amp;0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>$$\begin{cases}x_1+x_2+2x_4=1,\\x_3+x_4=1,\end{cases}\ \text{即}\ \begin{cases}x_1=-x_2-2x_4+1,\\x_3=-x_4+1,\end{cases}$$</p>
+<p>$$\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=k_1\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}+k_2\begin{pmatrix}-2\\0\\-1\\1\end{pmatrix}+\begin{pmatrix}1\\0\\1\\0\end{pmatrix},\ k_1,k_2\ \text{为任意常数}.$$</p>
+<p>当 $\lambda=0$ 或 $\lambda=10$ 时，$\lambda=10$ 时（$m=8$），</p>
+<p>$$\begin{pmatrix}1&amp;1&amp;0&amp;2&amp;m+1\\0&amp;0&amp;1&amp;1&amp;m+2\\0&amp;0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>$$\begin{pmatrix}x_1\\x_2\\x_3\\x_4\end{pmatrix}=k_1\begin{pmatrix}-1\\1\\0\\0\end{pmatrix}+k_2\begin{pmatrix}-2\\0\\-1\\1\end{pmatrix}+\begin{pmatrix}m+1\\0\\m+2\\0\end{pmatrix},\ k_1,k_2\ \text{为任意常数}.$$</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.27" data-pid="4.4.27">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.27】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>(2002，数一) 已知四阶方阵 $A=(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\alpha}_4)$，$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\alpha}_4$ 均为 4 维列向量，其中 $\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\alpha}_4$ 线性无关，$\boldsymbol{\alpha}_1=2\boldsymbol{\alpha}_2-\boldsymbol{\alpha}_3$．如果 $\boldsymbol{\beta}=\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3+\boldsymbol{\alpha}_4$，求线性方程组 $Ax=\boldsymbol{\beta}$ 的通解．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性相关，$\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\alpha}_4$ 线性无关，故 $r(A)=3$.</p>
+<p>$A\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}=\boldsymbol{\alpha}_1-2\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3=\boldsymbol{0}$，即 $\boldsymbol{\xi}=(1,-2,1,0)^T$ 是 $Ax=\boldsymbol{0}$ 的一个基础解系（$4-r(A)=1$）．</p>
+<p>又 $A\begin{pmatrix}1\\1\\1\\1\end{pmatrix}=\boldsymbol{\alpha}_1+\boldsymbol{\alpha}_2+\boldsymbol{\alpha}_3+\boldsymbol{\alpha}_4=\boldsymbol{\beta}$，</p>
+<p>即 $\boldsymbol{\eta}=(1,1,1,1)^T$ 是 $Ax=\boldsymbol{\beta}$ 的一个特解，</p>
+<p>故 $Ax=\boldsymbol{\beta}$ 的通解为</p>
+<p>$$x=k\begin{pmatrix}1\\-2\\1\\0\end{pmatrix}+\begin{pmatrix}1\\1\\1\\1\end{pmatrix}$$</p>
+<p>$k$ 为任意常数．</p>
+<p>$k_1=-6,k_2=3,k_3=-2$，故 $\boldsymbol{v}_1-\boldsymbol{v}_2=-6\boldsymbol{\alpha}_1+3\boldsymbol{\alpha}_2-2\boldsymbol{\alpha}_3=\boldsymbol{0}$，则 $\boldsymbol{v}_1,\boldsymbol{v}_2$ 的其余分量都相同，</p>
+<p>即 $\boldsymbol{v}_1-\boldsymbol{v}_2=\boldsymbol{0}$，这与 $\boldsymbol{v}_1,\boldsymbol{v}_2$ 是 $A$ 的属于不同特征值的特征向量矛盾，</p>
+<p>故 $k_1=-6,k_2=3,k_3=-2$ 不可能同时成立，即 $v_1,v_2,v_3$ 线性无关，</p>
+<p>故 $A$ 相似于对角矩阵 $\Lambda=\begin{pmatrix}0&amp;&amp;&amp;\\&amp;1&amp;&amp;\\&amp;&amp;-1&amp;\\&amp;&amp;&amp;2\end{pmatrix}$.</p>
+<p>则</p>
+<p>$$\boldsymbol{\alpha}_1=0\boldsymbol{\beta}_1+\frac{1}{2}\boldsymbol{\beta}_2+\frac{3}{2}\boldsymbol{\beta}_3,\ \boldsymbol{\alpha}_2=-\frac{1}{2}\boldsymbol{\beta}_1-\frac{1}{2}\boldsymbol{\beta}_2+\frac{1}{2}\boldsymbol{\beta}_3,\ \boldsymbol{\alpha}_3=\frac{1}{2}\boldsymbol{\beta}_1+\frac{3}{2}\boldsymbol{\beta}_2-\frac{1}{2}\boldsymbol{\beta}_3.$$</p>
+<p>向量组 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$ 可由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示，$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 也可由 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$ 线性表示，即 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 与 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$ 等价，故两向量组有相同的秩，$r(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3)=3$，即 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3$ 线性无关．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.28" data-pid="4.4.28">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.28】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设有三条不同的直线，其方程分别为</p>
+<p>$$a_1x+b_1y=c_1,\ a_2x+b_2y=c_2,\ a_3x+b_3y=c_3\ \text{（其中 }a_i^2+b_i^2\neq 0\text{）}$$</p>
+<p>试讨论这三条直线的位置关系．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$\overline{A}=\begin{pmatrix}a_1&amp;b_1&amp;c_1\\a_2&amp;b_2&amp;c_2\\a_3&amp;b_3&amp;c_3\end{pmatrix}.$$</p>
+<p>(1) 三条直线相交于一点 $\Leftrightarrow$ 方程组有唯一解 $\Leftrightarrow r(A)=r(\overline{A})=3$.</p>
+<p>(2) 三条直线两两不平行也不重合<span class="unclear">[?]</span> $\Leftrightarrow$ 方程组有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})=2$.</p>
+<p>$\boldsymbol{\alpha}_1=(a_1,b_1,c_1)^T$，$\boldsymbol{\alpha}_2=(a_2,b_2,c_2)^T$，$\boldsymbol{\alpha}_3=(a_3,b_3,c_3)^T$，</p>
+<p>则</p>
+<p>$$\begin{pmatrix}1\\-1\\-1\\-1\end{pmatrix}^T,\ \begin{pmatrix}1\\-1\\1\\1\end{pmatrix}^T<span class="unclear">[?]</span>$$</p>
+<p>$r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3)=r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{0})=2&lt;3$<span class="unclear">[?]</span>，</p>
+<p>三条直线两两不平行<span class="unclear">[?]</span>也不重合，通解中 $\boldsymbol{0}$<span class="unclear">[?]</span> 向量为零向量，即三条直线交于一点<span class="unclear">[?]</span>．</p>
+<p>设 $(a_1,b_1,c_1)\neq(a_2,b_2,c_2)$，则</p>
+<p>$$a_1x+b_1y+c_1=0\text（且）a_2x+b_2y+c_2=0$$</p>
+<p>的解即两条直线的交点<span class="unclear">[?]</span>，且当且仅当 $(\boldsymbol{\alpha}_1-\boldsymbol{\alpha}_2)^Tx=0$ 和 $(\boldsymbol{\alpha}_2-\boldsymbol{\alpha}_3)^Tx=0$ 同时成立<span class="unclear">[?]</span>．</p>
+<p>(3) 三条直线交于一点<span class="unclear">[?]</span> $\Leftrightarrow$ 方程组无解 $\Leftrightarrow r(A)\neq r(\overline{A})$<span class="unclear">[?]</span>.</p>
+<p>(4) 三条直线不相交（无公共点）$\Leftrightarrow$ 方程组无解 $\Leftrightarrow r(\overline{A})=r(A)+1$，即三条直线中任何两条直线的交点均不在第三条直线上（三条直线交于一点<span class="unclear">[?]</span>）．</p>
+<p>则三条直线相交于一点 $\Leftrightarrow$ 方程组只有零解 $\Leftrightarrow r(A)=3$.</p>
+<p>(1) 三条直线相交于一点，但不共线（三条直线交于一点<span class="unclear">[?]</span>）．</p>
+<p>(2) 三条直线重合（两条直线（或三条直线）重合）$\Leftrightarrow$ 方程组有无穷多解 $\Leftrightarrow r(A)=r(\overline{A})&lt;3$<span class="unclear">[?]</span>．</p>
+<p>(3) $r(A)=2$ 且 $r(A,\boldsymbol{\beta})=3$，方程组无解，三条直线不相交（两两相交但不共点）<span class="unclear">[?]</span>．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.29" data-pid="4.4.29">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.29】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{\alpha}_1=(2,1,0)^T$，$\boldsymbol{\alpha}_2=(1,1,1)^T$，$\boldsymbol{\alpha}_3=(1,2,1)^T<span class="unclear">[?]</span>$，$\boldsymbol{\beta}=(2,1,b)^T$，$b$ 为任意常数，试讨论 $\boldsymbol{\beta}$ 能否由 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性表示．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$2k_1+k_2+k_3=2,\ k_1+k_2+2k_3=1,\ k_2+k_3=b,$$</p>
+<p>亦即</p>
+<p>$$\begin{pmatrix}1&amp;1&amp;1&amp;1\\1&amp;-1&amp;0&amp;-1\\0&amp;1&amp;2&amp;2\end{pmatrix}\begin{pmatrix}k_1\\k_2\\k_3\end{pmatrix}=\begin{pmatrix}2\\1\\b\end{pmatrix}<span class="unclear">[?]</span>$$</p>
+<p>对上式增广矩阵作初等行变换：</p>
+<p>$$\begin{pmatrix}2&amp;1&amp;1&amp;2\\1&amp;1&amp;2&amp;1\\0&amp;1&amp;1&amp;b\end{pmatrix}\to\begin{pmatrix}1&amp;1&amp;2&amp;1\\0&amp;1&amp;1&amp;b\\0&amp;0&amp;1&amp;2b-1<span class="unclear">[?]</span>\end{pmatrix}$$</p>
+<p>故 $r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3)=3$，$r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3,\boldsymbol{\beta})=3$（矩阵第三行元素读数反复变化<span class="unclear">[?]</span>），</p>
+<p>其中 $k_3=2b-1$<span class="unclear">[?]</span>，$k_2=1-b$<span class="unclear">[?]</span>，$k_1=b$<span class="unclear">[?]</span>．</p>
+<p>（1）当 $\lambda=\frac{1}{2}$<span class="unclear">[?]</span> 时，即 $2b-1=0$<span class="unclear">[?]</span>，</p>
+<p>$$\boldsymbol{\beta}=\frac{1}{2}\boldsymbol{\alpha}_1+\frac{1}{2}\boldsymbol{\alpha}_2+\frac{3}{2}\boldsymbol{\alpha}_3<span class="unclear">[?]</span>$$</p>
+<p>（2）当 $\lambda\neq\frac{1}{2}$<span class="unclear">[?]</span> 时，$t$ 为任意常数<span class="unclear">[?]</span>，</p>
+<p>$$\boldsymbol{\beta}=(3t+1)\boldsymbol{\alpha}_1+(t+1)\boldsymbol{\alpha}_2+t\boldsymbol{\alpha}_3<span class="unclear">[?]</span>$$</p>
+<p>（或 $\boldsymbol{\beta}=(1+2t)\boldsymbol{\alpha}_1+2t\boldsymbol{\alpha}_2+t\boldsymbol{\alpha}_3$，两种读法并存）</p>
+<p>从而 $\boldsymbol{\alpha}_1=\lambda(\boldsymbol{\beta}-2\boldsymbol{\alpha}_2-\boldsymbol{\alpha}_3)$，其中 $\lambda=\frac{1}{3}<span class="unclear">[?]</span>$，$t=\frac{1}{2}<span class="unclear">[?]</span>$．</p>
+<p>$$a_2x+b_2y+c_2=0 \Rightarrow r(A)=2 \text{ 且 } r(A,\boldsymbol{\beta})=3$$</p>
+<p>方程组无解，从而三条直线不能交于一点．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.30" data-pid="4.4.30">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.30】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>(2018，数三) 设 $A$ 是 $4\times 3$ 矩阵，$\boldsymbol{\eta}_1,\boldsymbol{\eta}_2,\boldsymbol{\eta}_3$ 是非齐次线性方程组 $Ax=\boldsymbol{\beta}$ 的三个线性无关的解，则 ( )<span class="unclear">[?]</span>（问句谓语无法辨认）</p>
+<p>(A) $\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$；</p>
+<p>(B) $\boldsymbol{\eta}_1+\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$；</p>
+<p>(C) $\boldsymbol{\eta}_1+2\boldsymbol{\eta}_2+3\boldsymbol{\eta}_3$；</p>
+<p>(D) $\boldsymbol{\eta}_1-2\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$\boldsymbol{\eta}_1+\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$ 与 $\boldsymbol{\eta}_1-2\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$<span class="unclear">[?]</span>（后续推理无法辨认），</p>
+<p>$\boldsymbol{\eta}_2+\boldsymbol{\eta}_3=(\boldsymbol{\eta}_1+\boldsymbol{\eta}_3)\cdots<span class="unclear">[?]</span>$（此行无法辨认），</p>
+<p>$A\boldsymbol{\eta}_1-2A\boldsymbol{\eta}_2+A\boldsymbol{\eta}_3=\boldsymbol{0}$，$\boldsymbol{\beta}-2\boldsymbol{\beta}+\boldsymbol{\beta}=\boldsymbol{0}$（对应向量线性相关<span class="unclear">[?]</span>），</p>
+<p>$\boldsymbol{\eta}_1+\boldsymbol{\eta}_2$（无法辨认<span class="unclear">[?]</span>），</p>
+<p>$A(\boldsymbol{\eta}_1+2\boldsymbol{\eta}_2+3\boldsymbol{\eta}_3)=\boldsymbol{\beta}+2\boldsymbol{\beta}+3\boldsymbol{\beta}=6\boldsymbol{\beta}$，零向量（$\boldsymbol{\eta}_1+\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$<span class="unclear">[?]</span>）是线性相关的，</p>
+<p>$\boldsymbol{\eta}_1+\boldsymbol{\eta}_2+\boldsymbol{\eta}_3$ 与 $\boldsymbol{\eta}_1+2\boldsymbol{\eta}_2+3\boldsymbol{\eta}_3$（线性无关<span class="unclear">[?]</span>），但 $(\boldsymbol{\eta}_2+\boldsymbol{\eta}_3)\boldsymbol{\eta}_1-(\boldsymbol{\eta}_1+\boldsymbol{\eta}_3)\boldsymbol{\eta}_2+\cdots=\boldsymbol{0}$（线性相关）<span class="unclear">[?]</span>，</p>
+<p>$A(\boldsymbol{\eta}_1+2\boldsymbol{\eta}_2+3\boldsymbol{\eta}_3)=6\boldsymbol{\beta}\neq\boldsymbol{0}$，$\boldsymbol{\eta}_1+2\boldsymbol{\eta}_2+3\boldsymbol{\eta}_3\neq\boldsymbol{0}$ 是线性无关的（选 (C)<span class="unclear">[?]</span>；另一种读取为选 (D)，答案判定无法确认）．</p>
+<p>$$\overline{A}_1=\begin{pmatrix}1&amp;1&amp;0&amp;-2&amp;-6\\4&amp;-1&amp;-1&amp;-1&amp;1\\3&amp;-1&amp;-1&amp;0&amp;3\end{pmatrix}\to\begin{pmatrix}1&amp;0&amp;0&amp;-1&amp;-2\\0&amp;1&amp;0&amp;-1&amp;-4\\0&amp;0&amp;1&amp;-2&amp;-5\end{pmatrix},$$</p>
+<p>由于 $r(A_1)=r(\overline{A}_1)=3&lt;4$，所以方程组有无穷多解，且通解为</p>
+<p>$$\begin{pmatrix}-2\\-4\\-5\\0\end{pmatrix}+k\begin{pmatrix}1\\1\\2\\1\end{pmatrix},\quad 其中\ k\ 为任意常数。$$</p>
+<p>（2）记（Ⅰ）的特解</p>
+<p>$$\boldsymbol{\eta}=\begin{pmatrix}-2\\-4\\-5\\0\end{pmatrix},$$</p>
+<p>将（Ⅰ）的特解 $\boldsymbol{\eta}$ 代入（Ⅱ）的第一个方程，得 $-2-4m+5=-5$，解得 $m=2$；</p>
+<p>将（Ⅰ）的特解 $\boldsymbol{\eta}$ 代入（Ⅱ）的第二个方程，得 $-4n+5=-11$，从而 $n=4$，</p>
+<p>将（Ⅰ）的特解 $\boldsymbol{\eta}$ 代入（Ⅱ）的第三个方程，得 $-5=-t+1$，解得 $t=6$。</p>
+<p>因此，方程组（Ⅱ）的参数 $m=2, n=4, t=6$，即当 $m=2, n=4, t=6$ 时，方程组（Ⅰ）的全部解都是方程组（Ⅱ）的解，这时，方程组（Ⅱ）化为</p>
+<p>$$(Ⅱ)\begin{cases}x_1+2x_2-x_3-x_4=-5,\\4x_2-x_3-2x_4=-11,\\x_3-2x_4=-5.\end{cases}$$</p>
+<p>设方程组（Ⅱ）的系数矩阵为 $A_2$，增广矩阵为 $\overline{A}_2$，对 $\overline{A}_2$ 施以初等行变换，得</p>
+<p>$$\overline{A}_2=\begin{pmatrix}1&amp;2&amp;-1&amp;-1&amp;-5\\0&amp;4&amp;-1&amp;-2&amp;-11\\0&amp;0&amp;1&amp;-2&amp;-5\end{pmatrix}\to\begin{pmatrix}1&amp;0&amp;0&amp;-1&amp;-2\\0&amp;1&amp;0&amp;-1&amp;-4\\0&amp;0&amp;1&amp;-2&amp;-5\end{pmatrix},$$</p>
+<p>于是方程组（Ⅱ）的通解为</p>
+<p>$$\begin{pmatrix}-2\\-4\\-5\\0\end{pmatrix}+k\begin{pmatrix}1\\1\\2\\1\end{pmatrix},\quad 其中\ k\ 为任意常数。$$</p>
+<p>显然，方程组（Ⅰ）、（Ⅱ）的解完全相同，即方程组（Ⅰ）、（Ⅱ）同解。</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.31" data-pid="4.4.31">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.31】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A$ 为 $m\times n$ 矩阵，$B$ 是 $n\times s$ 矩阵，证明 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 与 $B\boldsymbol{x}=\boldsymbol{0}$ 同解的充分必要条件是 $r(AB)=r(B)$。</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>必要性：已知 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 与 $B\boldsymbol{x}=\boldsymbol{0}$ 同解，则两个线性方程组的基础解系也完全相同，当然基础解系所包括的线性无关解的个数完全相等，即 $s-r(AB)=s-r(B)$，所以 $r(AB)=r(B)$。</p>
+<p>充分性：设 $\boldsymbol{\xi}$ 是 $B\boldsymbol{x}=\boldsymbol{0}$ 的任一解向量，即 $B\boldsymbol{\xi}=\boldsymbol{0}$，两边左乘 $A$，得 $AB\boldsymbol{\xi}=\boldsymbol{0}$，即 $\boldsymbol{\xi}$ 也是 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 的解，所以 $B\boldsymbol{x}=\boldsymbol{0}$ 的解集含于 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 的解集中。已知 $r(B)=r(AB)=r$，若 $r&lt;s$，设 $\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\cdots,\boldsymbol{\xi}_{s-r}$ 为 $B\boldsymbol{x}=\boldsymbol{0}$ 的基础解系，则它们必含于 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 的解集中，而 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 的基础解系也应含有 $s-r$ 个线性无关的解向量……（接下页）</p>
+<p>无关解向量．故 $\boldsymbol{\xi}_1,\boldsymbol{\xi}_2,\cdots,\boldsymbol{\xi}_{s-r}$ 也构成了 $(AB)\boldsymbol{x}=\boldsymbol{0}$ 的一组基础解系．两个线性方程组基础解系完全相同，则解集必然相等．</p>
+<p>又若 $r(B)=r(AB)=r=s$，则两个线性方程组均只有零解，自然解集也相等．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.32" data-pid="4.4.32">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.32】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设有三张不同平面的方程 $a_{i1}x+a_{i2}y+a_{i3}z=b_i\ (i=1,2,3)$，它们所组成的线性方程组的系数矩阵与增广矩阵的秩都为 2，则这三张平面可能的位置关系为______．</p>
+<p>（A）（B）（C）（D）为四幅三平面位置关系图（图略）</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>对于非齐次线性方程组</p>
+<p>$$\begin{cases}a_{11}x+a_{12}y+a_{13}z=b_1,\\a_{21}x+a_{22}y+a_{23}z=b_2,\\a_{31}x+a_{32}y+a_{33}z=b_3,\end{cases}$$</p>
+<p>由 $r(A)=r(\overline{A})=2&lt;3=$ 未知量个数知方程组有无穷多解，即三平面共线．</p>
+<p>故应选（B）．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.33" data-pid="4.4.33">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.33】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\boldsymbol{\alpha}_1=\begin{pmatrix}a_1\\a_2\\a_3\end{pmatrix}$，$\boldsymbol{\alpha}_2=\begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}$，$\boldsymbol{\alpha}_3=\begin{pmatrix}c_1\\c_2\\c_3\end{pmatrix}$，则三条直线</p>
+<p>$$a_1x+b_1y+c_1=0,$$</p>
+<p>$$a_2x+b_2y+c_2=0,$$</p>
+<p>$$a_3x+b_3y+c_3=0$$</p>
+<p>（其中 $a_i^2+b_i^2\neq 0,\ i=1,2,3$）交于一点的充要条件是______．</p>
+<p>(A) $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性相关</p>
+<p>(B) $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性无关</p>
+<p>(C) 秩 $r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3)=$ 秩 $r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2)$</p>
+<p>(D) $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性相关，$\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$ 线性无关</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>三条直线交于一点的等价条件是非齐次线性方程组</p>
+<p>$$\begin{cases}a_1x+b_1y=-c_1,\\a_2x+b_2y=-c_2,\\a_3x+b_3y=-c_3\end{cases}$$</p>
+<p>有唯一解，即 $r(A)=r(\overline{A})=2$．</p>
+<p>$$\boldsymbol{A}=\begin{pmatrix}a_1&amp;b_1\\a_2&amp;b_2\\a_3&amp;b_3\end{pmatrix},\qquad \overline{\boldsymbol{A}}=\begin{pmatrix}a_1&amp;b_1&amp;-c_1\\a_2&amp;b_2&amp;-c_2\\a_3&amp;b_3&amp;-c_3\end{pmatrix},$$</p>
+<p>故 $r(A)=2$ 说明 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$ 线性无关．$r(\overline{A})=2$ 说明 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,-\boldsymbol{\alpha}_3$ 线性相关．即存在 $k_1,k_2,k_3$，使 $k_1\boldsymbol{\alpha}_1+k_2\boldsymbol{\alpha}_2-k_3\boldsymbol{\alpha}_3=\boldsymbol{0}$ 成立，并且 $k_3\neq 0$．令 $l_1=k_1,\ l_2=k_2,\ l_3=-k_3$，则存在一组不全为零的数，使 $l_1\boldsymbol{\alpha}_1+l_2\boldsymbol{\alpha}_2+l_3\boldsymbol{\alpha}_3=\boldsymbol{0}$ 成立，从而说明 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性相关．</p>
+<p>故应选（D）．</p>
+<p>点评：三条直线有交点的充要条件是 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2,\boldsymbol{\alpha}_3$ 线性相关，若要保证三条直线只有一个交点，则应在它们有交点的情况下，两两不能重合，即 $\boldsymbol{\alpha}_1\neq k\boldsymbol{\alpha}_2$（$k\neq 0$ 为常数），从而 $r(\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2)=2$，即 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$ 线性无关．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.34" data-pid="4.4.34">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.34】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设矩阵 $\begin{pmatrix}a_1&amp;b_1&amp;c_1\\a_2&amp;b_2&amp;c_2\\a_3&amp;b_3&amp;c_3\end{pmatrix}$ 是满秩的，则直线 $L_1:\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}$ 与直线 $L_2:\dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}$ ________．</p>
+<p>(A) 相交于一点　(B) 重合　(C) 平行但不重合　(D) 异面</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为</p>
+<p>$$\begin{pmatrix}a_1&amp;b_1&amp;c_1\\a_2&amp;b_2&amp;c_2\\a_3&amp;b_3&amp;c_3\end{pmatrix}\xrightarrow{\text{初等行变换}}\begin{pmatrix}a_1-a_2&amp;b_1-b_2&amp;c_1-c_2\\a_2-a_3&amp;b_2-b_3&amp;c_2-c_3\\a_3&amp;b_3&amp;c_3\end{pmatrix},$$</p>
+<p>而初等变换不改变矩阵的秩，所以 $\boldsymbol{n}_1=(a_1-a_2,\ b_1-b_2,\ c_1-c_2)$，$\boldsymbol{n}_2=(a_2-a_3,\ b_2-b_3,\ c_2-c_3)$ 线性无关，从而两条直线不可能平行或重合，排除（B）、（C）．</p>
+<p>假设两直线相交，且此时 $L_1$ 对应参数值为 $m$，$L_2$ 对应参数值为 $n$，即有</p>
+<p>$$\dfrac{x-a_3}{a_1-a_2}=\dfrac{y-b_3}{b_1-b_2}=\dfrac{z-c_3}{c_1-c_2}=m,\qquad \dfrac{x-a_1}{a_2-a_3}=\dfrac{y-b_1}{b_2-b_3}=\dfrac{z-c_1}{c_2-c_3}=n.$$</p>
+<p>则</p>
+<p>$$a_3+(a_1-a_2)m=a_1+(a_2-a_3)n,$$</p>
+<p>$$b_3+(b_1-b_2)m=b_1+(b_2-b_3)n,$$</p>
+<p>$$c_3+(c_1-c_2)m=c_1+(c_2-c_3)n.$$</p>
+<p>讨论线性方程组</p>
+<p>$$(a_1-a_2)m+(a_3-a_2)n=a_1-a_3,$$</p>
+<p>$$(b_1-b_2)m+(b_3-b_2)n=b_1-b_3,$$</p>
+<p>$$(c_1-c_2)m+(c_3-c_2)n=c_1-c_3.$$</p>
+<p>$$\overline{A}=\begin{pmatrix}a_1-a_2&amp;a_3-a_2&amp;a_1-a_3\\b_1-b_2&amp;b_3-b_2&amp;b_1-b_3\\c_1-c_2&amp;c_3-c_2&amp;c_1-c_3\end{pmatrix}\xrightarrow{\text{初等列变换}}\begin{pmatrix}a_1-a_2&amp;a_3-a_2&amp;0\\b_1-b_2&amp;b_3-b_2&amp;0\\c_1-c_2&amp;c_3-c_2&amp;0\end{pmatrix},$$</p>
+<p>则 $r(A)=r(\overline{A})=2=$ 未知量个数，线性方程组只有唯一解，所以两直线相交于一点．</p>
+<p>故应选（A）．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.35" data-pid="4.4.35">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.35】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知平面上三条不同直线的方程分别为</p>
+<p>$$l_1:ax+2by+3c=0,$$</p>
+<p>$$l_2:bx+2cy+3a=0,$$</p>
+<p>$$l_3:cx+2ay+3b=0.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>试证这三条直线交于一点的充分必要条件为 $a+b+c=0$．</p>
+<p>证法一　必要性：设三直线 $l_1,l_2,l_3$ 交于一点，则线性方程组</p>
+<p>$$\begin{cases}ax+2by=-3c,\\bx+2cy=-3a,\\cx+2ay=-3b\end{cases}\qquad①$$</p>
+<p>有唯一解，故系数矩阵 $A=\begin{pmatrix}a&amp;2b\\b&amp;2c\\c&amp;2a\end{pmatrix}$ 与增广矩阵 $\overline{A}=\begin{pmatrix}a&amp;2b&amp;-3c\\b&amp;2c&amp;-3a\\c&amp;2a&amp;-3b\end{pmatrix}$ 的秩均为 2，于是 $|\overline{A}|=0$．</p>
+<p>由于</p>
+<p>$$|\overline{A}|=\begin{vmatrix}a&amp;2b&amp;-3c\\b&amp;2c&amp;-3a\\c&amp;2a&amp;-3b\end{vmatrix}=6(a+b+c)(a^2+b^2+c^2-ab-ac-bc)$$</p>
+<p>$$=3(a+b+c)\big((a-b)^2+(b-c)^2+(c-a)^2\big),$$</p>
+<p>但 $(a-b)^2+(b-c)^2+(c-a)^2\neq 0$，故 $a+b+c=0$．</p>
+<p>充分性：由 $a+b+c=0$，则从必要性的证明可知，$|\overline{A}|=0$，故秩$(\overline{A})&lt;3$．</p>
+<p>由于</p>
+<p>$$\begin{vmatrix}a&amp;2b\\b&amp;2c\end{vmatrix}=2(ac-b^2)=-2\big(a(a+b)+b^2\big)=-2\Big(\big(a+\tfrac{1}{2}b\big)^2+\tfrac{3}{4}b^2\Big)\neq 0,$$</p>
+<p>故秩$(A)=2$．于是，秩$(A)=$秩$(\overline{A})=2$．</p>
+<p>因此方程组①有唯一解，即三直线 $l_1,l_2,l_3$ 交于一点．</p>
+<p>证法二　必要性：设三直线交于一点 $(x_0,y_0)$，则</p>
+<p>$$\begin{pmatrix}x_0\\y_0\\1\end{pmatrix}$$</p>
+<p>为 $A\boldsymbol{x}=\boldsymbol{0}$ 的非零解，其中</p>
+<p>$$A=\begin{pmatrix}a&amp;2b&amp;3c\\b&amp;2c&amp;3a\\c&amp;2a&amp;3b\end{pmatrix}.$$</p>
+<p>于是 $|A|=0$．而</p>
+<p>$$|A|=\begin{vmatrix}a&amp;2b&amp;3c\\b&amp;2c&amp;3a\\c&amp;2a&amp;3b\end{vmatrix}=-6(a+b+c)(a^2+b^2+c^2-ab-bc-ac)$$</p>
+<p>$$=-3(a+b+c)\big((a-b)^2+(b-c)^2+(c-a)^2\big),$$</p>
+<p>但 $(a-b)^2+(b-c)^2+(c-a)^2\neq 0$，故 $a+b+c=0$．</p>
+<p>充分性：考虑线性方程组</p>
+<p>$$ax+2by=-3c,$$</p>
+<p>$$bx+2cy=-3a,\qquad①$$</p>
+<p>$$cx+2ay=-3b.$$</p>
+<p>将方程组①的三个方程相加，并由 $a+b+c=0$ 可知，方程组①等价于方程组</p>
+<p>$$\begin{cases}ax+2by=-3c,\\bx+2cy=-3a.\end{cases}\qquad②$$</p>
+<p>因为</p>
+<p>$$\begin{vmatrix}a&amp;2b\\b&amp;2c\end{vmatrix}=2(ac-b^2)=-2\big(a(a+b)+b^2\big)=-\big(a^2+b^2+(a+b)^2\big)\neq 0,$$</p>
+<p>故方程组②有唯一解，所以方程组①有唯一解，即三直线 $l_1,l_2,l_3$ 交于一点．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.36" data-pid="4.4.36">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.36】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A^2=E$，$E$ 为单位矩阵，则下列正确的是______．</p>
+<p>(A) $A-E$ 可逆　(B) $A+E$ 可逆　(C) $A\neq E$ 时，$A+E$ 可逆　(D) $A\neq E$ 时，$A+E$ 不可逆</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>应用排除法（A）、（B）、（C）不正确．事实上当 $A=E$ 时，则 $A^2=E$，而 $A-E$ 不可逆；当 $A=-E$ 时，$A^2=E$，但 $A+E$ 亦不可逆．因而只有（D）正确．</p>
+<p>也可直接判定（D）是正确的选项．由于 $A^2=E$，所以 $(A+E)(A-E)=O$，故 $A\neq E$ 时方程组 $(A+E)\boldsymbol{x}=\boldsymbol{0}$ 有非零解，因此 $|A+E|=0$，即 $A+E$ 不可逆．</p>
+<p>故应选（D）．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.37" data-pid="4.4.37">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.37】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $n$ 元非齐次线性方程组 $A\boldsymbol{x}=\boldsymbol{b}$ 有解，其中 $A$ 为 $(n+1)\times n$ 矩阵，则行列式 $|A\;\boldsymbol{b}|=$______．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因方程组 $A\boldsymbol{x}=\boldsymbol{b}$ 有解，故 $r(A)=r(A\;\boldsymbol{b})$．</p>
+<p>又 $A$ 为 $(n+1)\times n$ 矩阵，$r(A)&lt;n+1$，从而</p>
+<p>$$r(A\;\boldsymbol{b})&lt;n+1,\quad 即\ |A\;\boldsymbol{b}|=0.$$</p>
+<p>故应填 $0$．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.38" data-pid="4.4.38">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.38】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若方程 $a_1x^{n-1}+a_2x^{n-2}+\cdots+a_{n-1}x+a_n=0$ 有 $n$ 个不相等实根，则必有______．</p>
+<p>(A) $a_1,a_2,\cdots,a_n$ 全为零　(B) $a_1,a_2,\cdots,a_n$ 不全为零</p>
+<p>(C) $a_1,a_2,\cdots,a_n$ 全不为零　(D) $a_1,a_2,\cdots,a_n$ 为任意常数</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设方程的 $n$ 个不相等实根为 $x_1,x_2,\cdots,x_n$，则有</p>
+<p>$$\begin{cases}a_n+a_{n-1}x_1+\cdots+a_2x_1^{n-2}+a_1x_1^{n-1}=0,\\a_n+a_{n-1}x_2+\cdots+a_2x_2^{n-2}+a_1x_2^{n-1}=0,\\\cdots\cdots\cdots\\a_n+a_{n-1}x_n+\cdots+a_2x_n^{n-2}+a_1x_n^{n-1}=0.\end{cases}$$</p>
+<p>若 $x_1,x_2,\cdots,x_n$ 已知，求 $a_1,a_2,\cdots,a_n$，这是一个齐次线性方程组，其系数矩阵的行列式是</p>
+<p>$$\begin{vmatrix}1&amp;x_1&amp;x_1^2&amp;\cdots&amp;x_1^{n-1}\\1&amp;x_2&amp;x_2^2&amp;\cdots&amp;x_2^{n-1}\\\vdots&amp;\vdots&amp;\vdots&amp;&amp;\vdots\\1&amp;x_n&amp;x_n^2&amp;\cdots&amp;x_n^{n-1}\end{vmatrix}=\prod_{1\leqslant i&lt;j\leqslant n}(x_j-x_i)\neq 0,$$</p>
+<p>所以齐次线性方程组只有零解，即</p>
+<p>$$a_1=a_2=\cdots=a_n=0.$$</p>
+<p>故应选（A）．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.39" data-pid="4.4.39">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.39】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知三阶方阵 $B\neq O$，且 $B$ 的每一个列向量都是以下方程组的解</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$\begin{cases}x_1+2x_2+3x_3=0,\\2x_1+3x_2+5x_3=0,\\x_1+x_2+ax_3=0.\end{cases}$$</p>
+<p>(Ⅰ) 求 $a$ 的值；</p>
+<p>(Ⅱ) <span class="unclear">[?]</span>（该行印刷模糊，多轮放大读数不一致，无法可靠转写）</p>
+<p>设 $B=(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3)$，由题设知</p>
+<p>$$A\boldsymbol{\beta}_j=\boldsymbol{0}\quad(j=1,2,3),$$</p>
+<p>其中</p>
+<p>$$A=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;a\end{pmatrix}.$$</p>
+<p>将三个向量等式合并成矩阵等式，得</p>
+<p>$$AB=A(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\boldsymbol{\beta}_3)=(A\boldsymbol{\beta}_1,A\boldsymbol{\beta}_2,A\boldsymbol{\beta}_3)=O.$$</p>
+<p>由 $B\neq O$ 知 $B$ 的列向量组不全为零向量，且均为 $A\boldsymbol{x}=\boldsymbol{0}$ 的解，故 $A\boldsymbol{x}=\boldsymbol{0}$ 有非零解，$r(A)&lt;3$，即 $|A|=0$．</p>
+<p>$$|A|=\begin{vmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;a\end{vmatrix}=2-a=0,$$</p>
+<p>解得 $a=2$．</p>
+<p>当 $a=2$ 时，$r(A)=2&lt;3$，基础解系含 $3-2=1$ 个向量．</p>
+<p>$$A=\begin{pmatrix}1&amp;2&amp;3\\2&amp;3&amp;5\\1&amp;1&amp;2\end{pmatrix}\to\begin{pmatrix}1&amp;2&amp;3\\0&amp;-1&amp;-1\\0&amp;0&amp;0\end{pmatrix},$$</p>
+<p>取 $x_3=1$，得基础解系</p>
+<p>$$\boldsymbol{\xi}=(-1,-1,1)^{T}.$$</p>
+<p>于是</p>
+<p>$$B=(k_1\boldsymbol{\xi},k_2\boldsymbol{\xi},k_3\boldsymbol{\xi}),$$</p>
+<p>其中 $k_1,k_2,k_3$ 为不全为零的任意常数．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.40" data-pid="4.4.40">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.40】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $A=\begin{pmatrix}1&amp;2&amp;-2\\2&amp;1&amp;2\\2&amp;-2&amp;1\end{pmatrix}$，则 $A^{-1}=$______．</p>
+<p>(A) $\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\2&amp;-2&amp;1\end{pmatrix}$　(B) $\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\-2&amp;2&amp;1\end{pmatrix}$</p>
+<p>(C) $\dfrac{1}{9}\begin{pmatrix}-1&amp;-2&amp;-2\\-2&amp;-1&amp;2\\-2&amp;2&amp;-1\end{pmatrix}$　(D) $\dfrac{1}{9}\begin{pmatrix}-1&amp;-2&amp;-2\\-2&amp;-1&amp;2\\2&amp;-2&amp;-1\end{pmatrix}$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>本题主要考查逆矩阵概念、矩阵乘法和转置运算．</p>
+<p>由矩阵 $A$ 可知，$A$ 的第1行与第2列的对应元素乘积之和 $=1\times 2+2\times 1+(-2)\times 2=0$，即 $A$ 的第1行与第2列正交，即</p>
+<p>$$AA^{T}=\begin{pmatrix}9&amp;0&amp;0\\0&amp;9&amp;0\\0&amp;0&amp;9\end{pmatrix}=9E.$$</p>
+<p>于是 $A\cdot\dfrac{1}{9}A^{T}=E$，故 $A^{-1}=\dfrac{1}{9}A^{T}=\dfrac{1}{9}\begin{pmatrix}1&amp;2&amp;2\\2&amp;1&amp;-2\\-2&amp;2&amp;1\end{pmatrix}$．</p>
+<p>故应选（B）．</p>
+<p>$$8(A-2E)X=\boldsymbol{\gamma}.$$</p>
+<p>令 $X=(x_1,x_2,x_3)^{T}$，代入上式，得到非齐次线性方程组</p>
+<p>$$\begin{cases}-x_1+\frac{1}{2}x_2=0,\\ 2x_1-x_2=0,\\ x_1+\frac{1}{2}x_2-2x_3=1.\end{cases}$$</p>
+<p>解其对应的齐次线性方程组，得通解</p>
+<p>$$\boldsymbol{\xi}=k(1,2,1)^{T},$$</p>
+<p>其中 $k$ 为任意常数．</p>
+<p>显然，非齐次线性方程组的一个特解为</p>
+<p>$$\boldsymbol{\eta}^{*}=\left(0,0,-\frac{1}{2}\right)^{T}.$$</p>
+<p>于是所求方程的解为</p>
+<p>$$X=k(1,2,1)^{T}+\left(0,0,-\frac{1}{2}\right)^{T},$$</p>
+<p>其中 $k$ 为任意常数．</p>
+<p>点评：本题直观看是解矩阵方程的题目，但通过矩阵方程的化简得 $8(A-2E)X=\boldsymbol{\gamma}$ 后，我们发现矩阵 $(A-2E)$ 不可逆，从而转化为非齐次线性方程组求通解．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.41" data-pid="4.4.41">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.41】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A$ 为 $m\times n$ 矩阵，秩为 $m$；$B$ 为 $n\times(n-m)$ 矩阵，秩为 $n-m$；又知 $AB=O$，$\boldsymbol{\alpha}$ 是满足条件 $A\boldsymbol{\alpha}=\boldsymbol{0}$ 的一个 $n$ 维列向量．证明：存在唯一的一个 $n-m$ 维列向量 $\boldsymbol{\beta}$，使得 $\boldsymbol{\alpha}=B\boldsymbol{\beta}$．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $r(A)=m$，知 $A\boldsymbol{x}=\boldsymbol{0}$ 的基础解系含 $n-m$ 个解向量．</p>
+<p>设 $\boldsymbol{\eta}_1,\boldsymbol{\eta}_2,\cdots,\boldsymbol{\eta}_{n-m}$ 为基础解系．</p>
+<p>由 $AB=O$，知 $B$ 的列向量均为 $A\boldsymbol{x}=\boldsymbol{0}$ 的解向量，且 $r(B)=n-m$，故 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\cdots,\boldsymbol{\beta}_{n-m}$ 线性无关，从而 $\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\cdots,\boldsymbol{\beta}_{n-m}$ 也是 $A\boldsymbol{x}=\boldsymbol{0}$ 的基础解系．</p>
+<p>于是 $\boldsymbol{\alpha}$ 可由其线性表示，设</p>
+<p>$$\boldsymbol{\alpha}=k_1\boldsymbol{\beta}_1+k_2\boldsymbol{\beta}_2+k_3\boldsymbol{\beta}_3+\cdots+k_{n-m}\boldsymbol{\beta}_{n-m}=(\boldsymbol{\beta}_1,\boldsymbol{\beta}_2,\cdots,\boldsymbol{\beta}_{n-m})\begin{pmatrix}k_1\\k_2\\ \vdots\\ k_{n-m}\end{pmatrix}=B\boldsymbol{\beta}.$$</p>
+<p>其中 $\boldsymbol{\beta}=(k_1,k_2,\cdots,k_{n-m})^{T}$，即存在 $n-m$ 维列向量 $\boldsymbol{\beta}$，使得 $\boldsymbol{\alpha}=B\boldsymbol{\beta}$．</p>
+<p>设另有 $\boldsymbol{\beta}'$，使得 $\boldsymbol{\alpha}=B\boldsymbol{\beta}'$，则有 $B(\boldsymbol{\beta}-\boldsymbol{\beta}')=\boldsymbol{0}$，即 $\boldsymbol{\beta}-\boldsymbol{\beta}'$ 是 $B\boldsymbol{x}=\boldsymbol{0}$ 的解向量．</p>
+<p>由 $r(B)=n-m$，知 $B\boldsymbol{x}=\boldsymbol{0}$ 只有零解，故 $\boldsymbol{\beta}=\boldsymbol{\beta}'$，即 $\boldsymbol{\beta}$ 是唯一的．</p>
+<p>证毕．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-4.4.42" data-pid="4.4.42">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【4.42】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $B$ 是秩为 2 的 $5\times4$ 阵，$\boldsymbol{\alpha}_1=(1,1,2,3)^{T}$，$\boldsymbol{\alpha}_2=(-1,1,4,-1)^{T}$，$\boldsymbol{\alpha}_3=(5,-1,-8,9)^{T}$ 是齐次线性方程组 $B\boldsymbol{x}=\boldsymbol{0}$ 的解向量，求 $B\boldsymbol{x}=\boldsymbol{0}$ 的解空间的一个标准正交基．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为矩阵 $B$ 的秩为 2，所以齐次线性方程组 $B\boldsymbol{x}=\boldsymbol{0}$ 的解空间的维数应为 $4-2=2$．而 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$ 线性无关，故 $\boldsymbol{\alpha}_1,\boldsymbol{\alpha}_2$ 是解空间的基．</p>
+<p>取 $\boldsymbol{\beta}_1=\boldsymbol{\alpha}_1=(1,1,2,3)^{T}$，则</p>
+<p>$$\boldsymbol{\beta}_2=\boldsymbol{\alpha}_2-\frac{(\boldsymbol{\alpha}_2,\boldsymbol{\beta}_1)}{(\boldsymbol{\beta}_1,\boldsymbol{\beta}_1)}\boldsymbol{\beta}_1=(-1,1,4,-1)^{T}-\frac{1}{3}(1,1,2,3)^{T}=\left(-\frac{4}{3},\frac{2}{3},\frac{10}{3},-2\right)^{T},$$</p>
+<p>再单位化，</p>
+<p>$$\boldsymbol{\varepsilon}_1=\frac{1}{\sqrt{15}}(1,1,2,3)^{T},\quad\boldsymbol{\varepsilon}_2=\frac{1}{\sqrt{39}}(-2,1,5,-3)^{T}.$$</p>
+<p>则 $\boldsymbol{\varepsilon}_1,\boldsymbol{\varepsilon}_2$ 即为所求的 $B\boldsymbol{x}=\boldsymbol{0}$ 解空间的一个标准正交基．</p></div>
 </div></div>
 </article>
 </section>
@@ -2215,6 +2741,7 @@
 <h2 class="sec-heading">§4. 综合提高题型</h2>
 <div class="type-block"><h3>题型1：线性方程组解的性质、结构和判定</h3><div class="type-body"></div></div>
 <div class="type-block"><h3>题型2：齐次线性方程组的基础解系</h3><div class="type-body"></div></div>
+<div class="type-block"><h3>题型7：综合例题</h3><div class="type-body"></div></div>
 </section>
 <nav class="chapter-nav">
 <a href="chapter-03.html">← 第三章　向量</a>

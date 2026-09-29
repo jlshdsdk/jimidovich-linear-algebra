@@ -23,6 +23,10 @@
 <div class="sec-group">
 <a class="sec-link" href="#sec-1">§1．矩阵的特征值与特征向量</a>
 <div class="prob-grid">
+<a href="#prob-5.1.1" data-pid="5.1.1">1</a>
+<a href="#prob-5.1.2" data-pid="5.1.2">2</a>
+<a href="#prob-5.1.3" data-pid="5.1.3">3</a>
+<a href="#prob-5.1.4" data-pid="5.1.4">4</a>
 </div></div>
 <div class="sec-group">
 <a class="sec-link" href="#sec-2">§2．矩阵的相似对角化</a>
@@ -36,13 +40,141 @@
 <a class="sec-link" href="#sec-4">§4．综合提高题型</a>
 <div class="prob-grid">
 </div></div>
+<div class="sec-group">
+<a class="sec-link" href="#sec-5">§1. 矩阵的特征值与特征向量</a>
+<div class="prob-grid">
+</div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 0 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 4 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第五章　矩阵的特征值与特征向量</h1>
-<p class="chapter-sub">本章正在转写校对中，稍后自动更新，请先刷其他章节</p>
-<div class="note-block"><span class="note-tag">进度</span>本章内容正在逐页精校录入，完成后本页将自动更新。你可以先学习前几章。</div>
+<p class="chapter-sub">共 4 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<section class="sec-block" id="sec-1">
+<h2 class="sec-heading">§1．矩阵的特征值与特征向量</h2>
+<article class="problem" id="prob-5.1.1" data-pid="5.1.1">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.1】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>矩阵 $A=\begin{pmatrix}1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\\1&amp;1&amp;1&amp;1\end{pmatrix}$ 的非零特征值是______．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由矩阵 $A$ 的特征方程 $|\lambda E-A|=0$，确定矩阵 $A$ 的特征值，选出其中的非零特征值．</p>
+<p>$$|\lambda E-A|=\begin{vmatrix}\lambda-1&amp;-1&amp;-1&amp;-1\\-1&amp;\lambda-1&amp;-1&amp;-1\\-1&amp;-1&amp;\lambda-1&amp;-1\\-1&amp;-1&amp;-1&amp;\lambda-1\end{vmatrix}=\lambda^{3}(\lambda-4),$$</p>
+<p>令 $|\lambda E-A|=0$，知 $\lambda_1=4$，$\lambda_2=0$（舍去）．</p>
+<p>故应填 4．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.1.2" data-pid="5.1.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>矩阵 $A=\begin{pmatrix}0&amp;-2&amp;-2\\2&amp;2&amp;-2\\-2&amp;-2&amp;2\end{pmatrix}$ 的非零特征值是________．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$|\lambda E-A|=\begin{vmatrix}\lambda&amp;2&amp;2\\-2&amp;\lambda-2&amp;2\\2&amp;2&amp;\lambda-2\end{vmatrix}=\lambda^{2}(\lambda-4)=0,$$</p>
+<p>解得 $\lambda_1=4$，$\lambda_2=\lambda_3=0$（舍去）．</p>
+<p>故应填 4．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.1.3" data-pid="5.1.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $n$ 阶矩阵 $A$ 的元素全为 1，则 $A$ 的 $n$ 个特征值是________．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$$|\lambda E-A|=\begin{vmatrix}\lambda-1&amp;-1&amp;-1&amp;\cdots&amp;-1\\-1&amp;\lambda-1&amp;-1&amp;\cdots&amp;-1\\\cdots&amp;\cdots&amp;\cdots&amp;\cdots&amp;\cdots\\-1&amp;-1&amp;-1&amp;\cdots&amp;\lambda-1\end{vmatrix}$$</p>
+<p>$$=(\lambda-n)\begin{vmatrix}1&amp;-1&amp;-1&amp;\cdots&amp;-1\\1&amp;\lambda-1&amp;-1&amp;\cdots&amp;-1\\\cdots&amp;\cdots&amp;\cdots&amp;\cdots&amp;\cdots\\1&amp;-1&amp;-1&amp;\cdots&amp;\lambda-1\end{vmatrix}$$</p>
+<p>$$=(\lambda-n)\begin{vmatrix}1&amp;-1&amp;-1&amp;\cdots&amp;-1\\0&amp;\lambda&amp;0&amp;\cdots&amp;0\\\cdots&amp;\cdots&amp;\cdots&amp;\cdots&amp;\cdots\\0&amp;0&amp;0&amp;\cdots&amp;\lambda\end{vmatrix}=(\lambda-n)\lambda^{n-1},$$</p>
+<p>故 $A$ 的 $n$ 个特征值为 $n,\overbrace{0,\cdots,0}^{n-1\text{个}}$．</p>
+<p>故应填 $n,\overbrace{0,\cdots,0}^{n-1\text{个}}$．</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.1.4" data-pid="5.1.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【1.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\lambda_1=0$ 是三阶矩阵 $A=\begin{pmatrix}1&amp;0&amp;1\\0&amp;2&amp;0\\1&amp;0&amp;a\end{pmatrix}$ 的特征值，则 $a=$________，其他特征值 $\lambda_2=$________，</p>
+<p>$\lambda_3=$________．</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $\lambda_1=0$ 为矩阵 $A$ 的特征值知 $|-A|=0$，从而 $|A|=2(a-1)=0$，故 $a=1$．</p>
+<p>把 $a=1$ 代入矩阵 $A$，通过计算得</p>
+<p>$$|\lambda E-A|=\lambda(\lambda-2)^{2}=0,$$</p>
+<p>所以 $\lambda_2=\lambda_3=2$．</p></div>
+</div></div>
+</article>
+<div class="note-block"></div>
+</section>
+<section class="sec-block" id="sec-5">
+<h2 class="sec-heading">§1. 矩阵的特征值与特征向量</h2>
+<div class="note-block"><span class="note-tag">知识点</span>1. 基本概念<div class="note-body"><p>设 $A$ 为 $n$ 阶矩阵，$\lambda$ 是一个数，若存在一个 $n$ 维非零列向量 $\boldsymbol{x}$ 使 $A\boldsymbol{x}=\lambda\boldsymbol{x}$ 成立，则称 $\lambda$ 为 $A$ 的一个特征值，相应的非零列向量 $\boldsymbol{x}$ 称为 $A$ 的属于 $\lambda$ 的特征向量．</p>
+<p>$\lambda E-A$ 称为 $A$ 的特征矩阵，$|\lambda E-A|$ 称为 $A$ 的特征多项式，$|\lambda E-A|=0$ 称为 $A$ 的特征方程．</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>2. 特征值的性质及运算<div class="note-body"><p>若 $\lambda$ 是 $A$ 的特征值，则</p>
+<p>(1) $k\lambda$ 是 $kA$ 的特征值．</p>
+<p>(2) $\lambda^{m}$ 是 $A^{m}$ 的特征值．</p>
+<p>(3) $f(A)=\sum\limits_{i=0}^{m}a_iA^{i}$ 的特征值为 $f(\lambda)=\sum\limits_{i=0}^{m}a_i\lambda^{i}$．</p>
+<p>(4) 若 $A$ 可逆，则 $\lambda\neq 0$，且 $\dfrac{1}{\lambda}$ 是 $A^{-1}$ 的特征值．</p>
+<p>(5) 若 $\lambda\neq 0$，则 $A^{*}$ 有特征值 $\dfrac{|A|}{\lambda}$．</p>
+<p>(6) $A$ 与 $A^{T}$ 有相同的特征值．</p>
+<p>(7) $AB$ 与 $BA$ 有相同的特征值．</p>
+<p>(8) 幂零矩阵的特征值只能为 0．</p>
+<p>(9) 幂等矩阵（$A^{2}=A$）的特征值只能为 0 或 1．</p>
+<p>(10) 对合矩阵（$A^{2}=E$）的特征值只能为 1 或 $-1$．</p>
+<p>(11) 正交矩阵的特征值的模为 1．</p>
+<p>(12) 实对称矩阵的特征值都是实数．</p>
+<p>(13) 实对称矩阵属于不同特征值的特征向量相互正交．</p>
+<p>(14) 正定矩阵的特征值都大于零．</p>
+<p>(15) $k$-幂矩阵（$A^{k}=E$）的特征值只可能是 1 的 $k$ 次方根．</p>
+<p>(16) $A$ 与 $B$ 相似，则 $A$ 与 $B$ 有相同的特征多项式，从而有相同的特征值．</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>3. 特征向量的性质<div class="note-body"><p>(1) 若 $\boldsymbol{x}$ 是 $A$ 的属于特征值 $\lambda$ 的特征向量，则 $\boldsymbol{x}$ 一定是非零向量．</p>
+<p>(2) 若 $\boldsymbol{x}_1,\boldsymbol{x}_2,\cdots,\boldsymbol{x}_m$ 都是 $A$ 的属于同一特征值 $\lambda$ 的特征向量，且 $k_1\boldsymbol{x}_1+k_2\boldsymbol{x}_2+\cdots+k_m\boldsymbol{x}_m\neq\boldsymbol{0}$，则 $k_1\boldsymbol{x}_1+k_2\boldsymbol{x}_2+\cdots+k_m\boldsymbol{x}_m$ 也是 $A$ 的属于特征值 $\lambda$ 的特征向量．</p>
+<p>(3) 设 $\lambda_1,\lambda_2$ 是 $A$ 的两个不同特征值，$\boldsymbol{x}_1,\boldsymbol{x}_2$ 是 $A$ 的分别属于 $\lambda_1,\lambda_2$ 的特征向量，则 $\boldsymbol{x}_1+\boldsymbol{x}_2$ 不是 $A$ 的特征向量．</p>
+<p>(4) 若 $\lambda$ 是 $A$ 的 $r$ 重特征值，则属于 $\lambda$ 的线性无关的特征向量最多有 $r$ 个．</p>
+<p>(5) $A$ 的属于不同特征值的特征向量线性无关．</p>
+<p>(6) 设 $\lambda$ 是 $A$ 的特征值，$\boldsymbol{x}$ 是属于 $\lambda$ 的特征向量，则</p>
+<p>① $\boldsymbol{x}$ 是 $kA$ 的属于特征值 $k\lambda$ 的、$A^{m}$ 的属于特征值 $\lambda^{m}$ 的和 $f(A)=\sum\limits_{i=0}^{m}a_iA^{i}$ 的属于特征值 $f(\lambda)=\sum\limits_{i=0}^{m}a_i\lambda^{i}$ 的特征向量；</p>
+<p>② 若 $\lambda\neq 0$，则 $\boldsymbol{x}$ 也是 $A^{-1}$ 的属于特征值 $\dfrac{1}{\lambda}$ 和 $A^{*}$ 的属于特征值 $\dfrac{|A|}{\lambda}$ 的特征向量；</p>
+<p>③ 若 $B=P^{-1}AP$，$P$ 为可逆阵，则 $\lambda$ 是 $B$ 的特征值，且 $P^{-1}\boldsymbol{x}$ 是 $B$ 的属于特征值 $\lambda$ 的特征向量．</p></div></div>
+<div class="note-block"><span class="note-tag">知识点</span>4. 矩阵的特征值和特征向量的求法<div class="note-body"><p>(1) 对于数字型矩阵 $A$，其特征值和特征向量的求法如下：</p>
+<p>① 计算特征多项式 $|\lambda E-A|$；</p>
+<p>② 求解特征方程 $|\lambda E-A|=0$，所有根 $\lambda_1,\lambda_2,\cdots,\lambda_n$ 即为 $A$ 的全部特征值；</p>
+<p>③ 固定一个特征值 $\lambda$，求解齐次线性方程组 $(\lambda E-A)\boldsymbol{x}=\boldsymbol{0}$，求得基础解系为 $\boldsymbol{\eta}_1,\boldsymbol{\eta}_2,\cdots,\boldsymbol{\eta}_s$，$s=n-r(\lambda E-A)$，则 $A$ 的属于 $\lambda$ 的所有特征向量为：</p>
+<p>$k_1\boldsymbol{\eta}_1+k_2\boldsymbol{\eta}_2+\cdots+k_s\boldsymbol{\eta}_s$，其中 $k_1,k_2,\cdots,k_s$ 不全为零．</p>
+<p>(2) 对于抽象型矩阵 $A$，其特征值和特征向量的求法通常有两种思路：</p>
+<p>① 利用特征值和特征向量的定义，若数 $\lambda$ 和非零向量 $\boldsymbol{x}$ 满足 $A\boldsymbol{x}=\lambda\boldsymbol{x}$，则 $\lambda$ 为 $A$ 的特征值，$\boldsymbol{x}$ 为 $A$ 的属于 $\lambda$ 的特征向量；</p>
+<p>② 利用特征值和特征向量的性质，例如已知 $A$ 的特征值，便可求得 $kA,A^{m},\sum\limits_{i=0}^{m}a_iA^{i}$ 等矩阵的特征值．</p></div></div>
+<div class="sec-divider">基 本 题 型</div>
+<div class="type-block"><h3>题型 1：数字型矩阵的特征值和特征向量</h3><div class="type-body"></div></div>
+</section>
+<nav class="chapter-nav">
+<a href="chapter-04.html">← 第四章　线性方程组</a>
+<a href="chapter-06.html">第六章　二次型 →</a>
+</nav>
 </main></div>
+<button class="back-top" id="backTop" type="button" title="回到顶部">↑</button>
+<div class="float-nav">
+<button id="prevProb" type="button">‹ 上一题</button>
+<button id="nextProb" type="button">下一题 ›</button>
+</div>
+<script src="../assets/vendor/katex/katex.min.js"></script>
+<script src="../assets/vendor/katex/auto-render.min.js"></script>
 <script src="../assets/script.js"></script>
 </body></html>
