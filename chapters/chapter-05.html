@@ -67,6 +67,28 @@
 <a class="sec-link" href="#sec-2">§2．矩阵的相似对角化</a>
 <div class="prob-grid">
 <a href="#prob-5.2.1" data-pid="5.2.1">1</a>
+<a href="#prob-5.2.2" data-pid="5.2.2">2</a>
+<a href="#prob-5.2.3" data-pid="5.2.3">3</a>
+<a href="#prob-5.2.4" data-pid="5.2.4">4</a>
+<a href="#prob-5.2.5" data-pid="5.2.5">5</a>
+<a href="#prob-5.2.6" data-pid="5.2.6">6</a>
+<a href="#prob-5.2.7" data-pid="5.2.7">7</a>
+<a href="#prob-5.2.8" data-pid="5.2.8">8</a>
+<a href="#prob-5.2.9" data-pid="5.2.9">9</a>
+<a href="#prob-5.2.10" data-pid="5.2.10">10</a>
+<a href="#prob-5.2.11" data-pid="5.2.11">11</a>
+<a href="#prob-5.2.12" data-pid="5.2.12">12</a>
+<a href="#prob-5.2.13" data-pid="5.2.13">13</a>
+<a href="#prob-5.2.14" data-pid="5.2.14">14</a>
+<a href="#prob-5.2.15" data-pid="5.2.15">15</a>
+<a href="#prob-5.2.16" data-pid="5.2.16">16</a>
+<a href="#prob-5.2.17" data-pid="5.2.17">17</a>
+<a href="#prob-5.2.18" data-pid="5.2.18">18</a>
+<a href="#prob-5.2.19" data-pid="5.2.19">19</a>
+<a href="#prob-5.2.20" data-pid="5.2.20">20</a>
+<a href="#prob-5.2.21" data-pid="5.2.21">21</a>
+<a href="#prob-5.2.22" data-pid="5.2.22">22</a>
+<a href="#prob-5.2.23" data-pid="5.2.23">23</a>
 </div></div>
 <div class="sec-group">
 <a class="sec-link" href="#sec-3">§3．实对称矩阵的正交相似对角化</a>
@@ -85,11 +107,11 @@
 <div class="prob-grid">
 </div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 40 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 62 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第五章　矩阵的特征值与特征向量</h1>
-<p class="chapter-sub">共 40 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<p class="chapter-sub">共 62 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
 <section class="sec-block" id="sec-1">
 <h2 class="sec-heading">§1．矩阵的特征值与特征向量</h2>
 <article class="problem" id="prob-5.1.1" data-pid="5.1.1">
@@ -939,7 +961,455 @@
 <p>设</p>
 <p>$$A=\begin{pmatrix}0&amp;0\\0&amp;0\end{pmatrix},\qquad B=\begin{pmatrix}1&amp;-1\\1&amp;-1\end{pmatrix}.$$</p>
 <p>显然，$A$ 与 $B$ 的特征值都是 0，但对任何一个可逆阵 $P$，</p>
-<p>$$P^{-1}0P\neq\begin{pmatrix}1&amp;-1\\1&amp;-1\end{pmatrix},$$</p></div>
+<p>$$P^{-1}0P\neq\begin{pmatrix}1&amp;-1\\1&amp;-1\end{pmatrix},$$</p>
+<p>故非(A).</p>
+<p>由 $A^2=O$，$B^2=O$，显然，$A^2\sim B^2$，但 $A$ 与 $B$ 不相似，所以非(D).</p>
+<p>再设 $A$ 为 $n$ 阶零矩阵，$B$ 为 $n$ 阶单位矩阵，则 $A$ 的特征值为 0（$n$ 重），$B$ 的特征值为 1（$n$ 重）. 由 $Ax=0\cdot x$ 和 $Bx=1\cdot x$ 知，任意非零 $n$ 维列向量都是 $A$ 和 $B$ 的特征向量，但 $A$ 与 $B$ 显然不相似，故非(C).</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应选(B).</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.2" data-pid="5.2.2">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.2】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若 $A$ 与 $B$ 相似，则______.</p>
+<p>（A）$\lambda E-A=\lambda E-B$</p>
+<p>（B）$|A|=|B|$</p>
+<p>（C）对于相同的特征值 $\lambda$，$A$、$B$ 有相同的特征向量</p>
+<p>（D）$A$、$B$ 均与同一个对角阵相似</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>例如</p>
+<p>$$A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;0\end{pmatrix},\qquad B=\begin{pmatrix}2&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;-1\end{pmatrix},$$</p>
+<p>则 $P^{-1}AP=B$，其中</p>
+<p>$$P=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;1&amp;-1\end{pmatrix},$$</p>
+<p>即 $A\sim B$，显然特征值为 $\lambda_1=1$，$\lambda_2=-1$，$\lambda_3=2$. 而 $E-A\neq E-B$，故非(A).</p>
+<p>计算得当 $\lambda=1$ 时，$A$ 对应于 $\lambda=1$ 的特征向量为 $\alpha=(0,1,1)^T$，而 $B$ 对应于 $\lambda=1$ 的特征向量为 $\beta=(0,1,0)^T$，显然 $\alpha$ 与 $\beta$ 线性无关，故非(C).</p>
+<p>$A,B$ 未必能相似对角化，故非(D).</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应选(B).</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.3" data-pid="5.2.3">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.3】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若</p>
+<p>$$\begin{pmatrix}22&amp;31\\y&amp;x\end{pmatrix}$$</p>
+<p>与</p>
+<p>$$\begin{pmatrix}1&amp;2\\3&amp;4\end{pmatrix}$$</p>
+<p>相似，则 $x=$______，$y=$______.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>利用两相似矩阵迹相等和行列式相等，得方程组</p>
+<p>$$\begin{cases}22+x=1+4,\\22x-31y=-2,\end{cases}$$</p>
+<p>解得</p>
+<p>$$\begin{cases}x=-17,\\y=-12,\end{cases}$$</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 $-17$，$-12$.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.4" data-pid="5.2.4">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.4】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知</p>
+<p>$$A\sim B=\begin{pmatrix}1&amp;0&amp;0&amp;0\\0&amp;1&amp;0&amp;0\\0&amp;0&amp;-1&amp;2\\0&amp;0&amp;2&amp;2\end{pmatrix}$$</p>
+<p>则 $r(A-E)+r(A-3E)=$______.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $A\sim B$，存在可逆阵 $P$，使得 $P^{-1}BP=A$，故</p>
+<p>$$r(A-E)+r(A-3E)=r(P^{-1}BP-E)+r(P^{-1}BP-3E)$$</p>
+<p>$$=r(P^{-1}(B-E)P)+r(P^{-1}(B-3E)P)=r(B-E)+r(B-3E)$$</p>
+<p>$$=r\begin{pmatrix}0&amp;0&amp;0&amp;0\\0&amp;0&amp;0&amp;0\\0&amp;0&amp;-2&amp;2\\0&amp;0&amp;2&amp;1\end{pmatrix}+r\begin{pmatrix}-2&amp;0&amp;0&amp;0\\0&amp;-2&amp;0&amp;0\\0&amp;0&amp;-4&amp;2\\0&amp;0&amp;2&amp;-1\end{pmatrix}$$</p>
+<p>$$=2+3=5.$$</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 5.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.5" data-pid="5.2.5">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.5】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若四阶矩阵 $A$ 与 $B$ 相似，矩阵 $A$ 的特征值为 $\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5}$，则行列式 $|B^{-1}-E|=$______.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因 $A$ 与 $B$ 相似，故 $A$ 与 $B$ 有相同的特征值，即 $B$ 的特征值为 $\frac{1}{2},\frac{1}{3},\frac{1}{4},\frac{1}{5}$，从而 $B^{-1}$ 的特征值为 $2,3,4,5$，$B^{-1}-E$ 的特征值为 $1,2,3,4$. 所以 $|B^{-1}-E|=1\times2\times3\times4=24$.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 24.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.6" data-pid="5.2.6">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.6】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>若矩阵 $A$ 与 $B$ 相似，且 2 是矩阵 $B$ 的一个特征值，则矩阵 $3A^2-4A+E$ 必有一个特征值为______.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为 $A$ 与 $B$ 相似，所以 $A$ 与 $B$ 有相同的特征值，又 2 是 $B$ 的特征值，故 $A$ 有特征值 2. 因此，矩阵 $3A^2-4A+E$ 必有特征值 $3\times2^2-4\times2+1=5$.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 5.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.7" data-pid="5.2.7">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.7】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\alpha=(1,2,-1)$，$A=\alpha^T\alpha$，若矩阵 $A$ 与 $B$ 相似，则 $(B+E)^*$ 的特征值为______.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由题设知</p>
+<p>$$A=\begin{pmatrix}1\\2\\-1\end{pmatrix}(1,2,-1)=\begin{pmatrix}1&amp;2&amp;-1\\2&amp;4&amp;-2\\-1&amp;-2&amp;1\end{pmatrix},$$</p>
+<p>计算得 $A$ 的特征值为 6,0,0. 由于 $A$ 与 $B$ 相似，故 $B$ 的特征值也为 6,0,0，从而 $B+E$ 的特征值为 7,1,1，且 $|B+E|=7$. 因此，$(B+E)^*$ 的特征值为 1,7,7.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>故应填 1,7,7.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.8" data-pid="5.2.8">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.8】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知矩阵</p>
+<p>$$A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;a\end{pmatrix}$$</p>
+<p>和矩阵</p>
+<p>$$B=\begin{pmatrix}2&amp;0&amp;0\\0&amp;3&amp;4\\0&amp;-2&amp;b\end{pmatrix}$$</p>
+<p>相似，试确定参数 $a,b$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>解法一　因为 $A\sim B$，所以 $|\lambda E-A|=|\lambda E-B|$，即</p>
+<p>$$\begin{vmatrix}\lambda-2&amp;0&amp;0\\0&amp;\lambda&amp;-1\\0&amp;-1&amp;\lambda-a\end{vmatrix}=\begin{vmatrix}\lambda-2&amp;0&amp;0\\0&amp;\lambda-3&amp;-4\\0&amp;2&amp;\lambda-b\end{vmatrix},$$</p>
+<p>解得</p>
+<p>$$(\lambda^2-a\lambda-1)(\lambda-2)=(\lambda^2-(3+b)\lambda+3\lambda+8)(\lambda-2),$$</p>
+<p>两边比较 $\lambda$ 系数可得</p>
+<p>$$\begin{cases}a=3+b,\\-1=3b+8,\end{cases}$$</p>
+<p>解得 $a=0,b=-3$.</p>
+<p>解法二 因 $A\sim B$，则 $|A|=|B|$，因为 $|A|=-2$，$|B|=2(8+2b)$，因此，解得 $b=-3$. 代入 $|\lambda E-B|=0$ 得到 $B$ 的全部特征值 $\lambda_1=2$，$\lambda_2=1$，$\lambda_3=-1$，则 1 也是 $A$ 的特征值，因此 $|E-A|=-a=0$，解得 $a=0$，$b=-3$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.9" data-pid="5.2.9">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.9】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>两个矩阵如果等价，它们是否相似？反之，如果相似，是否等价？哪些矩阵与单位矩阵等价？哪些矩阵与单位矩阵相似？</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由定义，等价未必相似，但相似一定等价；</p>
+<p>可逆矩阵都与单位矩阵等价；但只有单位矩阵与单位矩阵相似.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.10" data-pid="5.2.10">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.10】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $n$ 阶方阵 $A$ 相似于某对角矩阵 $\Lambda$，则______.</p>
+<p>(A) $r(A)=n$　　(B) $A$ 有不同的特征值</p>
+<p>(C) $A$ 是实对称矩阵　　(D) $A$ 有 $n$ 个线性无关的特征向量</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>例如 $A=\begin{pmatrix}1&amp;1\\0&amp;0\end{pmatrix}$，$r(A)=1\ne 2$；矩阵 $A$ 的特征值为 $\lambda_1=1$，$\lambda_2=0$. $A$ 非实对称矩阵，虽然 $A$ 可对角化，但非(A)，非(B)，非(C).</p>
+<p>选项(D)是 $A$ 可对角化的充分必要条件.</p>
+<p>故应选(D).</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.11" data-pid="5.2.11">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.11】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A$ 为三阶矩阵，且 $A-E$，$A+2E$，$5A-3E$ 不可逆，试证 $A$ 可相似于对角阵.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因为 $A-E$ 不可逆，即 $|E-A|=0$，所以 1 是 $A$ 的特征值.</p>
+<p>同理由 $A+2E$，$5A-3E$ 不可逆分别得出 $-2$ 和 $\dfrac{3}{5}$ 也是 $A$ 的特征值. 因此 $A$ 有三个不同的特征值 $1$，$-2$，$\dfrac{3}{5}$，因此 $A$ 相似于对角阵</p>
+<p>$$\begin{pmatrix}1&amp;&amp;\\&amp;-2&amp;\\&amp;&amp;\frac{3}{5}\end{pmatrix}.$$</p>
+<p>点评：本题关键是由矩阵不可逆得到 $A$ 的三个不同的特征值.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.12" data-pid="5.2.12">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.12】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设三阶矩阵 $A=\begin{pmatrix}2&amp;-1&amp;2\\5&amp;a&amp;3\\-1&amp;b&amp;-2\end{pmatrix}$，$\xi=(1,1,-1)^{\mathrm T}$ 是 $A$ 的特征向量.</p>
+<p>(1) 试确定参数 $a,b$ 及特征向量 $\xi$ 所对应的特征值；</p>
+<p>(2) 问 $A$ 能否相似于对角阵？说明理由.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) 由 $A\xi=\lambda\xi$，即 $(\lambda E-A)\xi=0$，即</p>
+<p>$$\begin{pmatrix}\lambda-2&amp;1&amp;-2\\-5&amp;\lambda-a&amp;-3\\1&amp;-b&amp;\lambda+2\end{pmatrix}\begin{pmatrix}1\\1\\-1\end{pmatrix}=\begin{pmatrix}0\\0\\0\end{pmatrix}$$</p>
+<p>$$\begin{cases}\lambda-2+1+2=0,\\-5+\lambda-a+3=0,\\1-b-\lambda-2=0,\end{cases}$$</p>
+<p>解得 $a=-3$，$b=0$，$\lambda=-1$.</p>
+<p>(2) 由 $A=\begin{pmatrix}2&amp;-1&amp;2\\5&amp;-3&amp;3\\-1&amp;0&amp;-2\end{pmatrix}$，</p>
+<p>$$|\lambda E-A|=\begin{vmatrix}\lambda-2&amp;1&amp;-2\\-5&amp;\lambda+3&amp;-3\\1&amp;0&amp;\lambda+2\end{vmatrix}=(\lambda+1)^3$$</p>
+<p>知 $\lambda=-1$ 是 $A$ 的三重特征值.</p>
+<p>但秩 $r(-E-A)=r\begin{pmatrix}-3&amp;1&amp;-2\\-5&amp;2&amp;-3\\1&amp;0&amp;1\end{pmatrix}=2$，</p>
+<p>从而 $\lambda=-1$ 对应的线性无关特征向量只有一个，故 $A$ 不能相似于对角阵.</p>
+<p>点评：本题(2)中也可不求 $r(-E-A)$，事实上，由于 $-E-A\ne 0$，则 $(-E-A)x=0$ 的基础解系中解向量个数 $k=3-r(-E-A)\le 2&lt;3$，即三重特征值最多对应两个线性无关特征向量，从而 $A$ 不能相似于对角阵.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.13" data-pid="5.2.13">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.13】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A$ 为 $n$ 阶可逆方阵，若 $A$ 相似于对角阵，则 $A^{-1}$ 也相似于对角阵.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设有可逆矩阵 $P$ 使得 $P^{-1}AP=\Lambda$（对角阵），则有 $A$ 可逆，且</p>
+<p>$$P^{-1}A^{-1}(P^{-1})^{-1}=\Lambda^{-1}$$，即 $P^{-1}A^{-1}P=\Lambda^{-1}$（对角阵），</p>
+<p>所以 $A^{-1}$ 也相似于对角阵.</p>
+<p>点评：本题利用定义判定 $A^{-1}$ 是否可相似对角化，并且用到结论：可逆对角阵的逆矩阵也是对角阵.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.14" data-pid="5.2.14">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.14】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $A=\begin{pmatrix}2&amp;a&amp;2\\5&amp;b&amp;3\\-1&amp;1&amp;-1\end{pmatrix}$ 有特征值 $\pm 1$. 问 $A$ 能否对角化？并说明理由.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因 $\lambda=\pm 1$ 是 $A$ 的特征值，代入 $A$ 的特征方程 $|\lambda E-A|=0$.</p>
+<p>当 $\lambda=1$ 时，</p>
+<p>$$|E-A|=\begin{vmatrix}-1&amp;-a&amp;-2\\-5&amp;1-b&amp;-3\\1&amp;-1&amp;2\end{vmatrix}=-7(a+1)=0$$</p>
+<p>得 $a=-1$.</p>
+<p>当 $\lambda=-1$ 时，</p>
+<p>$$|-E-A|=\begin{vmatrix}-3&amp;-a&amp;-2\\-5&amp;-1-b&amp;-3\\1&amp;-1&amp;0\end{vmatrix}=b+3=0$$</p>
+<p>得 $b=-3$.</p>
+<p>因此 $A=\begin{pmatrix}2&amp;-1&amp;2\\5&amp;-3&amp;3\\-1&amp;1&amp;-1\end{pmatrix}$.</p>
+<p>又特征值之和等于矩阵的迹，即 $1+(-1)+\lambda_3=2+(-3)+(-1)$，因此 $\lambda_3=-2$. 这样三阶矩阵 $A$ 有三个不同的特征值，故可以相似对角化.</p>
+<p>点评：本题利用结论：矩阵的迹等于特征值之和来求第 3 个特征值，比直接求要简便得多.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.15" data-pid="5.2.15">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.15】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设二阶矩阵 $A$ 的行列式为负值，证明：$A$ 必与一个对角矩阵相似.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>设 $\lambda_1$，$\lambda_2$ 是 $A$ 的两个特征值，则有 $|A|=\lambda_1\lambda_2&lt;0$，即 $\lambda_1\ne\lambda_2$，于是 $A$ 必有两个线性无关的特征向量，从而 $A$ 与一个对角矩阵相似.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.16" data-pid="5.2.16">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.16】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设方阵 $A$，$B$ 分别与对角矩阵 $\Lambda_1$，$\Lambda_2$ 相似，证明：分块矩阵 $\begin{pmatrix}A&amp;0\\0&amp;B\end{pmatrix}$ 必与一个对角矩阵相似.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>因 $A\sim\Lambda_1$，$B\sim\Lambda_2$，则分别存在可逆矩阵 $P_1$，$P_2$，使得 $A=P_1^{-1}\Lambda_1P_1$，$B=P_2^{-1}\Lambda_2P_2$.</p>
+<p>取 $P=\begin{pmatrix}P_1&amp;0\\0&amp;P_2\end{pmatrix}$，则 $|P|=|P_1||P_2|\ne 0$，从而 $P$ 可逆，且 $P^{-1}=\begin{pmatrix}P_1^{-1}&amp;0\\0&amp;P_2^{-1}\end{pmatrix}$，于是有</p>
+<p>$$\begin{pmatrix}A&amp;0\\0&amp;B\end{pmatrix}=\begin{pmatrix}P_1^{-1}&amp;0\\0&amp;P_2^{-1}\end{pmatrix}\begin{pmatrix}\Lambda_1&amp;0\\0&amp;\Lambda_2\end{pmatrix}\begin{pmatrix}P_1&amp;0\\0&amp;P_2\end{pmatrix}$$</p>
+<p>即 $\begin{pmatrix}A&amp;0\\0&amp;B\end{pmatrix}$ 与对角阵 $\begin{pmatrix}\Lambda_1&amp;0\\0&amp;\Lambda_2\end{pmatrix}$ 相似.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.17" data-pid="5.2.17">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.17】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A$ 为非零的 $n$ 阶方阵，如果存在正整数 $k$，使得 $A^k=0$（即 $A$ 为幂零阵），证明：$A$ 不能与对角阵相似.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>假设 $A$ 与对角阵相似，即有可逆矩阵 $P$ 使得</p>
+<p>$$P^{-1}AP=\begin{pmatrix}\lambda_1&amp;&amp;&amp;\\&amp;\lambda_2&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\lambda_n\end{pmatrix}$$</p>
+<p>所以</p>
+<p>$$0=P^{-1}A^kP=(P^{-1}AP)^k=\begin{pmatrix}\lambda_1^k&amp;&amp;&amp;\\&amp;\lambda_2^k&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\lambda_n^k\end{pmatrix}$$</p>
+<p>从而 $\lambda_i=0\ (i=1,2,\cdots,n)$，由此可得 $A=0$，这与 $A$ 为非零的 $n$ 阶方阵矛盾，所以 $A$ 不能与对角阵相似.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.18" data-pid="5.2.18">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.18】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设矩阵 $A=\begin{pmatrix}1&amp;2&amp;-3\\-1&amp;4&amp;-3\\1&amp;a&amp;5\end{pmatrix}$ 的特征方程有一个二重根，求 $a$ 的值，并讨论 $A$ 是否可相似对角化.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$A$ 的特征多项式为</p>
+<p>$$|\lambda E-A|=\begin{vmatrix}\lambda-1&amp;-2&amp;3\\1&amp;\lambda-4&amp;3\\-1&amp;-a&amp;\lambda-5\end{vmatrix}=\begin{vmatrix}\lambda-2&amp;2-\lambda&amp;0\\1&amp;\lambda-4&amp;3\\-1&amp;-a&amp;\lambda-5\end{vmatrix}$$</p>
+<p>$$=(\lambda-2)\begin{vmatrix}1&amp;-1&amp;0\\1&amp;\lambda-4&amp;3\\-1&amp;-a&amp;\lambda-5\end{vmatrix}=(\lambda-2)\begin{vmatrix}1&amp;0&amp;0\\1&amp;\lambda-3&amp;3\\-1&amp;-a-1&amp;\lambda-5\end{vmatrix}=(\lambda-2)(\lambda^2-8\lambda+18+3a)$$</p>
+<p>若 $\lambda=2$ 是特征方程的二重根，则有 $2^2-16+18+3a=0$，解得 $a=-2$.</p>
+<p>当 $a=-2$ 时，$A$ 的特征值为 $2,2,6$，矩阵 $2E-A=\begin{pmatrix}1&amp;-2&amp;3\\1&amp;-2&amp;3\\-1&amp;2&amp;-3\end{pmatrix}$ 的秩为 1，故 $\lambda=2$ 对应的线性无关的特征向量有两个，从而 $A$ 可相似对角化.</p>
+<p>若 $\lambda=2$ 不是特征方程的二重根，则 $\lambda^2-8\lambda+18+3a$ 为完全平方，从而 $18+3a=16$，解得 $a=-\dfrac{2}{3}$.</p>
+<p>当 $a=-\dfrac{2}{3}$ 时，$A$ 的特征值为 $2,4,4$，矩阵</p>
+<p>$$4E-A=\begin{pmatrix}3&amp;-2&amp;3\\1&amp;0&amp;3\\-1&amp;\frac{2}{3}&amp;-1\end{pmatrix}$$</p>
+<p>的秩为 2，故 $\lambda=4$ 对应的线性无关的特征向量只有一个，从而 $A$ 不可相似对角化.</p>
+<p>点评：矩阵 $A$ 能否与对角阵相似，关键看二重特征值是否有两个线性无关的特征向量.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.19" data-pid="5.2.19">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.19】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A=\begin{pmatrix}4&amp;6&amp;0\\-3&amp;-5&amp;0\\-3&amp;-6&amp;1\end{pmatrix}$，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角阵.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$|\lambda E-A|=\begin{vmatrix}\lambda-4&amp;-6&amp;0\\3&amp;\lambda+5&amp;0\\3&amp;6&amp;\lambda-1\end{vmatrix}=(\lambda-1)^2(\lambda+2)$，因此 $A$ 的特征值为 $\lambda_1=-2$，$\lambda_2=\lambda_3=1$.</p>
+<p>当 $\lambda_1=-2$ 时，解 $(-2E-A)x=0$ 得基础解系 $\eta_1=(-1,1,1)^{\mathrm T}$，即为属于 $\lambda_1=-2$ 的线性无关的特征向量.</p>
+<p>当 $\lambda_2=\lambda_3=1$ 时，解 $(E-A)x=0$ 得基础解系</p>
+<p>$$\eta_2=(0,0,1)^{\mathrm T}，\eta_3=(-2,1,0)^{\mathrm T}，$$</p>
+<p>即为属于 $\lambda_2=\lambda_3=1$ 的线性无关的特征向量.</p>
+<p>因此 $A$ 可对角化. 令 $P=(\eta_1,\eta_2,\eta_3)=\begin{pmatrix}-1&amp;0&amp;-2\\1&amp;0&amp;1\\1&amp;1&amp;0\end{pmatrix}$，则 $P^{-1}AP=\begin{pmatrix}-2&amp;&amp;\\&amp;1&amp;\\&amp;&amp;1\end{pmatrix}$.</p>
+<p>点评：注意到若存在可逆矩阵 $P$ 使 $P^{-1}AP$ 为对角阵，则 $P$ 的列向量为 $A$ 的 $n$ 个线性无关的特征向量；而对角阵主对角线上的元素为 $A$ 的特征值. 事实上，设</p>
+<p>$$P^{-1}AP=\begin{pmatrix}\lambda_1&amp;&amp;&amp;\\&amp;\lambda_2&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\lambda_n\end{pmatrix}$$</p>
+<p>令 $P=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，则</p>
+<p>$$A(\alpha_1,\alpha_2,\cdots,\alpha_n)=(\alpha_1,\alpha_2,\cdots,\alpha_n)\begin{pmatrix}\lambda_1&amp;&amp;&amp;\\&amp;\lambda_2&amp;&amp;\\&amp;&amp;\ddots&amp;\\&amp;&amp;&amp;\lambda_n\end{pmatrix}$$</p>
+<p>即有</p>
+<p>$$A\alpha_i=\lambda_i\alpha_i，\quad i=1,2,\cdots,n.$$</p>
+<p>所以 $\lambda_i$ 为 $A$ 的特征值，而 $\alpha_i$ 为 $A$ 的属于 $\lambda_i$ 的特征向量.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.20" data-pid="5.2.20">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.20】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设矩阵 $A$ 与 $B$ 相似，且</p>
+<p>$$A=\begin{pmatrix}1&amp;-1&amp;1\\2&amp;4&amp;-2\\-3&amp;-3&amp;a\end{pmatrix}，\quad B=\begin{pmatrix}2&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;b\end{pmatrix}.$$</p>
+<p>(1) 求 $a$，$b$ 的值；</p>
+<p>(2) 求可逆矩阵 $P$，使 $P^{-1}AP=B$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) $A$ 的特征多项式为</p>
+<p>$$|\lambda E-A|=\begin{vmatrix}\lambda-1&amp;1&amp;-1\\-2&amp;\lambda-4&amp;2\\3&amp;3&amp;\lambda-a\end{vmatrix}=(\lambda-2)\left[\lambda^2-(a+3)\lambda+3(a-1)\right].$$</p>
+<p>由 $A\sim B$ 可知，$A$ 与 $B$ 有相同的特征值 $\lambda_1=\lambda_2=2$，$\lambda_3=b$.</p>
+<p>由于 2 是 $A$ 的二重特征值，因此 2 是方程 $\lambda^2-(a+3)\lambda+3(a-1)=0$ 的根. 把 $\lambda_1=2$ 代入，得 $a=5$.</p>
+<p>因此，有</p>
+<p>$$|\lambda E-A|=(\lambda-2)(\lambda^2-8\lambda+12)=(\lambda-2)^2(\lambda-6).$$</p>
+<p>于是，$b=\lambda_3=6$.</p>
+<p>(2) 当 $\lambda=2$ 时，求解 $(2E-A)x=0$，其基础解系为 $\alpha_1=(1,-1,0)^{\mathrm T}$，$\alpha_2=(1,0,1)^{\mathrm T}$.</p>
+<p>当 $\lambda=6$ 时，求解 $(6E-A)x=0$，其基础解系为 $\alpha_3=(1,-2,3)^{\mathrm T}$.</p>
+<p>令 $P=(\alpha_1,\alpha_2,\alpha_3)=\begin{pmatrix}1&amp;1&amp;1\\-1&amp;0&amp;-2\\0&amp;1&amp;3\end{pmatrix}$，则有 $P^{-1}AP=B$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.21" data-pid="5.2.21">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.21】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;0&amp;1\\0&amp;1&amp;x\end{pmatrix}$，$B=\begin{pmatrix}2&amp;0&amp;0\\0&amp;y&amp;0\\0&amp;0&amp;-1\end{pmatrix}$，且 $A$ 与 $B$ 相似. 求：</p>
+<p>(1) $x$ 和 $y$；</p>
+<p>(2) 一个满足 $P^{-1}AP=B$ 的可逆矩阵 $P$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>（【2.21】题干见上页）</p>
+<p>因 $A$ 与 $B$ 相似，故 $A$ 与 $B$ 有相同的特征多项式，即 $|\lambda E-A|=|\lambda E-B|$，即</p>
+<p>$$\begin{vmatrix}\lambda-2&amp;0&amp;0\\0&amp;\lambda&amp;-1\\0&amp;-1&amp;\lambda-x\end{vmatrix}=\begin{vmatrix}\lambda-2&amp;0&amp;0\\0&amp;\lambda-y&amp;0\\0&amp;0&amp;\lambda+1\end{vmatrix}$$</p>
+<p>即 $(\lambda-2)[\lambda(\lambda-x)-1]=(\lambda-2)(\lambda-y)(\lambda+1)$，即</p>
+<p>$$\lambda(\lambda-x)-1=(\lambda-y)(\lambda+1)$$</p>
+<p>即</p>
+<p>$$\lambda^2-x\lambda-1=\lambda^2+(1-y)\lambda-y$$</p>
+<p>比较系数，得 $\begin{cases}x=y-1\\y=1\end{cases}$，解得 $x=0$，$y=1$.</p>
+<p>(2) $A$ 的特征值为 $2$，$1$，$-1$，对应的特征向量为</p>
+<p>$$\alpha_1=(1,0,0)^{\mathrm T}，\alpha_2=(0,1,1)^{\mathrm T}，\alpha_3=(0,1,-1)^{\mathrm T}.$$</p>
+<p>令 $P=(\alpha_1,\alpha_2,\alpha_3)=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;1&amp;-1\end{pmatrix}$，则 $P^{-1}AP=B$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.22" data-pid="5.2.22">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.22】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;0&amp;4\\0&amp;4&amp;0\end{pmatrix}$，问 $A$ 是否可对角化？若可对角化，求可逆矩阵 $P$，使 $P^{-1}AP$ 为对角阵.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$|\lambda E-A|=\begin{vmatrix}\lambda-2&amp;0&amp;0\\0&amp;\lambda&amp;-4\\0&amp;-4&amp;\lambda\end{vmatrix}=(\lambda-2)(\lambda^2-16)=(\lambda-2)(\lambda-4)(\lambda+4)$</p>
+<p>故 $A$ 的特征值为 $\lambda_1=2$，$\lambda_2=4$，$\lambda_3=-4$，为三个不同的特征值，故 $A$ 可对角化.</p>
+<p>当 $\lambda_1=2$ 时，</p>
+<p>$$2E-A=\begin{pmatrix}0&amp;0&amp;0\\0&amp;2&amp;-4\\0&amp;-4&amp;2\end{pmatrix}\to\begin{pmatrix}0&amp;1&amp;-2\\0&amp;0&amp;-6\\0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>$r(2E-A)=2$，得基础解系 $\xi_1=(1,0,0)^{\mathrm T}$；</p>
+<p>当 $\lambda_2=4$ 时，</p>
+<p>$$4E-A=\begin{pmatrix}2&amp;0&amp;0\\0&amp;4&amp;-4\\0&amp;-4&amp;4\end{pmatrix}\to\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;-1\\0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>$r(4E-A)=2$，得基础解系 $\xi_2=(0,1,1)^{\mathrm T}$；</p>
+<p>当 $\lambda_3=-4$ 时，</p>
+<p>$$-4E-A=\begin{pmatrix}-6&amp;0&amp;0\\0&amp;-4&amp;-4\\0&amp;-4&amp;-4\end{pmatrix}\to\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;0&amp;0\end{pmatrix}$$</p>
+<p>$r(-4E-A)=2$，得基础解系 $\xi_3=(0,1,-1)^{\mathrm T}$.</p>
+<p>故 $A$ 可对角化，且存在可逆矩阵 $P=(\xi_1,\xi_2,\xi_3)=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;1\\0&amp;1&amp;-1\end{pmatrix}$，使 $P^{-1}AP=\begin{pmatrix}2&amp;&amp;\\&amp;4&amp;\\&amp;&amp;-4\end{pmatrix}$ 为对角阵.</p>
+<p>点评：判断一个矩阵能否对角化，首先要判断矩阵是否具有 $n$ 个线性无关的特征向量；本题中 $A$ 有 3 个不同的特征值，故必可对角化.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-5.2.23" data-pid="5.2.23">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【2.23】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设三阶矩阵 $A$ 的特征值为 $1$，$2$，$3$，对应的特征向量依次为 $\alpha_1=(1,1,1)^{\mathrm T}$，$\alpha_2=(1,2,3)^{\mathrm T}$，$\alpha_3=(1,3,6)^{\mathrm T}$，求 $A$ 和 $A^{-1}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
 </div></div>
 </article>
 </section>
@@ -1011,6 +1481,8 @@
 <p>注意：$\Lambda$ 的主对角线元素为全部的特征值，其排列顺序与 $P$ 中列向量的排列顺序对应.</p></div></div>
 <div class="sec-divider">基 本 题 型</div>
 <div class="type-block"><h3>题型1：矩阵相似的概念和性质</h3><div class="type-body"></div></div>
+<div class="type-block"><h3>题型2：矩阵可相似对角化的判定</h3><div class="type-body"></div></div>
+<div class="type-block"><h3>题型3：求可逆矩阵 P，使 P⁻¹AP 为对角阵</h3><div class="type-body"></div></div>
 </section>
 <nav class="chapter-nav">
 <a href="chapter-04.html">← 第四章　线性方程组</a>
