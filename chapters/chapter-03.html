@@ -142,13 +142,19 @@
 <a href="#prob-3.5.32" data-pid="3.5.32">32</a>
 <a href="#prob-3.5.33" data-pid="3.5.33">33</a>
 <a href="#prob-3.5.34" data-pid="3.5.34">34</a>
+<a href="#prob-3.5.38" data-pid="3.5.38">38</a>
+<a href="#prob-3.5.39" data-pid="3.5.39">39</a>
+<a href="#prob-3.5.40" data-pid="3.5.40">40</a>
+<a href="#prob-3.5.41" data-pid="3.5.41">41</a>
+<a href="#prob-3.5.42" data-pid="3.5.42">42</a>
+<a href="#prob-3.5.43" data-pid="3.5.43">43</a>
 </div></div>
 <div class="side-title" style="margin-top:18px">进度</div>
-<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 103 题</div>
+<div style="padding:0 10px;font-size:13px;color:var(--text-light)" id="chapterStat">已做 0 / 109 题</div>
 </aside>
 <main class="content">
 <h1 class="chapter-title">第三章　向量</h1>
-<p class="chapter-sub">共 103 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
+<p class="chapter-sub">共 109 题 · 点击题卡右上角「标记已做」记录进度 · 方向键 ←/→ 切换题目</p>
 <section class="sec-block" id="sec-1">
 <h2 class="sec-heading">§1．向量的运算</h2>
 <div class="note-block"></div>
@@ -2370,7 +2376,167 @@
 <p>解此齐次线性方程组，得基础解系</p>
 <p>$$(1, 0, 0, -1)^T,$$</p>
 <p>故在两个基下有相同坐标的非零向量为</p>
-<p>$$\boldsymbol{\xi} = k \begin{bmatrix} 1 \\ 0 \\ 0 \\ -1 \end{bmatrix}, \quad k \neq 0.$$</p></div>
+<p>$$\boldsymbol{\xi} = k \begin{bmatrix} 1 \\ 0 \\ 0 \\ -1 \end{bmatrix}, \quad k \neq 0.$$</p>
+<p>于是当 $a=0$ 或 $a=-10$ 时，$\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关.</p>
+<p>当 $a=0$ 时，$\alpha_1$ 为 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的一个极大线性无关组，且 $\alpha_2=2\alpha_1,\alpha_3=3\alpha_1,\alpha_4=4\alpha_1$.</p>
+<p>当 $a=-10$ 时，对 $A$ 施以初等行变换，有</p>
+<p>$$A=\begin{pmatrix}-9&amp;2&amp;3&amp;4\\1&amp;-8&amp;3&amp;4\\1&amp;2&amp;-7&amp;4\\1&amp;2&amp;3&amp;-6\end{pmatrix}\to\begin{pmatrix}-9&amp;2&amp;3&amp;4\\10&amp;-10&amp;0&amp;0\\10&amp;0&amp;-10&amp;0\\10&amp;0&amp;0&amp;-10\end{pmatrix}$$</p>
+<p>$$\to\begin{pmatrix}-9&amp;2&amp;3&amp;4\\1&amp;-1&amp;0&amp;0\\1&amp;0&amp;-1&amp;0\\1&amp;0&amp;0&amp;-1\end{pmatrix}\to\begin{pmatrix}0&amp;0&amp;0&amp;0\\1&amp;-1&amp;0&amp;0\\1&amp;0&amp;-1&amp;0\\1&amp;0&amp;0&amp;-1\end{pmatrix}=(\beta_1,\beta_2,\beta_3,\beta_4).$$</p>
+<p>由于 $\beta_2,\beta_3,\beta_4$ 为 $\beta_1,\beta_2,\beta_3,\beta_4$ 的一个极大线性无关组，且 $\beta_1=-\beta_2-\beta_3-\beta_4$，故 $\alpha_2,\alpha_3,\alpha_4$ 为 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的一个极大线性无关组，且 $\alpha_1=-\alpha_2-\alpha_3-\alpha_4$.</p>
+<p>解法二 记 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$，对 $A$ 施以初等行变换，有</p>
+<p>$$A=\begin{pmatrix}1+a&amp;2&amp;3&amp;4\\1&amp;2+a&amp;3&amp;4\\1&amp;2&amp;3+a&amp;4\\1&amp;2&amp;3&amp;4+a\end{pmatrix}\to\begin{pmatrix}1+a&amp;2&amp;3&amp;4\\-a&amp;a&amp;0&amp;0\\-a&amp;0&amp;a&amp;0\\-a&amp;0&amp;0&amp;a\end{pmatrix}=B.$$</p>
+<p>当 $a=0$ 时，$A$ 的秩为 1，因而 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关，此时 $\alpha_1$ 为 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的一个极大线性无关组，且 $\alpha_2=2\alpha_1,\alpha_3=3\alpha_1,\alpha_4=4\alpha_1$.</p>
+<p>当 $a\neq0$ 时，再对 $B$ 施以初等行变换，有</p>
+<p>$$B\to\begin{pmatrix}1+a&amp;2&amp;3&amp;4\\-1&amp;1&amp;0&amp;0\\-1&amp;0&amp;1&amp;0\\-1&amp;0&amp;0&amp;1\end{pmatrix}\to\begin{pmatrix}a+10&amp;0&amp;0&amp;0\\-1&amp;1&amp;0&amp;0\\-1&amp;0&amp;1&amp;0\\-1&amp;0&amp;0&amp;1\end{pmatrix}=C=(\gamma_1,\gamma_2,\gamma_3,\gamma_4).$$</p>
+<p>如果 $a\neq-10$，$C$ 的秩为 4，从而 $A$ 的秩为 4，故 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性无关.</p>
+<p>如果 $a=-10$，$C$ 的秩为 3，从而 $A$ 的秩为 3，故 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关.</p>
+<p>由于 $\gamma_2,\gamma_3,\gamma_4$ 为 $\gamma_1,\gamma_2,\gamma_3,\gamma_4$ 的一个极大线性无关组，且 $\gamma_1=-\gamma_2-\gamma_3-\gamma_4$，于是 $\alpha_2,\alpha_3,\alpha_4$ 为 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 的一个极大线性无关组，且 $\alpha_1=-\alpha_2-\alpha_3-\alpha_4$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-3.5.38" data-pid="3.5.38">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.38】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>利用向量组理论，证明下列关于矩阵的秩的结论：</p>
+<p>(1) 设 $A,B$ 为 $m\times n$ 矩阵，证明：$r(A+B)\leqslant r(A)+r(B)$.</p>
+<p>(2) 设 $A$ 是 $m\times n$ 矩阵，$B$ 是 $n\times s$ 矩阵，证明：$r(AB)\leqslant\min\{r(A),r(B)\}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) 设 $A=(\alpha_1,\alpha_2,\cdots,\alpha_n)$，$B=(\beta_1,\beta_2,\cdots,\beta_n)$，其中 $\alpha_i,\beta_i$（$i=1,2,\cdots,n$）均为 $m$ 维列向量，则有</p>
+<p>$$A+B=(\alpha_1+\beta_1,\alpha_2+\beta_2,\cdots,\alpha_n+\beta_n)=(\gamma_1,\gamma_2,\cdots,\gamma_n),$$</p>
+<p>其中 $\gamma_i=\alpha_i+\beta_i$（$i=1,2,\cdots,n$），即 $A+B$ 的列向量组为 $\gamma_1,\gamma_2,\cdots,\gamma_n$.</p>
+<p>不妨设 $\alpha_1,\alpha_2,\cdots,\alpha_r$（$r\leqslant n$）为 $A$ 的列向量组的极大线性无关组，$\beta_1,\beta_2,\cdots,\beta_s$（$s\leqslant n$）为 $B$ 的列向量组的极大线性无关组，则 $\gamma_i$（$i=1,2,\cdots,n$）均可由 $\alpha_1,\alpha_2,\cdots,\alpha_r,\beta_1,\beta_2,\cdots,\beta_s$ 线性表示，所以向量组 $\gamma_1,\gamma_2,\cdots,\gamma_n$ 的秩不会超过向量组</p>
+<p>$\alpha_1,\alpha_2,\cdots,\alpha_r,\beta_1,\beta_2,\cdots,\beta_s$ 的秩. 即有</p>
+<p>$$r(A+B)\leqslant r+s=r(A)+r(B).$$</p>
+<p>(2) 设</p>
+<p>$$A=\begin{pmatrix}a_{11}&amp;a_{12}&amp;\cdots&amp;a_{1n}\\a_{21}&amp;a_{22}&amp;\cdots&amp;a_{2n}\\\vdots&amp;\vdots&amp;&amp;\vdots\\a_{m1}&amp;a_{m2}&amp;\cdots&amp;a_{mn}\end{pmatrix},\quad B=\begin{pmatrix}b_{11}&amp;b_{12}&amp;\cdots&amp;b_{1s}\\b_{21}&amp;b_{22}&amp;\cdots&amp;b_{2s}\\\vdots&amp;\vdots&amp;&amp;\vdots\\b_{n1}&amp;b_{n2}&amp;\cdots&amp;b_{ns}\end{pmatrix}=\begin{pmatrix}b_1\\b_2\\\vdots\\b_n\end{pmatrix},$$</p>
+<p>$$AB=\begin{pmatrix}c_{11}&amp;c_{12}&amp;\cdots&amp;c_{1s}\\c_{21}&amp;c_{22}&amp;\cdots&amp;c_{2s}\\\vdots&amp;\vdots&amp;&amp;\vdots\\c_{m1}&amp;c_{m2}&amp;\cdots&amp;c_{ms}\end{pmatrix}=\begin{pmatrix}c_1\\c_2\\\vdots\\c_m\end{pmatrix},$$</p>
+<p>其中 $b_1,b_2,\cdots,b_n$ 表示矩阵 $B$ 的行向量，$c_1,c_2,\cdots,c_m$ 表示矩阵 $AB$ 的行向量，则</p>
+<p>$$c_i=a_{i1}b_1+a_{i2}b_2+\cdots+a_{in}b_n\ (i=1,2,\cdots,m).$$</p>
+<p>即矩阵 $AB$ 的行向量可由矩阵 $B$ 的行向量组线性表示，故 $r(AB)\leqslant r(B)$.</p>
+<p>再证 $r(AB)\leqslant r(A)$. $r(AB)=r\left((AB)^{\mathrm{T}}\right)=r\left(B^{\mathrm{T}}A^{\mathrm{T}}\right)$，而 $r\left(B^{\mathrm{T}}A^{\mathrm{T}}\right)\leqslant r\left(A^{\mathrm{T}}\right)\leqslant r(A)$，从而有</p>
+<p>$$r(AB)=r\left(B^{\mathrm{T}}A^{\mathrm{T}}\right)\leqslant r(A).$$</p>
+<p>综上所述，有 $r(AB)\leqslant\min\{r(A),r(B)\}$.</p></div>
+</div></div>
+</article>
+<div class="type-block"><h3>题型5：向量空间</h3><div class="type-body"></div></div>
+<article class="problem" id="prob-3.5.39" data-pid="3.5.39">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.39】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\alpha_1,\alpha_2,\alpha_3$ 是三维向量空间 $\mathbb{R}^3$ 的一组基，则由基 $\alpha_1,\dfrac{1}{2}\alpha_2,\dfrac{1}{3}\alpha_3$ 到基 $\alpha_1+\alpha_2,\alpha_2+\alpha_3,\alpha_3+\alpha_1$ 的过渡矩阵为______.</p>
+<p>(A) $\begin{pmatrix}1&amp;0&amp;1\\2&amp;2&amp;0\\0&amp;3&amp;3\end{pmatrix}$</p>
+<p>(B) $\begin{pmatrix}1&amp;2&amp;0\\0&amp;2&amp;3\\1&amp;0&amp;3\end{pmatrix}$</p>
+<p>(C) $\begin{pmatrix}\dfrac{1}{2}&amp;\dfrac{1}{4}&amp;-\dfrac{1}{6}\\[2mm]-\dfrac{1}{2}&amp;\dfrac{1}{4}&amp;\dfrac{1}{6}\\[2mm]\dfrac{1}{2}&amp;-\dfrac{1}{4}&amp;\dfrac{1}{6}\end{pmatrix}$</p>
+<p>(D) $\begin{pmatrix}\dfrac{1}{2}&amp;-\dfrac{1}{2}&amp;\dfrac{1}{2}\\[2mm]\dfrac{1}{4}&amp;\dfrac{1}{4}&amp;-\dfrac{1}{4}\\[2mm]-\dfrac{1}{6}&amp;\dfrac{1}{6}&amp;\dfrac{1}{6}\end{pmatrix}$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>由 $\left(\alpha_1,\dfrac{1}{2}\alpha_2,\dfrac{1}{3}\alpha_3\right)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&amp;0&amp;0\\0&amp;\dfrac{1}{2}&amp;0\\0&amp;0&amp;\dfrac{1}{3}\end{pmatrix}$，得 $(\alpha_1,\alpha_2,\alpha_3)=\left(\alpha_1,\dfrac{1}{2}\alpha_2,\dfrac{1}{3}\alpha_3\right)\begin{pmatrix}1&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;3\end{pmatrix}$，</p>
+<p>故</p>
+<p>$$(\alpha_1+\alpha_2,\alpha_2+\alpha_3,\alpha_3+\alpha_1)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}=\left(\alpha_1,\frac{1}{2}\alpha_2,\frac{1}{3}\alpha_3\right)\begin{pmatrix}1&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;3\end{pmatrix}\begin{pmatrix}1&amp;0&amp;1\\1&amp;1&amp;0\\0&amp;1&amp;1\end{pmatrix}$$</p>
+<p>$$=\left(\alpha_1,\frac{1}{2}\alpha_2,\frac{1}{3}\alpha_3\right)\begin{pmatrix}1&amp;0&amp;1\\2&amp;2&amp;0\\0&amp;3&amp;3\end{pmatrix}.$$</p>
+<p>故应选(A).</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-3.5.40" data-pid="3.5.40">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.40】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\varepsilon_1=(1,2,0)^{\mathrm{T}},\varepsilon_2=(1,-1,2)^{\mathrm{T}},\varepsilon_3=(0,1,-1)^{\mathrm{T}}$ 是 $\mathbb{R}^3$ 的一组基，且 $\eta_1,\eta_2,\eta_3$ 满足</p>
+<p>$$(\eta_1,\eta_2,\eta_3)=(\varepsilon_1,\varepsilon_2,\varepsilon_3)P^{-1},\ P=\begin{pmatrix}2&amp;1&amp;6\\0&amp;1&amp;1\\1&amp;0&amp;2\end{pmatrix}.$$</p>
+<p>求 $\eta_1,\eta_2,\eta_3$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$P^{-1}=\begin{pmatrix}-2&amp;2&amp;5\\-1&amp;2&amp;2\\1&amp;-1&amp;-2\end{pmatrix}$，则</p>
+<p>$$(\eta_1,\eta_2,\eta_3)=\begin{pmatrix}1&amp;1&amp;0\\2&amp;-1&amp;1\\0&amp;2&amp;-1\end{pmatrix}\begin{pmatrix}-2&amp;2&amp;5\\-1&amp;2&amp;2\\1&amp;-1&amp;-2\end{pmatrix}=\begin{pmatrix}-3&amp;4&amp;7\\-2&amp;1&amp;6\\-3&amp;5&amp;6\end{pmatrix}.$$</p>
+<p>故 $\eta_1=(-3,-2,-3)^{\mathrm{T}},\eta_2=(4,1,5)^{\mathrm{T}},\eta_3=(7,6,6)^{\mathrm{T}}$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-3.5.41" data-pid="3.5.41">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.41】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\alpha_1=(1,1,1,1)^{\mathrm{T}},\alpha_2=(0,1,-1,2)^{\mathrm{T}},\alpha_3=(2,3,2+t,4)^{\mathrm{T}},\alpha_4=(3,1,5,9)^{\mathrm{T}}$，若 $\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关，求 $t$ 的值.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>$\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关 $\Leftrightarrow r(\alpha_1,\alpha_2,\alpha_3,\alpha_4)&lt;4$.</p>
+<p>对 $A=(\alpha_1,\alpha_2,\alpha_3,\alpha_4)$ 施以初等行变换：</p>
+<p>$$A=\begin{pmatrix}1&amp;0&amp;2&amp;3\\1&amp;1&amp;3&amp;1\\1&amp;-1&amp;2+t&amp;5\\1&amp;2&amp;4&amp;9\end{pmatrix}\xrightarrow[\;r_4-r_1\;]{\;r_2-r_1,\ r_3-r_1\;}\begin{pmatrix}1&amp;0&amp;2&amp;3\\0&amp;1&amp;1&amp;-2\\0&amp;-1&amp;t&amp;2\\0&amp;2&amp;2&amp;6\end{pmatrix}$$</p>
+<p>$$\xrightarrow{\;r_3+r_2,\ r_4-2r_2\;}\begin{pmatrix}1&amp;0&amp;2&amp;3\\0&amp;1&amp;1&amp;-2\\0&amp;0&amp;t+1&amp;0\\0&amp;0&amp;0&amp;10\end{pmatrix}.$$</p>
+<p>当 $t=-1$ 时，$r(A)=3&lt;4$，$\alpha_1,\alpha_2,\alpha_3,\alpha_4$ 线性相关.</p></div>
+<div class="sol-answer"><span class="ans-tag">最终答案</span>$t=-1$.</div>
+</div></div>
+</article>
+<article class="problem" id="prob-3.5.42" data-pid="3.5.42">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.42】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>已知 $\alpha_1,\alpha_2,\alpha_3$ 是三维向量空间 $V$ 的一个基，又</p>
+<p>$$\beta_1=\alpha_1+\alpha_2-\alpha_3,\quad\beta_2=-\alpha_1-2\alpha_2+2\alpha_3,\quad\beta_3=3\alpha_1+4\alpha_2-3\alpha_3.$$</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) 证明 $\beta_1,\beta_2,\beta_3$ 也是 $V$ 的一个基；</p>
+<p>(2) 求向量 $\xi=\alpha_1+\alpha_2+\alpha_3$ 在基 $\beta_1,\beta_2,\beta_3$ 下的坐标.</p>
+<p>(1) 由题设有</p>
+<p>$$(\beta_1,\beta_2,\beta_3)=(\alpha_1,\alpha_2,\alpha_3)\begin{pmatrix}1&amp;-1&amp;3\\1&amp;-2&amp;4\\-1&amp;2&amp;-3\end{pmatrix}.$$</p>
+<p>因为</p>
+<p>$$\begin{vmatrix}1&amp;-1&amp;3\\1&amp;-2&amp;4\\-1&amp;2&amp;-3\end{vmatrix}=-1\neq0,$$</p>
+<p>所以矩阵 $\begin{pmatrix}1&amp;-1&amp;3\\1&amp;-2&amp;4\\-1&amp;2&amp;-3\end{pmatrix}$ 是可逆矩阵，因此向量组 $\beta_1,\beta_2,\beta_3$ 线性无关，即知 $\beta_1,\beta_2,\beta_3$ 也是 $V$ 的一个基.</p>
+<p>(2) 据(1)可得，由基 $\alpha_1,\alpha_2,\alpha_3$ 到基 $\beta_1,\beta_2,\beta_3$ 的过渡矩阵为</p>
+<p>$$C=\begin{pmatrix}1&amp;-1&amp;3\\1&amp;-2&amp;4\\-1&amp;2&amp;-3\end{pmatrix}.$$</p>
+<p>由题设知，向量 $\xi$ 在基 $\alpha_1,\alpha_2,\alpha_3$ 下的坐标为 $(1,1,1)^{\mathrm{T}}$. 设向量 $\xi$ 在基 $\beta_1,\beta_2,\beta_3$ 下的坐标是 $(y_1,y_2,y_3)^{\mathrm{T}}$，根据坐标变换公式有</p>
+<p>$$\begin{pmatrix}y_1\\y_2\\y_3\end{pmatrix}=C^{-1}\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}2&amp;-3&amp;-2\\1&amp;0&amp;1\\0&amp;1&amp;1\end{pmatrix}\begin{pmatrix}1\\1\\1\end{pmatrix}=\begin{pmatrix}-3\\2\\2\end{pmatrix}.$$</p>
+<p>即向量 $\xi$ 在基 $\beta_1,\beta_2,\beta_3$ 下的坐标是 $(-3,2,2)^{\mathrm{T}}$.</p></div>
+</div></div>
+</article>
+<article class="problem" id="prob-3.5.43" data-pid="3.5.43">
+<div class="prob-head">
+<span class="prob-no" title="点击复制题号">【5.43】</span>
+<div class="prob-actions">
+<button class="btn-done" type="button">标记已做</button>
+<button class="btn-sol" type="button">收起解析</button>
+</div></div>
+<div class="prob-stem"><p>设 $\varepsilon_1=(1,0,1)^{\mathrm{T}},\varepsilon_2=(1,1,1)^{\mathrm{T}},\varepsilon_3=(1,0,0)^{\mathrm{T}}$ 是 $\mathbb{R}^3$ 的一组基，线性变换 $A$ 满足</p>
+<p>$$A\varepsilon_1=\varepsilon_1+\varepsilon_3,\quad A\varepsilon_2=\varepsilon_2-\varepsilon_3,\quad A\varepsilon_3=2\varepsilon_1-\varepsilon_2+\varepsilon_3.$$</p>
+<p>(1) 求 $A$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的矩阵；</p>
+<p>(2) 求 $A\gamma$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的坐标，其中 $\gamma=(1,0,-1)^{\mathrm{T}}$.</p></div>
+<hr class="prob-divider">
+<div class="prob-sol"><div class="sol-inner">
+<span class="sol-label">解 析</span>
+<div class="sol-body"><p>(1) 由条件得</p>
+<p>$$A(\varepsilon_1,\varepsilon_2,\varepsilon_3)=(A\varepsilon_1,A\varepsilon_2,A\varepsilon_3)=(\varepsilon_1,\varepsilon_2,\varepsilon_3)\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;-1\\1&amp;-1&amp;1\end{pmatrix}.$$</p>
+<p>由于 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 是 $\mathbb{R}^3$ 的一组基，它们线性无关，所以 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 可逆，有</p>
+<p>$$A=\begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;0\\1&amp;1&amp;0\end{pmatrix}\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;-1\\1&amp;-1&amp;1\end{pmatrix}\begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;0\\1&amp;1&amp;0\end{pmatrix}^{-1}.$$</p>
+<p>求得</p>
+<p>$\begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;0\\1&amp;1&amp;0\end{pmatrix}^{-1}=\begin{pmatrix}0&amp;-1&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;-1\end{pmatrix}.$</p>
+<p>所以</p>
+<p>$$A=\begin{pmatrix}1&amp;1&amp;1\\0&amp;1&amp;0\\1&amp;1&amp;0\end{pmatrix}\begin{pmatrix}1&amp;0&amp;2\\0&amp;1&amp;-1\\1&amp;-1&amp;1\end{pmatrix}\begin{pmatrix}0&amp;-1&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;-1\end{pmatrix}=\begin{pmatrix}2&amp;-2&amp;0\\-1&amp;1&amp;1\\1&amp;0&amp;0\end{pmatrix}.$$</p>
+<p>(2) 由于 $\gamma=(1,0,-1)^{\mathrm{T}}$，故</p>
+<p>$$A\gamma=\begin{pmatrix}2&amp;-2&amp;0\\-1&amp;1&amp;1\\1&amp;0&amp;0\end{pmatrix}\begin{pmatrix}1\\0\\-1\end{pmatrix}=\begin{pmatrix}2\\-2\\1\end{pmatrix}.$$</p>
+<p>设 $A\gamma$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的坐标是 $x$，则 $A\gamma=(\varepsilon_1,\varepsilon_2,\varepsilon_3)x$，</p>
+<p>$$x=(\varepsilon_1,\varepsilon_2,\varepsilon_3)^{-1}A\gamma=\begin{pmatrix}0&amp;-1&amp;1\\0&amp;1&amp;0\\1&amp;0&amp;-1\end{pmatrix}\begin{pmatrix}2\\-2\\1\end{pmatrix}=\begin{pmatrix}3\\-2\\1\end{pmatrix}.$$</p>
+<p>即 $A\gamma=3\varepsilon_1-2\varepsilon_2+\varepsilon_3$.</p>
+<p>所以 $A\gamma$ 在基 $\varepsilon_1,\varepsilon_2,\varepsilon_3$ 下的坐标为 $(3,-2,1)^{\mathrm{T}}$.</p></div>
 </div></div>
 </article>
 </section>
